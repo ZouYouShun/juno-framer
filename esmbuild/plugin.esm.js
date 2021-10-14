@@ -9,6 +9,8 @@ exports.esmPlugin = {
             const isNode = args.importer.includes("node_modules")
             const isLocal = args.path.startsWith("./") || args.path.startsWith("../")
 
+            // `${args.path}.js`
+
             // Rewrite all imports that don't have an extension (we assume it's code)
             if (
                 args.importer &&
