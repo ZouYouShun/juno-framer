@@ -5,7 +5,7 @@ addPropertyControls(lib.Link, {
   children2: {
     title: "children",
     type: ControlType.String,
-    defaultValue: "http://127.0.0.1",
+    defaultValue: "Link",
   },
   variant: {
     title: "variant",
@@ -19,6 +19,16 @@ addPropertyControls(lib.Link, {
     defaultValue: "informative.f02",
     options: lib.colorOptions,
   },
+  href: {
+    type: ControlType.String,
+    title: "href",
+    defaultValue: "http://127.0.0.1",
+  },
+  target: {
+    type: ControlType.String,
+    title: "target",
+    defaultValue: "_blank",
+  },
   disabled: {
     title: "disabled",
     type: ControlType.Boolean,
@@ -26,4 +36,5 @@ addPropertyControls(lib.Link, {
   },
 });
 
-export const Link: React.ComponentType = lib.Link;
+const RcLink: React.ComponentType = lib.Link;
+export default RcLink;
