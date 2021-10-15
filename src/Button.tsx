@@ -4,13 +4,7 @@ import { RcThemeProvider } from "@ringcentral/juno/foundation/theme/ThemeProvide
 import * as iconMap from "@ringcentral/juno/icon";
 import React from "react";
 
-export const Button = ({
-  children,
-  children2,
-  startIcon,
-  endIcon,
-  ...rest
-}: any) => {
+export const Button = ({ children2, startIcon, endIcon, ...rest }: any) => {
   const StartIcon =
     startIcon === "" ? undefined : (
       <RcIcon symbol={(iconMap as any)[startIcon]} />
@@ -21,7 +15,6 @@ export const Button = ({
   return (
     <RcThemeProvider>
       <RcButton {...rest} startIcon={StartIcon} endIcon={EndIcon}>
-        {children}
         {children2}
       </RcButton>
     </RcThemeProvider>
