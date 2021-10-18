@@ -31516,8 +31516,101 @@ var TextField3 = (_a2) => {
   })));
 };
 
+// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/Textarea.js
+import React488, { forwardRef as forwardRef453, useMemo as useMemo14 } from "react";
+
+// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/utils/TextareaUtils.js
+var RcTextareaInputClasses = RcClasses(["inputMultiline", "root"], "RcTextareaInput");
+
+// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/styles/TextareaStyle.js
+var __makeTemplateObject44 = function(cooked, raw) {
+  if (Object.defineProperty) {
+    Object.defineProperty(cooked, "raw", { value: raw });
+  } else {
+    cooked.raw = raw;
+  }
+  return cooked;
+};
+var TextareaStyle = function(_a2) {
+  var disabled3 = _a2.disabled;
+  return css2(templateObject_213 || (templateObject_213 = __makeTemplateObject44(["\n    .", " {\n      margin: ", " 0 0 0;\n\n      background: ", ";\n      ", ";\n      ", ";\n    }\n\n    .", " {\n      padding: 0;\n    }\n  "], [
+    "\n    .",
+    " {\n      margin: ",
+    " 0 0 0;\n\n      background: ",
+    ";\n      ",
+    ";\n      ",
+    ";\n    }\n\n    .",
+    " {\n      padding: 0;\n    }\n  "
+  ])), RcTextareaInputClasses.inputMultiline, spacing2(1), palette2("neutral", "b03"), fakeBorder(), !disabled3 && css2(templateObject_144 || (templateObject_144 = __makeTemplateObject44(["\n          ", " {\n            &:hover {\n              background: transparent;\n            }\n          }\n        "], ["\n          ", " {\n            &:hover {\n              background: transparent;\n            }\n          }\n        "])), nonTouchHoverMedia), RcTextareaInputClasses.root);
+};
+var templateObject_144;
+var templateObject_213;
+
+// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/Textarea.js
+var __makeTemplateObject45 = function(cooked, raw) {
+  if (Object.defineProperty) {
+    Object.defineProperty(cooked, "raw", { value: raw });
+  } else {
+    cooked.raw = raw;
+  }
+  return cooked;
+};
+var __assign423 = function() {
+  __assign423 = Object.assign || function(t2) {
+    for (var s2, i2 = 1, n2 = arguments.length; i2 < n2; i2++) {
+      s2 = arguments[i2];
+      for (var p in s2)
+        if (Object.prototype.hasOwnProperty.call(s2, p))
+          t2[p] = s2[p];
+    }
+    return t2;
+  };
+  return __assign423.apply(this, arguments);
+};
+var __rest39 = function(s2, e2) {
+  var t2 = {};
+  for (var p in s2)
+    if (Object.prototype.hasOwnProperty.call(s2, p) && e2.indexOf(p) < 0)
+      t2[p] = s2[p];
+  if (s2 != null && typeof Object.getOwnPropertySymbols === "function")
+    for (var i2 = 0, p = Object.getOwnPropertySymbols(s2); i2 < p.length; i2++) {
+      if (e2.indexOf(p[i2]) < 0 && Object.prototype.propertyIsEnumerable.call(s2, p[i2]))
+        t2[p[i2]] = s2[p[i2]];
+    }
+  return t2;
+};
+var _RcTextarea = forwardRef453(function(inProps, ref) {
+  var props = useThemeProps({ props: inProps, name: "RcTextarea" });
+  var classes = props.classes, InputPropsProp = props.InputProps, rest = __rest39(props, ["classes", "InputProps"]);
+  var InputProps = useMemo14(function() {
+    return combineProps({
+      classes: RcTextareaInputClasses
+    }, InputPropsProp);
+  }, [InputPropsProp]);
+  return React488.createElement(RcTextField, __assign423({}, rest, { multiline: true, InputProps, clearBtn: false, ref }));
+});
+var RcTextarea = styled_components_default(_RcTextarea)(templateObject_145 || (templateObject_145 = __makeTemplateObject45(["\n  ", "\n"], ["\n  ", "\n"])), TextareaStyle);
+RcTextarea.defaultProps = {
+  rows: 3
+};
+RcTextarea.displayName = "RcTextarea";
+var templateObject_145;
+
+// src/Textarea.tsx
+import React489, { useState as useState20 } from "react";
+var Textarea = (_a2) => {
+  var _b = _a2, { value: valueProp } = _b, rest = __objRest(_b, ["value"]);
+  const [value, setValue] = useState20(valueProp);
+  return /* @__PURE__ */ React489.createElement(RcThemeProvider, null, /* @__PURE__ */ React489.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
+    value,
+    onChange: (e2) => {
+      setValue(e2.target.value);
+    }
+  })));
+};
+
 // src/ThemeProvider.tsx
-import React488 from "react";
+import React490 from "react";
 
 // src/themes/rcBlue/rcBlue.ts
 var rcBlue = {
@@ -42074,19 +42167,19 @@ var RcThemeIds = Object.keys(RcThemes);
 var ThemeProvider3 = (_a2) => {
   var _b = _a2, { children, themeId } = _b, rest = __objRest(_b, ["children", "themeId"]);
   const theme = RcThemes[themeId];
-  return /* @__PURE__ */ React488.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React490.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
     theme
   }), children[0]);
 };
 
 // src/Tooltip.tsx
-import React489 from "react";
+import React491 from "react";
 var Tooltip3 = (_a2) => {
   var _b = _a2, { children } = _b, rest = __objRest(_b, ["children"]);
   console.log(children, rest);
-  return /* @__PURE__ */ React489.createElement(RcThemeProvider, null, children.length > 0 ? /* @__PURE__ */ React489.createElement(RcTooltip, __spreadValues({
+  return /* @__PURE__ */ React491.createElement(RcThemeProvider, null, children.length > 0 ? /* @__PURE__ */ React491.createElement(RcTooltip, __spreadValues({
     css: true
-  }, rest), children[0]) : /* @__PURE__ */ React489.createElement("div", null, "Example"));
+  }, rest), children[0]) : /* @__PURE__ */ React491.createElement("div", null, "Example"));
 };
 
 // src/utils/colorOptions.ts
@@ -42683,6 +42776,7 @@ export {
   SnackbarContent3 as SnackbarContent,
   Text2 as Text,
   TextField3 as TextField,
+  Textarea,
   ThemeProvider3 as ThemeProvider,
   Tooltip3 as Tooltip,
   colorOptions,
