@@ -5,6 +5,7 @@ export * from "./Icon";
 export * from "./LinearProgress";
 export * from "./Link";
 export * from "./SnackbarContent";
+export * from "./Switch";
 export * from "./Text";
 export * from "./TextField";
 export * from "./Textarea";
