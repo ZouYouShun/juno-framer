@@ -48,7 +48,7 @@ addPropertyControls(lib.Button, {
     title: "radius",
     type: ControlType.Enum,
     defaultValue: "lg",
-    options: ["circle", "lg", "md", "round", "sm", "xl", "xxl", "zero"],
+    options: lib.radiusOptions,
   },
   title: {
     title: "title",

@@ -6,6 +6,7 @@ export * from "./LinearProgress";
 export * from "./Link";
 export * from "./SnackbarContent";
 export * from "./Text";
+export * from "./TextField";
 export * from "./ThemeProvider";
 export * from "./Tooltip";
 export * from "./themes";
