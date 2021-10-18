@@ -1,5 +1,5 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js";
+import * as lib from "https://zouyoushun.github.io/juno-framer/esmbuild@1.0.6/index.js";
 
 addPropertyControls(lib.Text, {
   color: {
@@ -16,19 +16,19 @@ addPropertyControls(lib.Text, {
   variant: {
     title: "variant",
     type: ControlType.Enum,
-    defaultValue: "body1",
+    defaultValue: "inherit",
     options: lib.typographyOptions,
   },
   title: {
     title: "title",
     type: ControlType.String,
   },
-  weight: {
-    title: "weight",
-    type: ControlType.Enum,
-    defaultValue: undefined,
-    options: [undefined, "normal", "bold"],
-  },
+  // weight: {
+  //   title: "weight",
+  //   type: ControlType.Enum,
+  //   defaultValue: undefined,
+  //   options: [undefined, "normal", "bold"],
+  // },
   useRcTooltip: {
     title: "useRcTooltip",
     type: ControlType.Boolean,
@@ -37,14 +37,14 @@ addPropertyControls(lib.Text, {
   display: {
     title: "display",
     type: ControlType.Enum,
-    defaultValue: undefined,
-    options: [undefined, "inline", "initial", "block"],
+    defaultValue: "block",
+    options: ["inline", "initial", "block"],
   },
   align: {
     title: "align",
     type: ControlType.Enum,
-    defaultValue: undefined,
-    options: [undefined, "inherit", "left", "right", "center", "justify"],
+    defaultValue: "left",
+    options: ["inherit", "left", "right", "center", "justify"],
   },
   noWrap: {
     title: "noWrap",

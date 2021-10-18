@@ -1,5 +1,5 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js?123123s";
+import * as lib from "https://zouyoushun.github.io/juno-framer/esmbuild@1.0.6/index.js";
 
 addPropertyControls(lib.Avatar, {
   clickable: {
@@ -10,7 +10,7 @@ addPropertyControls(lib.Avatar, {
   color: {
     type: ControlType.Enum,
     title: "color",
-    defaultValue: 'avatar.global',
+    defaultValue: "avatar.global",
     options: [undefined, ...lib.colorOptions],
   },
   src: {
@@ -20,22 +20,32 @@ addPropertyControls(lib.Avatar, {
   _children: {
     title: "children",
     type: ControlType.String,
-    defaultValue: 'T',
+    defaultValue: "T",
   },
-  title: {
-    title: "title",
-    type: ControlType.String,
+  size: {
+    title: "size",
+    type: ControlType.Enum,
+    defaultValue: "medium",
+    options: ["small", "medium", "large", "xxsmall", "xsmall", "xlarge"],
   },
   useRcTooltip: {
     title: "useRcTooltip",
     type: ControlType.Boolean,
     defaultValue: false,
   },
-  align: {
-    title: "align",
-    type: ControlType.Enum,
-    defaultValue: undefined,
-    options: [undefined, "inherit", "left", "right", "center", "justify"],
+  title: {
+    title: "Tooltip",
+    type: ControlType.String,
+    hidden(props) {
+      return !props.useRcTooltip;
+    },
+  },
+  hasPresence: {
+    title: "presence",
+    type: ControlType.Boolean,
+    enabledTitle: "Show",
+    disabledTitle: "Hide",
+    defaultValue: true,
   },
   presenceOrigin: {
     title: "presenceOrigin",
@@ -55,15 +65,12 @@ addPropertyControls(lib.Avatar, {
         options: ["left", "right"],
       },
     },
-  },
-  $noPresence: {
-    title: "$noPresence",
-    type: ControlType.Boolean,
-    defaultValue: false,
+    hidden(props) {
+      return !props.hasPresence;
+    },
   },
   presenceProps: {
     title: "presenceProps",
-    description: "when you don't need presence, set $noPresence to true",
     type: ControlType.Object,
     controls: {
       type: {
@@ -84,12 +91,9 @@ addPropertyControls(lib.Avatar, {
         ],
       },
     },
-  },
-  size: {
-    title: "size",
-    type: ControlType.Enum,
-    defaultValue: "medium",
-    options: ["small", "medium", "large", "xxsmall", "xsmall", "xlarge"],
+    hidden(props) {
+      return !props.hasPresence;
+    },
   },
   mask: {
     title: "mask",
