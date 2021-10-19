@@ -6,6 +6,7 @@ export * from "./CircularProgress";
 export * from "./Icon";
 export * from "./LinearProgress";
 export * from "./Link";
+// export * from "./Radio";
 export * from "./SnackbarContent";
 export * from "./Switch";
 export * from "./Text";
