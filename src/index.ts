@@ -7,6 +7,7 @@ export * from "./Icon";
 export * from "./LinearProgress";
 export * from "./Link";
 // export * from "./Radio";
+export * from "./Slider";
 export * from "./SnackbarContent";
 export * from "./Switch";
 export * from "./Text";
