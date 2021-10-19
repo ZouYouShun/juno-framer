@@ -33386,8 +33386,15 @@ var TextField3 = (_a2) => {
   })));
 };
 
+// src/Presence.tsx
+import React506 from "react";
+var Presence = (_a2) => {
+  var _b = _a2, { _children } = _b, rest = __objRest(_b, ["_children"]);
+  return /* @__PURE__ */ React506.createElement(RcThemeProvider, null, /* @__PURE__ */ React506.createElement(RcPresence, __spreadValues({}, rest), _children));
+};
+
 // node_modules/@ringcentral/juno/es6/components/Forms/Textarea/Textarea.js
-import React506, { forwardRef as forwardRef463, useMemo as useMemo18 } from "react";
+import React507, { forwardRef as forwardRef463, useMemo as useMemo18 } from "react";
 
 // node_modules/@ringcentral/juno/es6/components/Forms/Textarea/utils/TextareaUtils.js
 var RcTextareaInputClasses = RcClasses(["inputMultiline", "root"], "RcTextareaInput");
@@ -33457,7 +33464,7 @@ var _RcTextarea = forwardRef463(function(inProps, ref) {
       classes: RcTextareaInputClasses
     }, InputPropsProp);
   }, [InputPropsProp]);
-  return React506.createElement(RcTextField, __assign428({}, rest, { multiline: true, InputProps, clearBtn: false, ref }));
+  return React507.createElement(RcTextField, __assign428({}, rest, { multiline: true, InputProps, clearBtn: false, ref }));
 });
 var RcTextarea = styled_components_default(_RcTextarea)(templateObject_154 || (templateObject_154 = __makeTemplateObject54(["\n  ", "\n"], ["\n  ", "\n"])), TextareaStyle);
 RcTextarea.defaultProps = {
@@ -33467,11 +33474,11 @@ RcTextarea.displayName = "RcTextarea";
 var templateObject_154;
 
 // src/Textarea.tsx
-import React507, { useState as useState21 } from "react";
+import React508, { useState as useState21 } from "react";
 var Textarea = (_a2) => {
   var _b = _a2, { value: valueProp } = _b, rest = __objRest(_b, ["value"]);
   const [value, setValue] = useState21(valueProp);
-  return /* @__PURE__ */ React507.createElement(RcThemeProvider, null, /* @__PURE__ */ React507.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React508.createElement(RcThemeProvider, null, /* @__PURE__ */ React508.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
     value,
     onChange: (e2) => {
       setValue(e2.target.value);
@@ -33480,7 +33487,7 @@ var Textarea = (_a2) => {
 };
 
 // src/ThemeProvider.tsx
-import React508 from "react";
+import React509 from "react";
 
 // src/themes/rcBlue/rcBlue.ts
 var rcBlue = {
@@ -44037,19 +44044,19 @@ var RcThemeIds = Object.keys(RcThemes);
 var ThemeProvider3 = (_a2) => {
   var _b = _a2, { children, themeId } = _b, rest = __objRest(_b, ["children", "themeId"]);
   const theme = RcThemes[themeId];
-  return /* @__PURE__ */ React508.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React509.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
     theme
   }), children[0]);
 };
 
 // src/Tooltip.tsx
-import React509 from "react";
+import React510 from "react";
 var Tooltip3 = (_a2) => {
   var _b = _a2, { children } = _b, rest = __objRest(_b, ["children"]);
   console.log(children, rest);
-  return /* @__PURE__ */ React509.createElement(RcThemeProvider, null, children.length > 0 ? /* @__PURE__ */ React509.createElement(RcTooltip, __spreadValues({
+  return /* @__PURE__ */ React510.createElement(RcThemeProvider, null, children.length > 0 ? /* @__PURE__ */ React510.createElement(RcTooltip, __spreadValues({
     css: true
-  }, rest), children[0]) : /* @__PURE__ */ React509.createElement("div", null, "Example"));
+  }, rest), children[0]) : /* @__PURE__ */ React510.createElement("div", null, "Example"));
 };
 
 // src/utils/colorOptions.ts
@@ -44641,6 +44648,7 @@ export {
   Icon,
   LinearProgress3 as LinearProgress,
   Link,
+  Presence,
   RcMobileThemes,
   RcThemeIds,
   RcThemes,
