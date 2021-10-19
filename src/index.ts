@@ -6,6 +6,7 @@ export * from "./Checkbox";
 export * from "./CircularProgress";
 // export * from "./DatePicker";
 export * from "./Icon";
+export * from "./IconButton";
 export * from "./LinearProgress";
 export * from "./Link";
 // export * from "./Radio";
