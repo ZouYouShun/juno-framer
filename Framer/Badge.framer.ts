@@ -1,19 +1,25 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js";
+import * as lib from "http://127.0.0.1:8000/index.js?123123123s";
 
 addPropertyControls(lib.Badge, {
   variant: {
     title: "variant",
     type: ControlType.Enum,
     /** description: "The variant to use.", */
-    defaultValue: undefined,
+    defaultValue: "standard",
     options: ["dot", "standard"],
   },
   badgeContent: {
     title: "badgeContent",
-    type: ControlType.Object,
+    type: ControlType.Number,
     /** description: "The content rendered within the badge.", */
-    defaultValue: undefined,
+    defaultValue: 1,
+  },
+  max: {
+    title: "max",
+    type: ControlType.Number,
+    /** description: "Max count to show.", */
+    defaultValue: 5,
   },
   overlap: {
     title: "overlap",
@@ -60,7 +66,7 @@ addPropertyControls(lib.Badge, {
     type: ControlType.Enum,
     /** description: "tag border color", */
     defaultValue: undefined,
-    options: lib.colorOptions,
+    options: [undefined, ...lib.colorOptions],
   },
   _children: {
     title: "children",
@@ -75,15 +81,10 @@ addPropertyControls(lib.Badge, {
   // },
   invisible: {
     title: "invisible",
-    type: ControlType.Boolean,
+    type: ControlType.Enum,
     /** description: "If `true`, the badge will be invisible.", */
-    defaultValue: false,
-  },
-  max: {
-    title: "max",
-    type: ControlType.Number,
-    /** description: "Max count to show.", */
-    defaultValue: undefined,
+    optionTitles: ["undefined", "true", "false"],
+    options: [undefined, 1, 0],
   },
   showZero: {
     title: "showZero",
@@ -91,19 +92,19 @@ addPropertyControls(lib.Badge, {
     /** description: "Controls whether the badge is hidden when `badgeContent` is zero.", */
     defaultValue: false,
   },
-//   dotComponent: {
-//     title: "dotComponent",
-//     type: ControlType.Object,
-//     /** description: "Custom dot render Component in `dot` mode
-// if you don't want any dot, you can set `null`", */
-//     defaultValue: undefined,
-//   },
-//   dotProps: {
-//     title: "dotProps",
-//     type: ControlType.Object,
-//     /** description: "when mode is dot, that addition dotProps", */
-//     defaultValue: undefined,
-//   },
+  //   dotComponent: {
+  //     title: "dotComponent",
+  //     type: ControlType.Object,
+  //     /** description: "Custom dot render Component in `dot` mode
+  // if you don't want any dot, you can set `null`", */
+  //     defaultValue: undefined,
+  //   },
+  //   dotProps: {
+  //     title: "dotProps",
+  //     type: ControlType.Object,
+  //     /** description: "when mode is dot, that addition dotProps", */
+  //     defaultValue: undefined,
+  //   },
 });
 
 const RcBadge: React.ComponentType = lib.Badge;
