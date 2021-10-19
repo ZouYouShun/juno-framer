@@ -1,5 +1,5 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js";
+import * as lib from "http://127.0.0.1:8000/index.js?asdasdasd";
 
 addPropertyControls(lib.Presence, {
   type: {
@@ -47,7 +47,7 @@ addPropertyControls(lib.Presence, {
     type: ControlType.Enum,
     /** description: "other custom color with presence", */
     defaultValue: undefined,
-    options: [undefined, lib.colorOptions],
+    options: [undefined, ...lib.colorOptions],
   },
 });
 
