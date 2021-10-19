@@ -14,6 +14,7 @@ export * from "./Switch";
 export * from "./Tag";
 export * from "./Text";
 export * from "./TextField";
+export * from "./Thumbnail";
 export * from "./Presence";
 export * from "./Textarea";
 export * from "./ThemeProvider";
