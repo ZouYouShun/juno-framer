@@ -1,6 +1,7 @@
 export * from "./Alert";
 export * from "./Avatar";
 export * from "./Button";
+export * from "./Badge";
 export * from "./Checkbox";
 export * from "./CircularProgress";
 // export * from "./DatePicker";
