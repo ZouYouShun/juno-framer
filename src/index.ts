@@ -12,6 +12,7 @@ export * from "./SnackbarContent";
 export * from "./Switch";
 export * from "./Text";
 export * from "./TextField";
+export * from "./Presence";
 export * from "./Textarea";
 export * from "./ThemeProvider";
 // export * from "./TimePicker";
