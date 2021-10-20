@@ -5,7 +5,7 @@ import React from "react";
 
 export const Avatar = ({
   _children,
-  $noPresence,
+  hasPresence,
   startIcon,
   endIcon,
   iconSymbol,
@@ -17,7 +17,7 @@ export const Avatar = ({
       <RcAvatar
         {...rest}
         iconSymbol={(iconMap as any)[iconSymbol]}
-        presenceProps={$noPresence ? undefined : presenceProps}
+        presenceProps={hasPresence ? presenceProps : undefined}
       >
         {_children}
       </RcAvatar>
