@@ -1,12 +1,12 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js";
+import * as lib from "https://zouyoushun.github.io/juno-framer/esmbuild@1.0.7/index.js";
 
 addPropertyControls(lib.SnackbarAction, {
   _children: {
     title: "children",
     type: ControlType.String,
     /** description: "The content of the component.", */
-    defaultValue: undefined,
+    defaultValue: "click",
   },
   symbol: {
     type: ControlType.Enum,
@@ -24,7 +24,7 @@ addPropertyControls(lib.SnackbarAction, {
     title: "color",
     type: ControlType.Enum,
     /** description: "tag color, default is `highlight.b03`", */
-    defaultValue: undefined,
+    defaultValue: "neutral.f01",
     options: [undefined, ...lib.colorOptions],
   },
   size: {

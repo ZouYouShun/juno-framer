@@ -24,5 +24,10 @@ addPropertyControls(lib.LinearProgress, {
   },
 });
 
+/**
+ * @framerIntrinsicWidth 200
+ *
+ * @framerSupportedLayoutWidth fixed
+ */
 const RcLinearProgress: React.ComponentType = lib.LinearProgress;
 export default RcLinearProgress;

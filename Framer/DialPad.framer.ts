@@ -29,5 +29,10 @@ button background will not persist if persistBgTime less than 0", */
   },
 });
 
+/**
+ * @framerIntrinsicWidth 200
+ *
+ * @framerSupportedLayoutWidth fixed
+ */
 const RcDialPad: React.ComponentType = lib.DialPad;
 export default RcDialPad;
