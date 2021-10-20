@@ -27041,14 +27041,14 @@ import React453 from "react";
 var Avatar = (_a2) => {
   var _b = _a2, {
     _children,
-    $noPresence,
+    hasPresence,
     startIcon,
     endIcon,
     iconSymbol,
     presenceProps
   } = _b, rest = __objRest(_b, [
     "_children",
-    "$noPresence",
+    "hasPresence",
     "startIcon",
     "endIcon",
     "iconSymbol",
@@ -27056,7 +27056,7 @@ var Avatar = (_a2) => {
   ]);
   return /* @__PURE__ */ React453.createElement(RcThemeProvider, null, /* @__PURE__ */ React453.createElement(ExportType, __spreadProps(__spreadValues({}, rest), {
     iconSymbol: icon_exports[iconSymbol],
-    presenceProps: $noPresence ? void 0 : presenceProps
+    presenceProps: hasPresence ? presenceProps : void 0
   }), _children));
 };
 
