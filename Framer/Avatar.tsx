@@ -50,7 +50,6 @@ addPropertyControls(lib.Avatar, {
   presenceOrigin: {
     title: "presenceOrigin",
     type: ControlType.Object,
-    defaultValue: undefined,
     controls: {
       vertical: {
         title: "vertical",
