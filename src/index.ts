@@ -5,6 +5,7 @@ export * from "./Badge";
 export * from "./Checkbox";
 export * from "./Chip";
 export * from "./CircularProgress";
+export * from "./DialPad";
 export * from "./Divider";
 // export * from "./DatePicker";
 export * from "./Icon";
