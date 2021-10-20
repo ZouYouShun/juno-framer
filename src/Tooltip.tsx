@@ -2,17 +2,16 @@ import { RcTooltip } from "@ringcentral/juno/components/Tooltip";
 import { RcThemeProvider } from "@ringcentral/juno/foundation/theme/ThemeProvider";
 import React from "react";
 
-export const Tooltip = ({ children, ...rest }: any) => {
-  console.log(children, rest);
-
+export const Tooltip = ({ _children, children, ...rest }: any) => {
   return (
     <RcThemeProvider>
-      {children.length > 0 ? (
-        <RcTooltip css {...rest}>
-          {children[0]}
+      {_children.length > 0 ? (
+        // because framer issue, use ignorePointer to wrap that
+        <RcTooltip {...rest} ignorePointer>
+          {_children[0].props.children}
         </RcTooltip>
       ) : (
-        <div>Example</div>
+        <div>choice children</div>
       )}
     </RcThemeProvider>
   );
