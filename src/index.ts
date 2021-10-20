@@ -4,6 +4,7 @@ export * from "./Button";
 export * from "./Badge";
 export * from "./Checkbox";
 export * from "./CircularProgress";
+export * from "./Divider";
 // export * from "./DatePicker";
 export * from "./Icon";
 export * from "./IconButton";
