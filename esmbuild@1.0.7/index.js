@@ -37192,9 +37192,19 @@ var templateObject_166;
 // src/SnackbarContent.tsx
 import React531 from "react";
 var SnackbarContent3 = (_a2) => {
-  var _b = _a2, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  console.log(rest, _children);
-  return /* @__PURE__ */ React531.createElement(RcThemeProvider, null, /* @__PURE__ */ React531.createElement(RcSnackbarContent, __spreadValues({}, rest), _children));
+  var _b = _a2, {
+    _children,
+    action: actionProp = []
+  } = _b, rest = __objRest(_b, [
+    "_children",
+    "action"
+  ]);
+  const action3 = actionProp.map((a2) => {
+    return a2.props.children;
+  });
+  return /* @__PURE__ */ React531.createElement(RcThemeProvider, null, /* @__PURE__ */ React531.createElement(RcSnackbarContent, __spreadProps(__spreadValues({}, rest), {
+    action: action3
+  }), _children));
 };
 
 // node_modules/@ringcentral/juno/es6/components/Snackbar/SnackbarAction/SnackbarAction.js
@@ -48666,11 +48676,10 @@ var ThemeProvider3 = (_a2) => {
 // src/Tooltip.tsx
 import React549 from "react";
 var Tooltip3 = (_a2) => {
-  var _b = _a2, { children } = _b, rest = __objRest(_b, ["children"]);
-  console.log(children, rest);
-  return /* @__PURE__ */ React549.createElement(RcThemeProvider, null, children.length > 0 ? /* @__PURE__ */ React549.createElement(RcTooltip, __spreadValues({
-    css: true
-  }, rest), children[0]) : /* @__PURE__ */ React549.createElement("div", null, "Example"));
+  var _b = _a2, { _children, children } = _b, rest = __objRest(_b, ["_children", "children"]);
+  return /* @__PURE__ */ React549.createElement(RcThemeProvider, null, _children.length > 0 ? /* @__PURE__ */ React549.createElement(RcTooltip, __spreadProps(__spreadValues({}, rest), {
+    ignorePointer: true
+  }), _children[0].props.children) : /* @__PURE__ */ React549.createElement("div", null, "choice children"));
 };
 
 // src/utils/colorOptions.ts
