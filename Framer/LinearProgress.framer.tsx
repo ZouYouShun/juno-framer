@@ -1,5 +1,5 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js";
+import * as lib from "https://zouyoushun.github.io/juno-framer/esmbuild@1.0.7/index.js";
 
 addPropertyControls(lib.LinearProgress, {
   color: {
@@ -24,4 +24,5 @@ addPropertyControls(lib.LinearProgress, {
   },
 });
 
-export const LinearProgress: React.ComponentType = lib.LinearProgress;
+const RcLinearProgress: React.ComponentType = lib.LinearProgress;
+export default RcLinearProgress;

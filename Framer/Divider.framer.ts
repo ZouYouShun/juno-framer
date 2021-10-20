@@ -1,5 +1,5 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js";
+import * as lib from "http://127.0.0.1:8000/index.js?asss22";
 
 addPropertyControls(lib.Divider, {
   size: {
@@ -43,5 +43,10 @@ addPropertyControls(lib.Divider, {
   // },
 });
 
+/**
+ * @framerIntrinsicWidth 200
+ *
+ * @framerSupportedLayoutWidth fixed
+ */
 const RcDivider: React.ComponentType = lib.Divider;
 export default RcDivider;
