@@ -7,7 +7,7 @@ addPropertyControls(lib.Button, {
     type: ControlType.String,
     /** description: "The content of the button.
 The content of the component.", */
-    defaultValue: undefined,
+    defaultValue: 'Button',
   },
   variant: {
     title: "variant",
@@ -99,24 +99,24 @@ to highlight the element by applying separate styles with the `focusVisibleClass
     /** description: "If `true`, the touch ripple effect will be disabled.", */
     defaultValue: false,
   },
-//   TouchRippleProps: {
-//     title: "TouchRippleProps",
-//     type: ControlType.Object,
-//     /** description: "Props applied to the `TouchRipple` element.", */
-//     defaultValue: undefined,
-//   },
+  //   TouchRippleProps: {
+  //     title: "TouchRippleProps",
+  //     type: ControlType.Object,
+  //     /** description: "Props applied to the `TouchRipple` element.", */
+  //     defaultValue: undefined,
+  //   },
   loading: {
     title: "loading",
     type: ControlType.Boolean,
     /** description: "is button loading, when `loading` that `disabled` will auto become `true`", */
     defaultValue: false,
   },
-//   CircularProgressProps: {
-//     title: "CircularProgressProps",
-//     type: ControlType.Object,
-//     /** description: "Props send to `RcCircularProgress` when loading is `true`", */
-//     defaultValue: undefined,
-//   },
+  //   CircularProgressProps: {
+  //     title: "CircularProgressProps",
+  //     type: ControlType.Object,
+  //     /** description: "Props send to `RcCircularProgress` when loading is `true`", */
+  //     defaultValue: undefined,
+  //   },
   disableElevation: {
     title: "disableElevation",
     type: ControlType.Boolean,
@@ -137,15 +137,17 @@ to highlight the element by applying separate styles with the `focusVisibleClass
   },
   startIcon: {
     title: "startIcon",
-    type: ControlType.String,
+    type: ControlType.Enum,
     /** description: "Element placed before the children.", */
     defaultValue: undefined,
+    options: [undefined, ...lib.iconOptions],
   },
   endIcon: {
     title: "endIcon",
-    type: ControlType.String,
+    type: ControlType.Enum,
     /** description: "Element placed after the children.", */
     defaultValue: undefined,
+    options: [undefined, ...lib.iconOptions],
   },
   disabledVariant: {
     title: "disabledVariant",
@@ -176,12 +178,12 @@ to highlight the element by applying separate styles with the `focusVisibleClass
     /** description: "html native title or not, default `false`", */
     defaultValue: false,
   },
-//   TooltipProps: {
-//     title: "TooltipProps",
-//     type: ControlType.Object,
-//     /** description: "props for pass into `RcTooltip` when useRcTooltip is `true`", */
-//     defaultValue: undefined,
-//   },
+  //   TooltipProps: {
+  //     title: "TooltipProps",
+  //     type: ControlType.Object,
+  //     /** description: "props for pass into `RcTooltip` when useRcTooltip is `true`", */
+  //     defaultValue: undefined,
+  //   },
   onClick: {
     type: ControlType.EventHandler,
   },
