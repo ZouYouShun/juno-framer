@@ -2,10 +2,10 @@ import { RcLink } from "@ringcentral/juno/components/Link";
 import { RcThemeProvider } from "@ringcentral/juno/foundation/theme/ThemeProvider";
 import React from "react";
 
-export const Link = ({ children2, ...rest }: any) => {
+export const Link = ({ _children, ...rest }: any) => {
   return (
     <RcThemeProvider>
-      <RcLink {...rest}>{children2}</RcLink>
+      <RcLink {...rest}>{_children}</RcLink>
     </RcThemeProvider>
   );
 };

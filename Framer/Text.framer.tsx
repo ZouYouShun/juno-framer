@@ -8,7 +8,7 @@ addPropertyControls(lib.Text, {
     defaultValue: "informative.f02",
     options: lib.colorOptions,
   },
-  children2: {
+  _children: {
     title: "children",
     type: ControlType.String,
     defaultValue: "Text",
