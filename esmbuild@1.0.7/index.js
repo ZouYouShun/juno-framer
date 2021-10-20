@@ -28649,7 +28649,7 @@ var templateObject_131;
 // src/Button.tsx
 import React458 from "react";
 var Button3 = (_a2) => {
-  var _b = _a2, { children2, startIcon, endIcon } = _b, rest = __objRest(_b, ["children2", "startIcon", "endIcon"]);
+  var _b = _a2, { _children, startIcon, endIcon } = _b, rest = __objRest(_b, ["_children", "startIcon", "endIcon"]);
   const StartIcon = startIcon === "" ? void 0 : /* @__PURE__ */ React458.createElement(RcIcon, {
     symbol: icon_exports[startIcon]
   });
@@ -28659,7 +28659,7 @@ var Button3 = (_a2) => {
   return /* @__PURE__ */ React458.createElement(RcThemeProvider, null, /* @__PURE__ */ React458.createElement(RcButton, __spreadProps(__spreadValues({}, rest), {
     startIcon: StartIcon,
     endIcon: EndIcon
-  }), children2));
+  }), _children));
 };
 
 // node_modules/@material-ui/core/esm/Badge/Badge.js
@@ -35601,8 +35601,8 @@ var templateObject_160;
 // src/Link.tsx
 import React519 from "react";
 var Link = (_a2) => {
-  var _b = _a2, { children2 } = _b, rest = __objRest(_b, ["children2"]);
-  return /* @__PURE__ */ React519.createElement(RcThemeProvider, null, /* @__PURE__ */ React519.createElement(RcLink, __spreadValues({}, rest), children2));
+  var _b = _a2, { _children } = _b, rest = __objRest(_b, ["_children"]);
+  return /* @__PURE__ */ React519.createElement(RcThemeProvider, null, /* @__PURE__ */ React519.createElement(RcLink, __spreadValues({}, rest), _children));
 };
 
 // node_modules/@material-ui/lab/esm/Rating/Rating.js
@@ -37898,8 +37898,8 @@ var templateObject_176;
 // src/Text.tsx
 import React541 from "react";
 var Text2 = (_a2) => {
-  var _b = _a2, { children2, startIcon, endIcon } = _b, rest = __objRest(_b, ["children2", "startIcon", "endIcon"]);
-  return /* @__PURE__ */ React541.createElement(RcThemeProvider, null, /* @__PURE__ */ React541.createElement(RcText, __spreadValues({}, rest), children2));
+  var _b = _a2, { _children, startIcon, endIcon } = _b, rest = __objRest(_b, ["_children", "startIcon", "endIcon"]);
+  return /* @__PURE__ */ React541.createElement(RcThemeProvider, null, /* @__PURE__ */ React541.createElement(RcText, __spreadValues({}, rest), _children));
 };
 
 // src/TextField.tsx
