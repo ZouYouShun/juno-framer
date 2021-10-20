@@ -3,6 +3,7 @@ export * from "./Avatar";
 export * from "./Button";
 export * from "./Badge";
 export * from "./Checkbox";
+export * from "./Chip";
 export * from "./CircularProgress";
 export * from "./Divider";
 // export * from "./DatePicker";
