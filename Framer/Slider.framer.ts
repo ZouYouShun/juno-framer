@@ -93,5 +93,11 @@ addPropertyControls(lib.Slider, {
   //   },
 });
 
+
+/**
+ * @framerIntrinsicWidth 200
+ *
+ * @framerSupportedLayoutWidth fixed
+ */
 const RcSlider: React.ComponentType = lib.Slider;
 export default RcSlider;

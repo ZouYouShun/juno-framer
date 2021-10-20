@@ -73,5 +73,10 @@ Unless provided, the icon is mapped to the value of the `severity` prop.", */
   //   },
 });
 
+/**
+ * @framerIntrinsicWidth 200
+ *
+ * @framerSupportedLayoutWidth fixed
+ */
 const RcAlert: React.ComponentType = lib.Alert;
 export default RcAlert;
