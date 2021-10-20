@@ -1,0 +1,87 @@
+import { addPropertyControls, ControlType } from "framer";
+import * as lib from "http://127.0.0.1:8000/index.js";
+
+addPropertyControls(lib.SnackbarAction, {
+  _children: {
+    title: "children",
+    type: ControlType.String,
+    /** description: "The content of the component.", */
+    defaultValue: undefined,
+  },
+  symbol: {
+    type: ControlType.Enum,
+    title: "symbol",
+    defaultValue: "Help",
+    options: lib.iconOptions,
+  },
+  // tabIndex: {
+  //   title: "tabIndex",
+  //   type: ControlType.Object,
+  //   /** description: "", */
+  //   defaultValue: undefined,
+  // },
+  color: {
+    title: "color",
+    type: ControlType.Enum,
+    /** description: "tag color, default is `highlight.b03`", */
+    defaultValue: undefined,
+    options: [undefined, ...lib.colorOptions],
+  },
+  size: {
+    title: "size",
+    type: ControlType.Enum,
+    /** description: "size for action", */
+    defaultValue: "medium",
+    options: ["small", "medium"],
+  },
+  disabled: {
+    title: "disabled",
+    type: ControlType.Boolean,
+    /** description: "If `true`, the base button will be disabled.", */
+    defaultValue: false,
+  },
+  variant: {
+    title: "variant",
+    type: ControlType.Enum,
+    /** description: "variant of action", */
+    defaultValue: "text",
+    options: ["text", "icon"],
+  },
+  centerRipple: {
+    title: "centerRipple",
+    type: ControlType.Boolean,
+    /** description: "If `true`, the ripples will be centered.
+They won't start at the cursor interaction position.", */
+    defaultValue: false,
+  },
+  disableRipple: {
+    title: "disableRipple",
+    type: ControlType.Boolean,
+    /** description: "If `true`, the ripple effect will be disabled.
+
+⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure
+to highlight the element by applying separate styles with the `focusVisibleClassName`.", */
+    defaultValue: true,
+  },
+  disableTouchRipple: {
+    title: "disableTouchRipple",
+    type: ControlType.Boolean,
+    /** description: "If `true`, the touch ripple effect will be disabled.", */
+    defaultValue: false,
+  },
+  focusRipple: {
+    title: "focusRipple",
+    type: ControlType.Boolean,
+    /** description: "If `true`, the base button will have a keyboard focus ripple.", */
+    defaultValue: false,
+  },
+  // TouchRippleProps: {
+  //   title: "TouchRippleProps",
+  //   type: ControlType.Object,
+  //   /** description: "Props applied to the `TouchRipple` element.", */
+  //   defaultValue: undefined,
+  // },
+});
+
+const RcSnackbarAction: React.ComponentType = lib.SnackbarAction;
+export default RcSnackbarAction;

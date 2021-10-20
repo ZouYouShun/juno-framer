@@ -18,6 +18,7 @@ export * from "./Link";
 export * from "./Rating";
 export * from "./Slider";
 export * from "./SnackbarContent";
+export * from "./SnackbarAction";
 export * from "./Switch";
 export * from "./Tag";
 export * from "./Text";
