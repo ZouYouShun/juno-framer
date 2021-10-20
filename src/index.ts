@@ -10,6 +10,7 @@ export * from "./Divider";
 // export * from "./DatePicker";
 export * from "./Icon";
 export * from "./IconButton";
+export * from "./InlineEditable";
 export * from "./LinearProgress";
 export * from "./Link";
 // export * from "./Radio";
