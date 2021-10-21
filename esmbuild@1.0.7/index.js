@@ -38024,20 +38024,10 @@ var Thumbnail = (_a2) => {
   }), _children));
 };
 
-// src/Presence.tsx
-import React545 from "react";
-var Presence = (_a2) => {
-  var _b = _a2, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React545.createElement(RcThemeProvider, null, /* @__PURE__ */ React545.createElement(RcPresence, __spreadValues({}, rest), _children));
-};
+// node_modules/@ringcentral/juno/es6/components/Paper/Paper.js
+import React545, { forwardRef as forwardRef478, useMemo as useMemo23 } from "react";
 
-// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/Textarea.js
-import React546, { forwardRef as forwardRef478, useMemo as useMemo23 } from "react";
-
-// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/utils/TextareaUtils.js
-var RcTextareaInputClasses = RcClasses(["inputMultiline", "root"], "RcTextareaInput");
-
-// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/styles/TextareaStyle.js
+// node_modules/@ringcentral/juno/es6/components/Paper/styles/PaperStyle.js
 var __makeTemplateObject79 = function(cooked, raw) {
   if (Object.defineProperty) {
     Object.defineProperty(cooked, "raw", { value: raw });
@@ -38046,22 +38036,15 @@ var __makeTemplateObject79 = function(cooked, raw) {
   }
   return cooked;
 };
-var TextareaStyle = function(_a2) {
-  var disabled3 = _a2.disabled;
-  return css2(templateObject_221 || (templateObject_221 = __makeTemplateObject79(["\n    .", " {\n      margin: ", " 0 0 0;\n\n      background: ", ";\n      ", ";\n      ", ";\n    }\n\n    .", " {\n      padding: 0;\n    }\n  "], [
-    "\n    .",
-    " {\n      margin: ",
-    " 0 0 0;\n\n      background: ",
-    ";\n      ",
-    ";\n      ",
-    ";\n    }\n\n    .",
-    " {\n      padding: 0;\n    }\n  "
-  ])), RcTextareaInputClasses.inputMultiline, spacing2(1), palette2("neutral", "b03"), fakeBorder(), !disabled3 && css2(templateObject_179 || (templateObject_179 = __makeTemplateObject79(["\n          ", " {\n            &:hover {\n              background: transparent;\n            }\n          }\n        "], ["\n          ", " {\n            &:hover {\n              background: transparent;\n            }\n          }\n        "])), nonTouchHoverMedia), RcTextareaInputClasses.root);
+var PaperStyle = function() {
+  return css2(templateObject_179 || (templateObject_179 = __makeTemplateObject79([""], [""])));
 };
 var templateObject_179;
-var templateObject_221;
 
-// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/Textarea.js
+// node_modules/@ringcentral/juno/es6/components/Paper/utils/PaperUtils.js
+var RcPaperClasses = RcClasses([], "RcPaper");
+
+// node_modules/@ringcentral/juno/es6/components/Paper/Paper.js
 var __makeTemplateObject80 = function(cooked, raw) {
   if (Object.defineProperty) {
     Object.defineProperty(cooked, "raw", { value: raw });
@@ -38094,29 +38077,121 @@ var __rest56 = function(s2, e2) {
     }
   return t2;
 };
-var _RcTextarea = forwardRef478(function(inProps, ref) {
+var _RcPaper = forwardRef478(function(inProps, ref) {
+  var props = useThemeProps({ props: inProps, name: "RcPaper" });
+  var classesProp = props.classes, children = props.children, rest = __rest56(props, ["classes", "children"]);
+  var classes = useMemo23(function() {
+    return combineClasses(RcPaperClasses, classesProp);
+  }, [
+    classesProp
+  ]);
+  return React545.createElement(Paper_default, __assign443({}, rest, { ref, classes }), children);
+});
+var RcPaper = styled_components_default(_RcPaper)(templateObject_180 || (templateObject_180 = __makeTemplateObject80(["\n  ", "\n"], ["\n  ", "\n"])), PaperStyle);
+RcPaper.defaultProps = {};
+RcPaper.displayName = "RcPaper";
+var templateObject_180;
+
+// src/Paper.tsx
+import React546 from "react";
+var Paper3 = (_a2) => {
+  var _b = _a2, { _children } = _b, rest = __objRest(_b, ["_children"]);
+  return /* @__PURE__ */ React546.createElement(RcThemeProvider, null, /* @__PURE__ */ React546.createElement(RcPaper, __spreadValues({}, rest), _children));
+};
+
+// src/Presence.tsx
+import React547 from "react";
+var Presence = (_a2) => {
+  var _b = _a2, { _children } = _b, rest = __objRest(_b, ["_children"]);
+  return /* @__PURE__ */ React547.createElement(RcThemeProvider, null, /* @__PURE__ */ React547.createElement(RcPresence, __spreadValues({}, rest), _children));
+};
+
+// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/Textarea.js
+import React548, { forwardRef as forwardRef479, useMemo as useMemo24 } from "react";
+
+// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/utils/TextareaUtils.js
+var RcTextareaInputClasses = RcClasses(["inputMultiline", "root"], "RcTextareaInput");
+
+// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/styles/TextareaStyle.js
+var __makeTemplateObject81 = function(cooked, raw) {
+  if (Object.defineProperty) {
+    Object.defineProperty(cooked, "raw", { value: raw });
+  } else {
+    cooked.raw = raw;
+  }
+  return cooked;
+};
+var TextareaStyle = function(_a2) {
+  var disabled3 = _a2.disabled;
+  return css2(templateObject_221 || (templateObject_221 = __makeTemplateObject81(["\n    .", " {\n      margin: ", " 0 0 0;\n\n      background: ", ";\n      ", ";\n      ", ";\n    }\n\n    .", " {\n      padding: 0;\n    }\n  "], [
+    "\n    .",
+    " {\n      margin: ",
+    " 0 0 0;\n\n      background: ",
+    ";\n      ",
+    ";\n      ",
+    ";\n    }\n\n    .",
+    " {\n      padding: 0;\n    }\n  "
+  ])), RcTextareaInputClasses.inputMultiline, spacing2(1), palette2("neutral", "b03"), fakeBorder(), !disabled3 && css2(templateObject_181 || (templateObject_181 = __makeTemplateObject81(["\n          ", " {\n            &:hover {\n              background: transparent;\n            }\n          }\n        "], ["\n          ", " {\n            &:hover {\n              background: transparent;\n            }\n          }\n        "])), nonTouchHoverMedia), RcTextareaInputClasses.root);
+};
+var templateObject_181;
+var templateObject_221;
+
+// node_modules/@ringcentral/juno/es6/components/Forms/Textarea/Textarea.js
+var __makeTemplateObject82 = function(cooked, raw) {
+  if (Object.defineProperty) {
+    Object.defineProperty(cooked, "raw", { value: raw });
+  } else {
+    cooked.raw = raw;
+  }
+  return cooked;
+};
+var __assign444 = function() {
+  __assign444 = Object.assign || function(t2) {
+    for (var s2, i2 = 1, n2 = arguments.length; i2 < n2; i2++) {
+      s2 = arguments[i2];
+      for (var p in s2)
+        if (Object.prototype.hasOwnProperty.call(s2, p))
+          t2[p] = s2[p];
+    }
+    return t2;
+  };
+  return __assign444.apply(this, arguments);
+};
+var __rest57 = function(s2, e2) {
+  var t2 = {};
+  for (var p in s2)
+    if (Object.prototype.hasOwnProperty.call(s2, p) && e2.indexOf(p) < 0)
+      t2[p] = s2[p];
+  if (s2 != null && typeof Object.getOwnPropertySymbols === "function")
+    for (var i2 = 0, p = Object.getOwnPropertySymbols(s2); i2 < p.length; i2++) {
+      if (e2.indexOf(p[i2]) < 0 && Object.prototype.propertyIsEnumerable.call(s2, p[i2]))
+        t2[p[i2]] = s2[p[i2]];
+    }
+  return t2;
+};
+var _RcTextarea = forwardRef479(function(inProps, ref) {
   var props = useThemeProps({ props: inProps, name: "RcTextarea" });
-  var classes = props.classes, InputPropsProp = props.InputProps, rest = __rest56(props, ["classes", "InputProps"]);
-  var InputProps = useMemo23(function() {
+  var classes = props.classes, InputPropsProp = props.InputProps, rest = __rest57(props, ["classes", "InputProps"]);
+  var InputProps = useMemo24(function() {
     return combineProps({
       classes: RcTextareaInputClasses
     }, InputPropsProp);
   }, [InputPropsProp]);
-  return React546.createElement(RcTextField, __assign443({}, rest, { multiline: true, InputProps, clearBtn: false, ref }));
+  return React548.createElement(RcTextField, __assign444({}, rest, { multiline: true, InputProps, clearBtn: false, ref }));
 });
-var RcTextarea = styled_components_default(_RcTextarea)(templateObject_180 || (templateObject_180 = __makeTemplateObject80(["\n  ", "\n"], ["\n  ", "\n"])), TextareaStyle);
+var RcTextarea = styled_components_default(_RcTextarea)(templateObject_182 || (templateObject_182 = __makeTemplateObject82(["\n  ", "\n"], ["\n  ", "\n"])), TextareaStyle);
 RcTextarea.defaultProps = {
   rows: 3
 };
 RcTextarea.displayName = "RcTextarea";
-var templateObject_180;
+var templateObject_182;
 
 // src/Textarea.tsx
-import React547, { useState as useState25 } from "react";
+import React549, { useState as useState25 } from "react";
 var Textarea = (_a2) => {
   var _b = _a2, { value: valueProp } = _b, rest = __objRest(_b, ["value"]);
   const [value, setValue] = useState25(valueProp);
-  return /* @__PURE__ */ React547.createElement(RcThemeProvider, null, /* @__PURE__ */ React547.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React549.createElement(RcThemeProvider, null, /* @__PURE__ */ React549.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
     value,
     onChange: (e2) => {
       setValue(e2.target.value);
@@ -38125,7 +38200,7 @@ var Textarea = (_a2) => {
 };
 
 // src/ThemeProvider.tsx
-import React548 from "react";
+import React550 from "react";
 
 // src/themes/rcBlue/rcBlue.ts
 var rcBlue = {
@@ -48682,18 +48757,18 @@ var RcThemeIds = Object.keys(RcThemes);
 var ThemeProvider3 = (_a2) => {
   var _b = _a2, { children, themeId } = _b, rest = __objRest(_b, ["children", "themeId"]);
   const theme = RcThemes[themeId];
-  return /* @__PURE__ */ React548.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React550.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
     theme
   }), children[0]);
 };
 
 // src/Tooltip.tsx
-import React549 from "react";
+import React551 from "react";
 var Tooltip3 = (_a2) => {
   var _b = _a2, { _children, children } = _b, rest = __objRest(_b, ["_children", "children"]);
-  return /* @__PURE__ */ React549.createElement(RcThemeProvider, null, _children.length > 0 ? /* @__PURE__ */ React549.createElement(RcTooltip, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React551.createElement(RcThemeProvider, null, _children.length > 0 ? /* @__PURE__ */ React551.createElement(RcTooltip, __spreadProps(__spreadValues({}, rest), {
     ignorePointer: true
-  }), _children[0].props.children) : /* @__PURE__ */ React549.createElement("div", null, "choice children"));
+  }), _children[0].props.children) : /* @__PURE__ */ React551.createElement("div", null, "choice children"));
 };
 
 // src/utils/colorOptions.ts
@@ -49322,6 +49397,7 @@ export {
   InlineEditable,
   LinearProgress3 as LinearProgress,
   Link,
+  Paper3 as Paper,
   Presence,
   Rating3 as Rating,
   RcMobileThemes,
