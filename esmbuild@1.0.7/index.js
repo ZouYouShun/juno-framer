@@ -37898,8 +37898,22 @@ var templateObject_176;
 // src/Text.tsx
 import React541 from "react";
 var Text2 = (_a2) => {
-  var _b = _a2, { _children, startIcon, endIcon } = _b, rest = __objRest(_b, ["_children", "startIcon", "endIcon"]);
-  return /* @__PURE__ */ React541.createElement(RcThemeProvider, null, /* @__PURE__ */ React541.createElement(RcText, __spreadValues({}, rest), _children));
+  var _b = _a2, {
+    _children,
+    titleWhenOverflow: titleWhenOverflowProp
+  } = _b, rest = __objRest(_b, [
+    "_children",
+    "titleWhenOverflow"
+  ]);
+  let titleWhenOverflow = +titleWhenOverflowProp;
+  if (titleWhenOverflowProp === "true") {
+    titleWhenOverflow = true;
+  } else if (titleWhenOverflowProp === "false") {
+    titleWhenOverflow = false;
+  }
+  return /* @__PURE__ */ React541.createElement(RcThemeProvider, null, /* @__PURE__ */ React541.createElement(RcText, __spreadProps(__spreadValues({}, rest), {
+    titleWhenOverflow
+  }), _children));
 };
 
 // src/TextField.tsx
