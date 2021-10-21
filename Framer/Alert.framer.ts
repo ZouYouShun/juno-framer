@@ -31,11 +31,9 @@ addPropertyControls(lib.Alert, {
   },
   icon: {
     title: "icon",
-    type: ControlType.Enum,
+    type: ControlType.ComponentInstance,
     /** description: "Override the icon displayed before the children.
 Unless provided, the icon is mapped to the value of the `severity` prop.", */
-    defaultValue: undefined,
-    options: [undefined, true, ...lib.iconOptions],
   },
   square: {
     title: "square",

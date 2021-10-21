@@ -1,12 +1,18 @@
 import { RcAlert } from "@ringcentral/juno/components/Alert";
 import { RcThemeProvider } from "@ringcentral/juno/foundation/theme/ThemeProvider";
 import React from "react";
-import * as iconMap from "@ringcentral/juno/icon";
 
-export const Alert = ({ _children, icon, ...rest }: any) => {
+export const Alert = ({
+  _children,
+  icon: iconProp,
+  defaultIcon,
+  ...rest
+}: any) => {
+  const icon = iconProp?.[0]?.props?.children;
+
   return (
     <RcThemeProvider>
-      <RcAlert {...rest} icon={(iconMap as any)[icon]}>
+      <RcAlert {...rest} icon={defaultIcon ? true : icon}>
         {_children}
       </RcAlert>
     </RcThemeProvider>
