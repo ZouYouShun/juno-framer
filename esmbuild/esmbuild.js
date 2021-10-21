@@ -1,8 +1,9 @@
 const { join, resolve } = require("path");
 const esbuild = require("esbuild");
 const globby = require("globby");
-const { esmPlugin } = require("./plugin.esm");
-const { cssPlugin } = require("./plugin.css");
+const { textReplacePlugin } = require("./plugin.textReplace");
+// const { esmPlugin } = require("./plugin.esm");
+// const { cssPlugin } = require("./plugin.css");
 
 const color = (n, v) => `\x1b[${n}m${v}\x1b[0m`;
 const defaultPath = join(process.cwd(), "src");
@@ -23,7 +24,11 @@ async function getBuildOptions(path) {
       "framer",
       "framer-motion",
     ],
-    // plugins: [esmPlugin, cssPlugin({ inject: true })],
+    plugins: [
+      textReplacePlugin,
+      // esmPlugin,
+      //  cssPlugin({ inject: true })
+    ],
   };
 }
 
