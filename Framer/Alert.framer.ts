@@ -29,11 +29,20 @@ addPropertyControls(lib.Alert, {
     /** description: "The content of the component.", */
     defaultValue: "Alert Example",
   },
+  defaultIcon: {
+    title: "defaultIcon",
+    type: ControlType.Boolean,
+    description: "use alert default icon",
+    defaultValue: false,
+  },
   icon: {
     title: "icon",
     type: ControlType.ComponentInstance,
     /** description: "Override the icon displayed before the children.
 Unless provided, the icon is mapped to the value of the `severity` prop.", */
+    hidden(props) {
+      return !!props.defaultIcon;
+    },
   },
   square: {
     title: "square",
