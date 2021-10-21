@@ -49339,7 +49339,7 @@ var iconOptions = [
   "DefaultAvatar",
   "Assignment",
   "ItemListSelected"
-];
+].sort();
 
 // src/utils/radiusOptions.ts
 var radiusOptions = [
