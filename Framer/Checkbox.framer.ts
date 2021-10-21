@@ -160,12 +160,22 @@ However, we set a `data-indeterminate` attribute on the input.", */
     /** description: "show color when not checked", */
     defaultValue: false,
   },
-  // formControlLabelProps: {
-  //     title: "formControlLabelProps",
-  //     type: ControlType.Object,
-  //     /** description: "formControlLabelProps when have label", */
-  //     defaultValue: undefined,
-  // },
+  formControlLabelProps: {
+    title: "formControlLabelProps",
+    description: "control label placement",
+    type: ControlType.Object,
+    controls: {
+      labelPlacement: {
+        title: "labelPlacement",
+        type: ControlType.Enum,
+        defaultValue: "end",
+        options: ["start", "end"],
+      },
+    },
+    hidden(props) {
+      return !props.label;
+    },
+  },
 });
 
 const RcCheckbox: React.ComponentType = lib.Checkbox;

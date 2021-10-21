@@ -157,12 +157,22 @@ They won't start at the cursor interaction position.", */
     /** description: "If `true`, the `input` element will be required.", */
     defaultValue: false,
   },
-  // formControlLabelProps: {
-  //   title: "formControlLabelProps",
-  //   type: ControlType.Object,
-  //   /** description: "formControlLabelProps when have label", */
-  //   defaultValue: undefined,
-  // },
+  formControlLabelProps: {
+    title: "formControlLabelProps",
+    description: "control label placement",
+    type: ControlType.Object,
+    controls: {
+      labelPlacement: {
+        title: "labelPlacement",
+        type: ControlType.Enum,
+        defaultValue: "end",
+        options: ["start", "end"],
+      },
+    },
+    hidden(props) {
+      return !props.label;
+    },
+  },
 });
 
 const RcRadio: React.ComponentType = lib.Radio;

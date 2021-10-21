@@ -1,4 +1,4 @@
-import { RcRadio } from "@ringcentral/juno/components/Forms/Radio";
+import { RcRadio } from "@ringcentral/juno/components/Forms/Radio/Radio";
 import { RcThemeProvider } from "@ringcentral/juno/foundation/theme/ThemeProvider";
 import React from "react";
 
