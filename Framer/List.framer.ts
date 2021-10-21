@@ -16,9 +16,10 @@ addPropertyControls(lib.List, {
   // },
   _children: {
     title: "children",
+    type: ControlType.Array,
     control: {
-      type: ControlType.ComponentInstance
-    }
+      type: ControlType.ComponentInstance,
+    },
   },
   disablePadding: {
     title: "disablePadding",

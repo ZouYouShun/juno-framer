@@ -1,7 +1,14 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js";
+import * as lib from "http://127.0.0.1:8000/index.js?saxxsx";
 
 addPropertyControls(lib.ListItem, {
+  color: {
+    title: "color",
+    type: ControlType.Enum,
+    /** description: "listItem use this color to calc hover, pressed, selected, disabled background color", */
+    defaultValue: "action.grayLight",
+    options: lib.colorOptions,
+  },
   button: {
     title: "button",
     type: ControlType.Boolean,
@@ -21,15 +28,9 @@ Props intended for ButtonBase can then be applied to ListItem.", */
   //     /** description: "", */
   //     defaultValue: undefined,
   //   },
-  color: {
-    title: "color",
-    type: ControlType.Enum,
-    /** description: "listItem use this color to calc hover, pressed, selected, disabled background color", */
-    defaultValue: "action.grayLight",
-    options: lib.colorOptions,
-  },
   _children: {
     title: "children",
+    type: ControlType.Array,
     control: {
       type: ControlType.ComponentInstance,
     },
@@ -60,13 +61,13 @@ Props intended for ButtonBase can then be applied to ListItem.", */
     /** description: "If `true`, the base button will be disabled.", */
     defaultValue: false,
   },
-//   component: {
-//     title: "component",
-//     type: ControlType.Object,
-//     /** description: "The component used for the root node. Either a string to use a HTML element or a component.
-// By default, it's a li when button is false and a div when button is true.", */
-//     defaultValue: undefined,
-//   },
+  //   component: {
+  //     title: "component",
+  //     type: ControlType.Object,
+  //     /** description: "The component used for the root node. Either a string to use a HTML element or a component.
+  // By default, it's a li when button is false and a div when button is true.", */
+  //     defaultValue: undefined,
+  //   },
   centerRipple: {
     title: "centerRipple",
     type: ControlType.Boolean,
@@ -95,54 +96,54 @@ to highlight the element by applying separate styles with the `focusVisibleClass
     /** description: "If `true`, the base button will have a keyboard focus ripple.", */
     defaultValue: false,
   },
-//   TouchRippleProps: {
-//     title: "TouchRippleProps",
-//     type: ControlType.Object,
-//     /** description: "Props applied to the `TouchRipple` element.", */
-//     defaultValue: undefined,
-//   },
+  //   TouchRippleProps: {
+  //     title: "TouchRippleProps",
+  //     type: ControlType.Object,
+  //     /** description: "Props applied to the `TouchRipple` element.", */
+  //     defaultValue: undefined,
+  //   },
   autoFocus: {
     title: "autoFocus",
     type: ControlType.Boolean,
     /** description: "", */
     defaultValue: false,
   },
-//   value: {
-//     title: "value",
-//     type: ControlType.Object,
-//     /** description: "native value attribute", */
-//     defaultValue: undefined,
-//   },
+  //   value: {
+  //     title: "value",
+  //     type: ControlType.Object,
+  //     /** description: "native value attribute", */
+  //     defaultValue: undefined,
+  //   },
   useRcTooltip: {
     title: "useRcTooltip",
     type: ControlType.Boolean,
     /** description: "html native title or not, default `false`", */
     defaultValue: false,
   },
-//   TooltipProps: {
-//     title: "TooltipProps",
-//     type: ControlType.Object,
-//     /** description: "props for pass into `RcTooltip` when useRcTooltip is `true`", */
-//     defaultValue: undefined,
-//   },
+  //   TooltipProps: {
+  //     title: "TooltipProps",
+  //     type: ControlType.Object,
+  //     /** description: "props for pass into `RcTooltip` when useRcTooltip is `true`", */
+  //     defaultValue: undefined,
+  //   },
   selected: {
     title: "selected",
     type: ControlType.Boolean,
     /** description: "", */
     defaultValue: false,
   },
-//   ContainerComponent: {
-//     title: "ContainerComponent",
-//     type: ControlType.Object,
-//     /** description: "", */
-//     defaultValue: undefined,
-//   },
-//   ContainerProps: {
-//     title: "ContainerProps",
-//     type: ControlType.Object,
-//     /** description: "", */
-//     defaultValue: undefined,
-//   },
+  //   ContainerComponent: {
+  //     title: "ContainerComponent",
+  //     type: ControlType.Object,
+  //     /** description: "", */
+  //     defaultValue: undefined,
+  //   },
+  //   ContainerProps: {
+  //     title: "ContainerProps",
+  //     type: ControlType.Object,
+  //     /** description: "", */
+  //     defaultValue: undefined,
+  //   },
   disableGutters: {
     title: "disableGutters",
     type: ControlType.Boolean,

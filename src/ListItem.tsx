@@ -3,9 +3,12 @@ import { RcThemeProvider } from "@ringcentral/juno/foundation/theme/ThemeProvide
 import React from "react";
 
 export const ListItem = ({ _children, ...rest }: any) => {
+  const children = _children.map((a: any) => {
+    return a.props.children;
+  });
   return (
     <RcThemeProvider>
-      <RcListItem {...rest}>{_children}</RcListItem>
+      <RcListItem {...rest}>{children}</RcListItem>
     </RcThemeProvider>
   );
 };
