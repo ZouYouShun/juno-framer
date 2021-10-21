@@ -392,4 +392,4 @@ export const iconOptions = [
   "DefaultAvatar",
   "Assignment",
   "ItemListSelected",
-];
+].sort();
