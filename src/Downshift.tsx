@@ -1,12 +1,11 @@
-import { RcwnshiftDoc } from "@ringcentral/juno/components/wnshiftDoc";
-  import { RcThemeProvider } from "@ringcentral/juno/foundation/theme/ThemeProvider";
-  import React from "react";
+import { RcDownshift } from "@ringcentral/juno/components/Downshift";
+import { RcThemeProvider } from "@ringcentral/juno/foundation/theme/ThemeProvider";
+import React from "react";
 
-  export const wnshiftDoc = ({ _children, ...rest }: any) => {
-    return (
-      <RcThemeProvider>
-        <RcwnshiftDoc {...rest}>{_children}</RcwnshiftDoc>
-      </RcThemeProvider>
-    );
-  };
-  
+export const Downshift = ({ _children, ...rest }: any) => {
+  return (
+    <RcThemeProvider>
+      <RcDownshift {...rest}>{_children}</RcDownshift>
+    </RcThemeProvider>
+  );
+};

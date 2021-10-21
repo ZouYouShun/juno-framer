@@ -23,10 +23,11 @@ addPropertyControls(lib.AppBar, {
   //   },
   elevation: {
     title: "elevation",
-    type: ControlType.Number,
+    type: ControlType.Enum,
     /** description: "Shadow depth, corresponds to `dp` in the spec.
 It accepts values between 0 and 24 inclusive.", */
-    defaultValue: 0,
+    defaultValue: "undefined",
+    options: lib.elevationOptions,
   },
   //   square: {
   //     title: "square",

@@ -68,7 +68,6 @@ addPropertyControls(lib.IconButton, {
     /** description: "If `true`, the base button will be disabled.", */
     defaultValue: false,
   },
-
   elevation: {
     title: "elevation",
     type: ControlType.Enum,
