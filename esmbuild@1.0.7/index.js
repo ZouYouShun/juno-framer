@@ -77142,18 +77142,18 @@ var _RcTablePagination = forwardRef621(function(inProps, ref2) {
     return rowsPerPage === -1 ? count2 : Math.min(count2, (page + 1) * rowsPerPage);
   };
   var menuItems = useMemo96(function() {
-    var menus = [];
+    var menus2 = [];
     if (!isPageSelection)
-      return menus;
+      return menus2;
     var _loop_1 = function(i3) {
-      menus.push(React733.createElement(MenuItemComponent, { value: i3, selected: i3 === page, key: i3, className: classes.menuItem, onClick: function(e2) {
+      menus2.push(React733.createElement(MenuItemComponent, { value: i3, selected: i3 === page, key: i3, className: classes.menuItem, onClick: function(e2) {
         return onChangePage(e2, i3);
       } }, i3 + 1));
     };
     for (var i2 = 0; i2 < totalPage; i2++) {
       _loop_1(i2);
     }
-    return menus;
+    return menus2;
   }, [
     MenuItemComponent,
     classes,
@@ -78822,15 +78822,40 @@ var Rating3 = (_a4) => {
   }, rest)));
 };
 
+// src/Select.tsx
+import React763, { useState as useState56 } from "react";
+var menus = [
+  { id: -1, value: 0 },
+  { id: 0, value: "Zero" },
+  { id: 1, value: "One: truncated when text too long!!!" },
+  { id: 2, value: "Two" },
+  { id: 3, value: "Three" }
+];
+var Select3 = (_a4) => {
+  var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
+  const [value, setValue] = useState56(void 0);
+  const handleChange = (event) => {
+    const { value: value2 } = event.target;
+    setValue(+value2);
+  };
+  return /* @__PURE__ */ React763.createElement(RcThemeProvider, null, /* @__PURE__ */ React763.createElement(RcSelect, __spreadProps(__spreadValues({}, rest), {
+    onChange: handleChange,
+    value
+  }), menus.map((item) => /* @__PURE__ */ React763.createElement(RcMenuItem, {
+    value: item.id,
+    key: item.id
+  }, item.value))));
+};
+
 // src/Slider.tsx
-import React763 from "react";
+import React764 from "react";
 var Slider3 = (_a4) => {
   var rest = __objRest(_a4, []);
-  return /* @__PURE__ */ React763.createElement(RcThemeProvider, null, /* @__PURE__ */ React763.createElement(RcSlider, __spreadValues({}, rest)));
+  return /* @__PURE__ */ React764.createElement(RcThemeProvider, null, /* @__PURE__ */ React764.createElement(RcSlider, __spreadValues({}, rest)));
 };
 
 // src/SnackbarContent.tsx
-import React764 from "react";
+import React765 from "react";
 var SnackbarContent3 = (_a4) => {
   var _b = _a4, {
     _children,
@@ -78842,34 +78867,34 @@ var SnackbarContent3 = (_a4) => {
   const action3 = actionProp.map((a2) => {
     return a2.props.children;
   });
-  return /* @__PURE__ */ React764.createElement(RcThemeProvider, null, /* @__PURE__ */ React764.createElement(RcSnackbarContent, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React765.createElement(RcThemeProvider, null, /* @__PURE__ */ React765.createElement(RcSnackbarContent, __spreadProps(__spreadValues({}, rest), {
     action: action3
   }), _children));
 };
 
 // src/SnackbarAction.tsx
-import React765 from "react";
+import React766 from "react";
 var SnackbarAction = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React765.createElement(RcThemeProvider, null, /* @__PURE__ */ React765.createElement(RcSnackbarAction, __spreadValues({}, rest), _children));
+  return /* @__PURE__ */ React766.createElement(RcThemeProvider, null, /* @__PURE__ */ React766.createElement(RcSnackbarAction, __spreadValues({}, rest), _children));
 };
 
 // src/Switch.tsx
-import React766 from "react";
+import React767 from "react";
 var Switch3 = (_a4) => {
   var rest = __objRest(_a4, []);
-  return /* @__PURE__ */ React766.createElement(RcThemeProvider, null, /* @__PURE__ */ React766.createElement(RcSwitch, __spreadValues({}, rest)));
+  return /* @__PURE__ */ React767.createElement(RcThemeProvider, null, /* @__PURE__ */ React767.createElement(RcSwitch, __spreadValues({}, rest)));
 };
 
 // src/Tag.tsx
-import React767 from "react";
+import React768 from "react";
 var Tag = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React767.createElement(RcThemeProvider, null, /* @__PURE__ */ React767.createElement(RcTag, __spreadValues({}, rest), _children));
+  return /* @__PURE__ */ React768.createElement(RcThemeProvider, null, /* @__PURE__ */ React768.createElement(RcTag, __spreadValues({}, rest), _children));
 };
 
 // src/Text.tsx
-import React768 from "react";
+import React769 from "react";
 var Text2 = (_a4) => {
   var _b = _a4, {
     _children,
@@ -78884,17 +78909,17 @@ var Text2 = (_a4) => {
   } else if (titleWhenOverflowProp === "false") {
     titleWhenOverflow = false;
   }
-  return /* @__PURE__ */ React768.createElement(RcThemeProvider, null, /* @__PURE__ */ React768.createElement(RcText, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React769.createElement(RcThemeProvider, null, /* @__PURE__ */ React769.createElement(RcText, __spreadProps(__spreadValues({}, rest), {
     titleWhenOverflow
   }), _children));
 };
 
 // src/TextField.tsx
-import React769, { useState as useState56 } from "react";
+import React770, { useState as useState57 } from "react";
 var TextField3 = (_a4) => {
   var _b = _a4, { value: valueProp } = _b, rest = __objRest(_b, ["value"]);
-  const [value, setValue] = useState56(valueProp);
-  return /* @__PURE__ */ React769.createElement(RcThemeProvider, null, /* @__PURE__ */ React769.createElement(RcTextField, __spreadProps(__spreadValues({}, rest), {
+  const [value, setValue] = useState57(valueProp);
+  return /* @__PURE__ */ React770.createElement(RcThemeProvider, null, /* @__PURE__ */ React770.createElement(RcTextField, __spreadProps(__spreadValues({}, rest), {
     value,
     onChange: (e2) => {
       setValue(e2.target.value);
@@ -78903,37 +78928,37 @@ var TextField3 = (_a4) => {
 };
 
 // src/Thumbnail.tsx
-import React770 from "react";
+import React771 from "react";
 var Thumbnail = (_a4) => {
   var _b = _a4, { _children, symbol } = _b, rest = __objRest(_b, ["_children", "symbol"]);
-  return /* @__PURE__ */ React770.createElement(RcThemeProvider, null, /* @__PURE__ */ React770.createElement(RcThumbnail, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React771.createElement(RcThemeProvider, null, /* @__PURE__ */ React771.createElement(RcThumbnail, __spreadProps(__spreadValues({}, rest), {
     symbol: icon_exports[symbol]
   }), _children));
 };
 
 // src/Paper.tsx
-import React771 from "react";
+import React772 from "react";
 var Paper3 = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
   const children2 = _children.map((a2) => {
     return a2.props.children || a2;
   });
-  return /* @__PURE__ */ React771.createElement(RcThemeProvider, null, /* @__PURE__ */ React771.createElement(RcPaper, __spreadValues({}, rest), children2));
+  return /* @__PURE__ */ React772.createElement(RcThemeProvider, null, /* @__PURE__ */ React772.createElement(RcPaper, __spreadValues({}, rest), children2));
 };
 
 // src/Presence.tsx
-import React772 from "react";
+import React773 from "react";
 var Presence = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React772.createElement(RcThemeProvider, null, /* @__PURE__ */ React772.createElement(RcPresence, __spreadValues({}, rest), _children));
+  return /* @__PURE__ */ React773.createElement(RcThemeProvider, null, /* @__PURE__ */ React773.createElement(RcPresence, __spreadValues({}, rest), _children));
 };
 
 // src/Textarea.tsx
-import React773, { useState as useState57 } from "react";
+import React774, { useState as useState58 } from "react";
 var Textarea = (_a4) => {
   var _b = _a4, { value: valueProp } = _b, rest = __objRest(_b, ["value"]);
-  const [value, setValue] = useState57(valueProp);
-  return /* @__PURE__ */ React773.createElement(RcThemeProvider, null, /* @__PURE__ */ React773.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
+  const [value, setValue] = useState58(valueProp);
+  return /* @__PURE__ */ React774.createElement(RcThemeProvider, null, /* @__PURE__ */ React774.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
     value,
     onChange: (e2) => {
       setValue(e2.target.value);
@@ -78942,7 +78967,7 @@ var Textarea = (_a4) => {
 };
 
 // src/ThemeProvider.tsx
-import React774 from "react";
+import React775 from "react";
 
 // src/themes/rcBlue/rcBlue.ts
 var rcBlue = {
@@ -89499,13 +89524,13 @@ var RcThemeIds = Object.keys(RcThemes);
 var ThemeProvider3 = (_a4) => {
   var _b = _a4, { children: children2, themeId } = _b, rest = __objRest(_b, ["children", "themeId"]);
   const theme = RcThemes[themeId];
-  return /* @__PURE__ */ React774.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React775.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
     theme
   }), children2[0]);
 };
 
 // src/TimePicker.tsx
-import React775, { useRef as useRef95, useState as useState58 } from "react";
+import React776, { useRef as useRef95, useState as useState59 } from "react";
 var TimePicker = (_a4) => {
   var _b = _a4, {
     _children,
@@ -89520,7 +89545,7 @@ var TimePicker = (_a4) => {
   ]);
   const min2 = useRef95(minProp ? new Date(`2020/1/1 ${minProp}`) : void 0);
   const max2 = useRef95(maxProp ? new Date(`2020/1/1 ${maxProp}`) : void 0);
-  const [value, setValue] = useState58(valueProp);
+  const [value, setValue] = useState59(valueProp);
   useChange(() => {
     min2.current = minProp ? new Date(`2020/1/1 ${minProp}`) : void 0;
     max2.current = maxProp ? new Date(`2020/1/1 ${maxProp}`) : void 0;
@@ -89528,7 +89553,7 @@ var TimePicker = (_a4) => {
   const handleChange = (time) => {
     setValue(time);
   };
-  return /* @__PURE__ */ React775.createElement(RcThemeProvider, null, /* @__PURE__ */ React775.createElement(RcTimePicker, __spreadValues({
+  return /* @__PURE__ */ React776.createElement(RcThemeProvider, null, /* @__PURE__ */ React776.createElement(RcTimePicker, __spreadValues({
     value,
     onChange: handleChange,
     min: min2.current,
@@ -89537,12 +89562,12 @@ var TimePicker = (_a4) => {
 };
 
 // src/Tooltip.tsx
-import React776 from "react";
+import React777 from "react";
 var Tooltip3 = (_a4) => {
   var _b = _a4, { _children, children: children2 } = _b, rest = __objRest(_b, ["_children", "children"]);
-  return /* @__PURE__ */ React776.createElement(RcThemeProvider, null, _children.length > 0 ? /* @__PURE__ */ React776.createElement(RcTooltip, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React777.createElement(RcThemeProvider, null, _children.length > 0 ? /* @__PURE__ */ React777.createElement(RcTooltip, __spreadProps(__spreadValues({}, rest), {
     ignorePointer: true
-  }), _children[0].props.children) : /* @__PURE__ */ React776.createElement("div", null, "choice children"));
+  }), _children[0].props.children) : /* @__PURE__ */ React777.createElement("div", null, "choice children"));
 };
 
 // src/utils/colorOptions.ts
@@ -90188,6 +90213,7 @@ export {
   RcMobileThemes,
   RcThemeIds,
   RcThemes,
+  Select3 as Select,
   Slider3 as Slider,
   SnackbarAction,
   SnackbarContent3 as SnackbarContent,
