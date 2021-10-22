@@ -25,6 +25,7 @@ export * from "./MenuItem";
 export * from "./Radio";
 export * from "./RadioGroup";
 export * from "./Rating";
+export * from "./Select";
 export * from "./Slider";
 export * from "./SnackbarContent";
 export * from "./SnackbarAction";
