@@ -1,14 +1,14 @@
-import { RcBox } from "@ringcentral/juno/components/Box";
+import { RcAccordionDetails } from "@ringcentral/juno/components/Accordion/AccordionDetails";
 import { RcThemeProvider } from "@ringcentral/juno/foundation/theme/ThemeProvider";
 import React from "react";
 
-export const Box = ({ _children, ...rest }: any) => {
+export const AccordionDetails = ({ _children, ...rest }: any) => {
   const children = _children.map((a: any) => {
     return a.props.children || a;
   });
   return (
     <RcThemeProvider>
-      <RcBox {...rest}>{children}</RcBox>
+      <RcAccordionDetails {...rest}>{children}</RcAccordionDetails>
     </RcThemeProvider>
   );
 };
