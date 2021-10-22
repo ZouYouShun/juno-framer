@@ -77142,18 +77142,18 @@ var _RcTablePagination = forwardRef621(function(inProps, ref2) {
     return rowsPerPage === -1 ? count2 : Math.min(count2, (page + 1) * rowsPerPage);
   };
   var menuItems = useMemo96(function() {
-    var menus2 = [];
+    var menus = [];
     if (!isPageSelection)
-      return menus2;
+      return menus;
     var _loop_1 = function(i3) {
-      menus2.push(React733.createElement(MenuItemComponent, { value: i3, selected: i3 === page, key: i3, className: classes.menuItem, onClick: function(e2) {
+      menus.push(React733.createElement(MenuItemComponent, { value: i3, selected: i3 === page, key: i3, className: classes.menuItem, onClick: function(e2) {
         return onChangePage(e2, i3);
       } }, i3 + 1));
     };
     for (var i2 = 0; i2 < totalPage; i2++) {
       _loop_1(i2);
     }
-    return menus2;
+    return menus;
   }, [
     MenuItemComponent,
     classes,
@@ -78824,27 +78824,25 @@ var Rating3 = (_a4) => {
 
 // src/Select.tsx
 import React763, { useState as useState56 } from "react";
-var menus = [
-  { id: -1, value: 0 },
-  { id: 0, value: "Zero" },
-  { id: 1, value: "One: truncated when text too long!!!" },
-  { id: 2, value: "Two" },
-  { id: 3, value: "Three" }
-];
 var Select3 = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
   const [value, setValue] = useState56(void 0);
+  const children2 = (_children == null ? void 0 : _children.map((a2, i2) => {
+    const item = a2.props.children;
+    return React763.cloneElement(item, { key: i2, value: item.props.value });
+  })) || [];
   const handleChange = (event) => {
     const { value: value2 } = event.target;
-    setValue(+value2);
+    setValue(value2);
   };
   return /* @__PURE__ */ React763.createElement(RcThemeProvider, null, /* @__PURE__ */ React763.createElement(RcSelect, __spreadProps(__spreadValues({}, rest), {
     onChange: handleChange,
     value
-  }), menus.map((item) => /* @__PURE__ */ React763.createElement(RcMenuItem, {
-    value: item.id,
-    key: item.id
-  }, item.value))));
+  }), children2.length > 0 ? children2 : /* @__PURE__ */ React763.createElement(RcMenuItem, {
+    value: "0"
+  }, /* @__PURE__ */ React763.createElement(RcListItemText, {
+    primary: "add children"
+  }))));
 };
 
 // src/Slider.tsx
