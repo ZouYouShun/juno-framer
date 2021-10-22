@@ -16,7 +16,11 @@ exports.textReplacePlugin = {
         )
         .replace(
           "import MuiSlideTransition from '@material-ui/pickers/views/Calendar/SlideTransition'",
-          "import { SlideTransition } from '@material-ui/pickers/esm/Calendar-11ae61f6'"
+          "import { SlideTransition as MuiSlideTransition } from '@material-ui/pickers/esm/Calendar-11ae61f6'"
+        )
+        .replace(
+          "@material-ui/pickers/_shared/hooks/useKeyDown",
+          "@material-ui/pickers/esm/Calendar-11ae61f6"
         );
 
       return { contents, loader };

@@ -10,7 +10,7 @@ const fixTypeFile = [
     url:
       'node_modules/@material-ui/pickers/esm/Calendar-11ae61f6.js',
     content: 'export { Calendar as C, Calendar$1 as a, isYearAndMonthViews as b, getFormatByViews as g, isYearOnlyView as i, styles as s }',
-    replaceTo: 'export { Calendar as C, Calendar$1 as a, isYearAndMonthViews as b, getFormatByViews as g, isYearOnlyView as i, styles as s, SlideTransition }',
+    replaceTo: 'export { Calendar as C, Calendar$1 as a, isYearAndMonthViews as b, getFormatByViews as g, isYearOnlyView as i, styles as s, SlideTransition, runKeyHandler }',
   },
 ];
 
