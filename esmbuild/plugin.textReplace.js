@@ -9,10 +9,15 @@ exports.textReplacePlugin = {
 
       const source = await fs.promises.readFile(args.path, "utf8");
 
-      const contents = source.replace(
-        "@material-ui/core/Radio/RadioButtonIcon",
-        "@material-ui/core/esm/Radio/RadioButtonIcon"
-      );
+      const contents = source
+        .replace(
+          "@material-ui/core/Radio/RadioButtonIcon",
+          "@material-ui/core/esm/Radio/RadioButtonIcon"
+        )
+        .replace(
+          "import MuiSlideTransition from '@material-ui/pickers/views/Calendar/SlideTransition'",
+          "import { SlideTransition } from '@material-ui/pickers/esm/Calendar-11ae61f6'"
+        );
 
       return { contents, loader };
     });
