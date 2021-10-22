@@ -30,7 +30,7 @@ export * from "./Paper";
 export * from "./Presence";
 export * from "./Textarea";
 export * from "./ThemeProvider";
-// export * from "./TimePicker";
+export * from "./TimePicker";
 export * from "./Tooltip";
 export * from "./themes";
 export * from "./utils";
