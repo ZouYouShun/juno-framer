@@ -1,5 +1,5 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js?slll";
+import * as lib from "http://127.0.0.1:8000/index.js";
 
 addPropertyControls(lib.Select, {
   label: {
@@ -7,19 +7,19 @@ addPropertyControls(lib.Select, {
     type: ControlType.String,
     /** description: "See [OutlinedInput#label](/api/outlined-input/#props)
 The label content.", */
-    defaultValue: undefined,
+    defaultValue: "label",
   },
   placeholder: {
     title: "placeholder",
     type: ControlType.String,
     /** description: "The short hint displayed in the input before the user enters a value.", */
-    defaultValue: undefined,
+    defaultValue: "placeholder",
   },
   helperText: {
     title: "helperText",
     type: ControlType.String,
     /** description: "The helper text content.", */
-    defaultValue: undefined,
+    defaultValue: "helperText",
   },
   //   input: {
   //     title: "input",
@@ -33,17 +33,17 @@ The label content.", */
   //     /** description: "The default element value. Use when the component is not controlled.", */
   //     defaultValue: undefined,
   //   },
-    _children: {
-      title: "children",
-      type: ControlType.Array,
-      control: {
-        type: ControlType.ComponentInstance,
-      },
-      /** description: "The option elements to populate the select with.
+  _children: {
+    title: "children",
+    type: ControlType.Array,
+    control: {
+      type: ControlType.ComponentInstance,
+    },
+    /** description: "The option elements to populate the select with.
   Can be some `MenuItem` when `native` is false and `option` when `native` is true.
 
   ⚠️The `MenuItem` elements **must** be direct descendants when `native` is false.", */
-    },
+  },
   size: {
     title: "size",
     type: ControlType.Enum,
@@ -58,12 +58,12 @@ The label content.", */
   // You can only use it when the `native` prop is `false` (default).", */
   //     defaultValue: false,
   //   },
-  multiple: {
-    title: "multiple",
-    type: ControlType.Boolean,
-    /** description: "If `true`, `value` must be an array and the menu will support multiple selections.", */
-    defaultValue: false,
-  },
+  // multiple: {
+  //   title: "multiple",
+  //   type: ControlType.Boolean,
+  //   /** description: "If `true`, `value` must be an array and the menu will support multiple selections.", */
+  //   defaultValue: false,
+  // },
   disabled: {
     title: "disabled",
     type: ControlType.Boolean,
@@ -154,14 +154,14 @@ FormControl.", */
   // component depending on the `variant` prop value.", */
   //     defaultValue: undefined,
   //   },
-  autoComplete: {
-    title: "autoComplete",
-    type: ControlType.String,
-    /** description: "This prop helps users to fill forms faster, especially on mobile devices.
-The name can be confusing, as it's more like an autofill.
-You can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).", */
-    defaultValue: undefined,
-  },
+  //   autoComplete: {
+  //     title: "autoComplete",
+  //     type: ControlType.String,
+  //     /** description: "This prop helps users to fill forms faster, especially on mobile devices.
+  // The name can be confusing, as it's more like an autofill.
+  // You can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).", */
+  //     defaultValue: undefined,
+  //   },
   gutterBottom: {
     title: "gutterBottom",
     type: ControlType.Boolean,
@@ -172,8 +172,9 @@ You can learn more about it [following the specification](https://html.spec.what
     title: "textVariant",
     type: ControlType.Enum,
     /** description: "set input text size when `variant="borderLess"`", */
-    defaultValue: undefined,
+    defaultValue: "undefined",
     options: [
+      "undefined",
       "inherit",
       "display4",
       "display3",
@@ -219,13 +220,20 @@ You can only use it when the `native` prop is `false` (default).", */
   //     /** description: "The icon that displays the arrow.", */
   //     defaultValue: undefined,
   //   },
-  //   labelId: {
-  //     title: "labelId",
-  //     type: ControlType.String,
-  //     /** description: "The ID of an element that acts as an additional label. The Select will
-  // be labelled by the additional label and the selected value.", */
-  //     defaultValue: undefined,
-  //   },
+  id: {
+    title: "id",
+    type: ControlType.String,
+    /** description: "The ID of an element that acts as an additional label. The Select will
+    be labelled by the additional label and the selected value.", */
+    defaultValue: (Math.random() + 1).toString(36).substring(7),
+  },
+  labelId: {
+    title: "labelId",
+    type: ControlType.String,
+    /** description: "The ID of an element that acts as an additional label. The Select will
+    be labelled by the additional label and the selected value.", */
+    defaultValue: undefined,
+  },
   //   labelWidth: {
   //     title: "labelWidth",
   //     type: ControlType.Number,
