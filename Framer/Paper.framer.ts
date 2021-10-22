@@ -12,7 +12,10 @@ addPropertyControls(lib.Paper, {
   },
   _children: {
     title: "children",
-    type: ControlType.ComponentInstance,
+    type: ControlType.Array,
+    control: {
+      type: ControlType.ComponentInstance,
+    },
     /** description: "The content of the component.", */
   },
   variant: {
