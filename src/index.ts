@@ -8,7 +8,7 @@ export * from "./Chip";
 export * from "./CircularProgress";
 export * from "./DialPad";
 export * from "./Divider";
-// export * from "./DatePicker";
+export * from "./DatePicker";
 export * from "./Icon";
 export * from "./IconButton";
 export * from "./InlineEditable";

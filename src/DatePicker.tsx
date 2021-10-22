@@ -5,7 +5,7 @@ import React from "react";
 export const DatePicker = ({ _children, ...rest }: any) => {
   return (
     <RcThemeProvider>
-      <RcDatePicker {...rest}>{_children}</RcDatePicker>
+      <RcDatePicker {...rest} />
     </RcThemeProvider>
   );
 };
