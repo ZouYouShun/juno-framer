@@ -26317,11 +26317,13 @@ var Accordion3 = (_a4) => {
 // src/AccordionDetails.tsx
 import React57 from "react";
 var AccordionDetails3 = (_a4) => {
-  var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
+  var _b = _a4, { _children = [] } = _b, rest = __objRest(_b, ["_children"]);
   const children2 = _children.map((a2) => {
     return a2.props.children || a2;
   });
-  return /* @__PURE__ */ React57.createElement(RcThemeProvider, null, /* @__PURE__ */ React57.createElement(RcAccordionDetails, __spreadValues({}, rest), children2));
+  return /* @__PURE__ */ React57.createElement(RcThemeProvider, null, /* @__PURE__ */ React57.createElement(RcAccordionDetails, __spreadValues({}, rest), children2.length > 0 ? children2 : /* @__PURE__ */ React57.createElement("div", {
+    style: { background: "white" }
+  }, "add children")));
 };
 
 // src/AccordionSummary.tsx
