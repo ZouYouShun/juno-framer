@@ -1,7 +1,13 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js";
+import * as lib from "http://127.0.0.1:8000/index.js?axssskksslsssj";
 
 addPropertyControls(lib.Radio, {
+  value: {
+    title: "value",
+    type: ControlType.String,
+    /** description: "The value of the component. The DOM API casts this to a string.", */
+    defaultValue: (Math.random() + 1).toString(36).substring(7),
+  },
   defaultChecked: {
     title: "defaultChecked",
     type: ControlType.Boolean,
@@ -109,12 +115,6 @@ They won't start at the cursor interaction position.", */
   //   /** description: "Name attribute of the `input` element.", */
   //   defaultValue: undefined,
   // },
-  // value: {
-  //   title: "value",
-  //   type: ControlType.Object,
-  //   /** description: "The value of the component. The DOM API casts this to a string.", */
-  //   defaultValue: undefined,
-  // },
   disableFocusRipple: {
     title: "disableFocusRipple",
     type: ControlType.Boolean,
@@ -157,22 +157,12 @@ They won't start at the cursor interaction position.", */
     /** description: "If `true`, the `input` element will be required.", */
     defaultValue: false,
   },
-  formControlLabelProps: {
-    title: "formControlLabelProps",
-    description: "control label placement",
-    type: ControlType.Object,
-    controls: {
-      labelPlacement: {
-        title: "labelPlacement",
-        type: ControlType.Enum,
-        defaultValue: "end",
-        options: ["start", "end"],
-      },
-    },
-    hidden(props) {
-      return !props.label;
-    },
-  },
+  // formControlLabelProps: {
+  //   title: "formControlLabelProps",
+  //   type: ControlType.Object,
+  //   /** description: "formControlLabelProps when have label", */
+  //   defaultValue: undefined,
+  // },
 });
 
 const RcRadio: React.ComponentType = lib.Radio;

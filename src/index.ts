@@ -17,6 +17,7 @@ export * from "./Link";
 export * from "./List";
 export * from "./ListItem";
 export * from "./Radio";
+export * from "./RadioGroup";
 export * from "./Rating";
 export * from "./Slider";
 export * from "./SnackbarContent";
