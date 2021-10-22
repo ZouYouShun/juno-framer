@@ -33,15 +33,17 @@ The label content.", */
   //     /** description: "The default element value. Use when the component is not controlled.", */
   //     defaultValue: undefined,
   //   },
-  //   _children: {
-  //     title: "children",
-  //     type: ControlType.Object,
-  //     /** description: "The option elements to populate the select with.
-  // Can be some `MenuItem` when `native` is false and `option` when `native` is true.
+    _children: {
+      title: "children",
+      type: ControlType.Array,
+      control: {
+        type: ControlType.ComponentInstance,
+      },
+      /** description: "The option elements to populate the select with.
+  Can be some `MenuItem` when `native` is false and `option` when `native` is true.
 
-  // ⚠️The `MenuItem` elements **must** be direct descendants when `native` is false.", */
-  //     defaultValue: undefined,
-  //   },
+  ⚠️The `MenuItem` elements **must** be direct descendants when `native` is false.", */
+    },
   size: {
     title: "size",
     type: ControlType.Enum,
