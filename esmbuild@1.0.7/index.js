@@ -40697,7 +40697,7 @@ var MenuList = /* @__PURE__ */ forwardRef456(function MenuList2(props, ref2) {
       }
     }
   });
-  var items = Children6.map(children2, function(child, index4) {
+  var items2 = Children6.map(children2, function(child, index4) {
     if (index4 === activeItemIndex) {
       var newChildProps = {};
       if (autoFocusItem) {
@@ -40716,7 +40716,7 @@ var MenuList = /* @__PURE__ */ forwardRef456(function MenuList2(props, ref2) {
     className,
     onKeyDown: handleKeyDown2,
     tabIndex: autoFocus ? 0 : -1
-  }, other), items);
+  }, other), items2);
 });
 true ? MenuList.propTypes = {
   autoFocus: import_prop_types48.default.bool,
@@ -40799,7 +40799,7 @@ var Menu = /* @__PURE__ */ forwardRef457(function Menu2(props, ref2) {
       }
     }
   });
-  var items = Children7.map(children2, function(child, index4) {
+  var items2 = Children7.map(children2, function(child, index4) {
     if (index4 === activeItemIndex) {
       return /* @__PURE__ */ cloneElement12(child, {
         ref: function ref3(instance) {
@@ -40835,7 +40835,7 @@ var Menu = /* @__PURE__ */ forwardRef457(function Menu2(props, ref2) {
     variant
   }, MenuListProps, {
     className: clsx_m_default(classes.list, MenuListProps.className)
-  }), items));
+  }), items2));
 });
 true ? Menu.propTypes = {
   anchorEl: import_prop_types49.default.oneOfType([HTMLElementType, import_prop_types49.default.func]),
@@ -43932,7 +43932,7 @@ var SelectInput = /* @__PURE__ */ forwardRef475(function SelectInput2(props, ref
       computeDisplay = true;
     }
   }
-  var items = childrenArray.map(function(child) {
+  var items2 = childrenArray.map(function(child) {
     if (!/* @__PURE__ */ isValidElement15(child)) {
       return null;
     }
@@ -44053,7 +44053,7 @@ var SelectInput = /* @__PURE__ */ forwardRef475(function SelectInput2(props, ref
         minWidth: menuMinWidth
       }, MenuProps.PaperProps != null ? MenuProps.PaperProps.style : null)
     })
-  }), items));
+  }), items2));
 });
 true ? SelectInput.propTypes = {
   "aria-label": import_prop_types61.default.string,
@@ -60386,15 +60386,15 @@ var useDownshift = function(_a4) {
       }
       return void 0;
     };
-    var getFilteredItems = function(items) {
+    var getFilteredItems = function(items2) {
       if (filterOptions) {
-        return filterOptions(items, {
+        return filterOptions(items2, {
           inputValue,
           getOptionLabel,
           selectedItems
         });
       }
-      return items;
+      return items2;
     };
     var results = getFilteredItems(options);
     noOptionItemRef.current = void 0;
@@ -60531,16 +60531,16 @@ var useDownshift = function(_a4) {
     var currentValue = value !== null && value !== void 0 ? value : (_c2 = inputRef.current) === null || _c2 === void 0 ? void 0 : _c2.value;
     if (!selectedItem && freeSolo && !isCompositionRef.current && currentValue && currentValue.length > 0) {
       if (freeSoloCount < maxFreeSolo) {
-        var items = currentValue.trim().split(stringArrToRegExp(keyToTags)).filter(function(x2) {
+        var items2 = currentValue.trim().split(stringArrToRegExp(keyToTags)).filter(function(x2) {
           return x2.trim() !== "";
         });
-        var toLength = freeSoloCount + items.length;
+        var toLength = freeSoloCount + items2.length;
         if (toLength > maxFreeSolo) {
-          items.splice(-(toLength - maxFreeSolo));
+          items2.splice(-(toLength - maxFreeSolo));
           onMaxFreeSolo === null || onMaxFreeSolo === void 0 ? void 0 : onMaxFreeSolo(maxFreeSolo);
         }
-        if (items.length > 0) {
-          handleSelectedItems(__spread20(selectedItems, items.map(function(label3) {
+        if (items2.length > 0) {
+          handleSelectedItems(__spread20(selectedItems, items2.map(function(label3) {
             return {
               id: (0, import_uniqueId2.default)(DOWNSHIFT_ID_TOKEN),
               isSuggestion: false,
@@ -62282,15 +62282,15 @@ function rangesWithin(node4, startIndex, endIndex) {
   var adjustedStart = findMaxKeyValue(node4, startIndex)[0];
   return toRanges(walkWithin(node4, adjustedStart, endIndex));
 }
-function arrayToRanges(items, parser) {
-  var length = items.length;
+function arrayToRanges(items2, parser) {
+  var length = items2.length;
   if (length === 0) {
     return [];
   }
-  var _a4 = parser(items[0]), start3 = _a4.index, value = _a4.value;
+  var _a4 = parser(items2[0]), start3 = _a4.index, value = _a4.value;
   var result = [];
   for (var i2 = 1; i2 < length; i2++) {
-    var _b = parser(items[i2]), nextIndex = _b.index, nextValue = _b.value;
+    var _b = parser(items2[i2]), nextIndex = _b.index, nextValue = _b.value;
     result.push({ start: start3, end: nextIndex - 1, value });
     start3 = nextIndex;
     value = nextValue;
@@ -62314,14 +62314,14 @@ function skew(node4) {
 }
 
 // node_modules/@ringcentral/juno/es6/components/Virtuoso/react-virtuoso/utils/binaryArraySearch.js
-function findIndexOfClosestSmallerOrEqual(items, value, comparator, start3) {
+function findIndexOfClosestSmallerOrEqual(items2, value, comparator, start3) {
   if (start3 === void 0) {
     start3 = 0;
   }
-  var end2 = items.length - 1;
+  var end2 = items2.length - 1;
   while (start3 <= end2) {
     var index4 = Math.floor((start3 + end2) / 2);
-    var item = items[index4];
+    var item = items2[index4];
     var match2 = comparator(item, value);
     if (match2 === 0) {
       return index4;
@@ -62338,15 +62338,15 @@ function findIndexOfClosestSmallerOrEqual(items, value, comparator, start3) {
       start3 = index4 + 1;
     }
   }
-  throw new Error("Failed binary finding record in array - " + items.join(",") + ", searched for " + value);
+  throw new Error("Failed binary finding record in array - " + items2.join(",") + ", searched for " + value);
 }
-function findClosestSmallerOrEqual(items, value, comparator) {
-  return items[findIndexOfClosestSmallerOrEqual(items, value, comparator)];
+function findClosestSmallerOrEqual(items2, value, comparator) {
+  return items2[findIndexOfClosestSmallerOrEqual(items2, value, comparator)];
 }
-function findRange(items, startValue, endValue, comparator) {
-  var startIndex = findIndexOfClosestSmallerOrEqual(items, startValue, comparator);
-  var endIndex = findIndexOfClosestSmallerOrEqual(items, endValue, comparator, startIndex);
-  return items.slice(startIndex, endIndex + 1);
+function findRange(items2, startValue, endValue, comparator) {
+  var startIndex = findIndexOfClosestSmallerOrEqual(items2, startValue, comparator);
+  var endIndex = findIndexOfClosestSmallerOrEqual(items2, endValue, comparator, startIndex);
+  return items2.slice(startIndex, endIndex + 1);
 }
 
 // node_modules/@ringcentral/juno/es6/components/Virtuoso/react-virtuoso/sizeSystem.js
@@ -63045,12 +63045,12 @@ var gridSystem = system(function(_a4) {
     var endIndex = perRow * ceil(endOffset / itemHeight) - 1;
     endIndex = min(totalCount2 - 1, endIndex);
     startIndex = min(endIndex, max(0, startIndex));
-    var items = buildItems(startIndex, endIndex);
-    var _e3 = gridLayout(viewport, item, items), top2 = _e3.top, bottom2 = _e3.bottom;
+    var items2 = buildItems(startIndex, endIndex);
+    var _e3 = gridLayout(viewport, item, items2), top2 = _e3.top, bottom2 = _e3.bottom;
     var totalHeight = ceil(totalCount2 / perRow) * itemHeight;
     var offsetBottom = totalHeight - bottom2;
     return {
-      items,
+      items: items2,
       offsetTop: top2,
       offsetBottom,
       top: top2,
@@ -63064,8 +63064,8 @@ var gridSystem = system(function(_a4) {
     return height2;
   })), viewportHeight);
   connect(pipe(combineLatest(viewportDimensions, itemDimensions, gridState), map(function(_a5) {
-    var _b2 = __read48(_a5, 3), viewportDimensions2 = _b2[0], item = _b2[1], items = _b2[2].items;
-    var _c2 = gridLayout(viewportDimensions2, item, items), top2 = _c2.top, bottom2 = _c2.bottom;
+    var _b2 = __read48(_a5, 3), viewportDimensions2 = _b2[0], item = _b2[1], items2 = _b2[2].items;
+    var _c2 = gridLayout(viewportDimensions2, item, items2), top2 = _c2.top, bottom2 = _c2.bottom;
     return [top2, bottom2];
   }), distinctUntilChanged(tupleComparator)), listBoundary);
   connect(pipe(listBoundary, withLatestFrom(gridState), map(function(_a5) {
@@ -63073,27 +63073,27 @@ var gridSystem = system(function(_a4) {
     return { bottom: bottom2, offsetBottom };
   })), stateFlags.listStateListener);
   var endReached = streamFromEmitter(pipe(duc(gridState), filter(function(_a5) {
-    var items = _a5.items;
-    return items.length > 0;
+    var items2 = _a5.items;
+    return items2.length > 0;
   }), withLatestFrom(totalCount), filter(function(_a5) {
-    var _b2 = __read48(_a5, 2), items = _b2[0].items, totalCount2 = _b2[1];
-    return items[items.length - 1].index === totalCount2 - 1;
+    var _b2 = __read48(_a5, 2), items2 = _b2[0].items, totalCount2 = _b2[1];
+    return items2[items2.length - 1].index === totalCount2 - 1;
   }), map(function(_a5) {
     var _b2 = __read48(_a5, 2), totalCount2 = _b2[1];
     return totalCount2 - 1;
   }), distinctUntilChanged()));
   var startReached = streamFromEmitter(pipe(duc(gridState), filter(function(_a5) {
-    var items = _a5.items;
-    return items.length > 0 && items[0].index === 0;
+    var items2 = _a5.items;
+    return items2.length > 0 && items2[0].index === 0;
   }), mapTo(0), distinctUntilChanged()));
   var rangeChanged = streamFromEmitter(pipe(duc(gridState), filter(function(_a5) {
-    var items = _a5.items;
-    return items.length > 0;
+    var items2 = _a5.items;
+    return items2.length > 0;
   }), map(function(_a5) {
-    var items = _a5.items;
+    var items2 = _a5.items;
     return {
-      startIndex: items[0].index,
-      endIndex: items[items.length - 1].index
+      startIndex: items2[0].index,
+      endIndex: items2[items2.length - 1].index
     };
   }), distinctUntilChanged(rangeComparator)));
   connect(rangeChanged, scrollSeek.scrollSeekRangeChanged);
@@ -63148,13 +63148,13 @@ var gridSystem = system(function(_a4) {
     propsReady
   });
 }, tup(sizeRangeSystem, domIOSystem, stateFlagsSystem, scrollSeekSystem, propsReadySystem, windowScrollerSystem));
-function gridLayout(viewport, item, items) {
+function gridLayout(viewport, item, items2) {
   var itemHeight = item.height;
-  if (itemHeight === void 0 || items.length === 0) {
+  if (itemHeight === void 0 || items2.length === 0) {
     return { top: 0, bottom: 0 };
   }
-  var top2 = itemTop(viewport, item, items[0].index);
-  var bottom2 = itemTop(viewport, item, items[items.length - 1].index) + itemHeight;
+  var top2 = itemTop(viewport, item, items2[0].index);
+  var bottom2 = itemTop(viewport, item, items2[items2.length - 1].index) + itemHeight;
   return { top: top2, bottom: bottom2 };
 }
 function itemTop(viewport, item, index4) {
@@ -63547,24 +63547,24 @@ var EMPTY_LIST_STATE = {
   topListHeight: 0,
   totalCount: 0
 };
-function transposeItems(items, sizes, firstItemIndex) {
+function transposeItems(items2, sizes, firstItemIndex) {
   var e_1, _a4;
-  if (items.length === 0) {
+  if (items2.length === 0) {
     return [];
   }
   if (!hasGroups(sizes)) {
-    return items.map(function(item2) {
+    return items2.map(function(item2) {
       return __assign502(__assign502({}, item2), { index: item2.index + firstItemIndex, originalIndex: item2.index });
     });
   }
-  var startIndex = items[0].index;
-  var endIndex = items[items.length - 1].index;
+  var startIndex = items2[0].index;
+  var endIndex = items2[items2.length - 1].index;
   var transposedItems = [];
   var groupRanges = rangesWithin(sizes.groupOffsetTree, startIndex, endIndex);
   var currentRange;
   var currentGroupIndex = 0;
   try {
-    for (var items_1 = __values10(items), items_1_1 = items_1.next(); !items_1_1.done; items_1_1 = items_1.next()) {
+    for (var items_1 = __values10(items2), items_1_1 = items_1.next(); !items_1_1.done; items_1_1 = items_1.next()) {
       var item = items_1_1.value;
       if (!currentRange || currentRange.end < item.index) {
         currentRange = groupRanges.shift();
@@ -63597,20 +63597,20 @@ function transposeItems(items, sizes, firstItemIndex) {
   }
   return transposedItems;
 }
-function buildListState(items, topItems, totalCount, sizes, firstItemIndex) {
+function buildListState(items2, topItems, totalCount, sizes, firstItemIndex) {
   var lastSize = sizes.lastSize, lastOffset = sizes.lastOffset, lastIndex = sizes.lastIndex;
   var offsetTop = 0;
   var bottom2 = 0;
-  if (items.length > 0) {
-    offsetTop = items[0].offset;
-    var lastItem = items[items.length - 1];
+  if (items2.length > 0) {
+    offsetTop = items2[0].offset;
+    var lastItem = items2[items2.length - 1];
     bottom2 = lastItem.offset + lastItem.size;
   }
   var total = lastOffset + (totalCount - lastIndex) * lastSize;
   var top2 = offsetTop;
   var offsetBottom = total - bottom2;
   return {
-    items: transposeItems(items, sizes, firstItemIndex),
+    items: transposeItems(items2, sizes, firstItemIndex),
     topItems: transposeItems(topItems, sizes, firstItemIndex),
     topListHeight: topItems.reduce(function(height2, item) {
       return item.size + height2;
@@ -63683,7 +63683,7 @@ var listStateSystem = system(function(_a4) {
       return null;
     }
     var maxIndex = totalCount2 - 1;
-    var items = tap([], function(result) {
+    var items2 = tap([], function(result) {
       var e_3, _a6;
       try {
         for (var offsetPointRanges_1 = __values10(offsetPointRanges), offsetPointRanges_1_1 = offsetPointRanges_1.next(); !offsetPointRanges_1_1.done; offsetPointRanges_1_1 = offsetPointRanges_1.next()) {
@@ -63726,7 +63726,7 @@ var listStateSystem = system(function(_a4) {
         }
       }
     });
-    return buildListState(items, topItems, totalCount2, sizesValue, firstItemIndex2);
+    return buildListState(items2, topItems, totalCount2, sizesValue, firstItemIndex2);
   }), filter(function(value) {
     return value !== null;
   }), distinctUntilChanged()), EMPTY_LIST_STATE);
@@ -63745,11 +63745,11 @@ var listStateSystem = system(function(_a4) {
     return state.items;
   })), itemsRendered);
   var endReached = streamFromEmitter(pipe(listState, filter(function(_a5) {
-    var items = _a5.items;
-    return items.length > 0;
+    var items2 = _a5.items;
+    return items2.length > 0;
   }), withLatestFrom(totalCount, data), filter(function(_a5) {
-    var _b2 = __read51(_a5, 2), items = _b2[0].items, totalCount2 = _b2[1];
-    return items[items.length - 1].originalIndex === totalCount2 - 1;
+    var _b2 = __read51(_a5, 2), items2 = _b2[0].items, totalCount2 = _b2[1];
+    return items2[items2.length - 1].originalIndex === totalCount2 - 1;
   }), map(function(_a5) {
     var _b2 = __read51(_a5, 3), totalCount2 = _b2[1], data2 = _b2[2];
     return [totalCount2 - 1, data2];
@@ -63758,20 +63758,20 @@ var listStateSystem = system(function(_a4) {
     return count2;
   })));
   var startReached = streamFromEmitter(pipe(listState, throttleTime(200), filter(function(_a5) {
-    var items = _a5.items, topItems = _a5.topItems;
-    return items.length > 0 && items[0].originalIndex === topItems.length;
+    var items2 = _a5.items, topItems = _a5.topItems;
+    return items2.length > 0 && items2[0].originalIndex === topItems.length;
   }), map(function(_a5) {
-    var items = _a5.items;
-    return items[0].index;
+    var items2 = _a5.items;
+    return items2[0].index;
   }), distinctUntilChanged()));
   var rangeChanged = streamFromEmitter(pipe(listState, filter(function(_a5) {
-    var items = _a5.items;
-    return items.length > 0;
+    var items2 = _a5.items;
+    return items2.length > 0;
   }), map(function(_a5) {
-    var items = _a5.items;
+    var items2 = _a5.items;
     return {
-      startIndex: items[0].index,
-      endIndex: items[items.length - 1].index
+      startIndex: items2[0].index,
+      endIndex: items2[items2.length - 1].index
     };
   }), distinctUntilChanged(rangeComparator)));
   return __assign502({
@@ -64010,7 +64010,7 @@ var initialItemCountSystem = system(function(_a4) {
       }
     }
     var adjustedCount = count2 + includedGroupsCount;
-    var items = Array.from({
+    var items2 = Array.from({
       length: adjustedCount
     }).map(function(_18, index5) {
       return {
@@ -64020,7 +64020,7 @@ var initialItemCountSystem = system(function(_a4) {
         data: data2[index5]
       };
     });
-    return buildListState(items, [], adjustedCount, sizes2, firstItemIndex2);
+    return buildListState(items2, [], adjustedCount, sizes2, firstItemIndex2);
   })), listState);
   return { initialItemCount };
 }, tup(sizeSystem, listStateSystem, propsReadySystem), { singleton: true });
@@ -64137,18 +64137,18 @@ var upwardScrollFixSystem = system(function(_a4) {
     return state;
   }), scan(function(_a5, _b2) {
     var _c2 = __read58(_a5, 2), prevItems = _c2[1];
-    var items = _b2.items;
+    var items2 = _b2.items;
     var newDev = 0;
-    if (prevItems.length > 0 && items.length > 0) {
-      var firstItemIndex = items[0].originalIndex;
+    if (prevItems.length > 0 && items2.length > 0) {
+      var firstItemIndex = items2[0].originalIndex;
       var prevFirstItemIndex = prevItems[0].originalIndex;
       var atStart = firstItemIndex === 0 && prevFirstItemIndex === 0;
       if (!atStart) {
         if (firstItemIndex === prevFirstItemIndex) {
-          newDev = items[0].size - prevItems[0].size;
+          newDev = items2[0].size - prevItems[0].size;
         } else {
           var _loop_1 = function(index5) {
-            var item = items[index5];
+            var item = items2[index5];
             var prevItem = prevItems.find(function(pItem) {
               return pItem.originalIndex === item.originalIndex;
             });
@@ -64160,7 +64160,7 @@ var upwardScrollFixSystem = system(function(_a4) {
               return "break";
             }
           };
-          for (var index4 = items.length - 1; index4 >= 0; index4--) {
+          for (var index4 = items2.length - 1; index4 >= 0; index4--) {
             var state_1 = _loop_1(index4);
             if (state_1 === "break")
               break;
@@ -64168,7 +64168,7 @@ var upwardScrollFixSystem = system(function(_a4) {
         }
       }
     }
-    return [newDev, items];
+    return [newDev, items2];
   }, [0, []]), filter(function(_a5) {
     var _b2 = __read58(_a5, 1), amount = _b2[0];
     return amount !== 0;
@@ -70640,7 +70640,7 @@ var _RcVirtualizedMenuList = forwardRef581(function(inProps, ref2) {
   var isMountedRef = useMountState();
   var hasSearchText = false;
   var activeItemIndex = -1;
-  var items = React670.Children.map(childrenProp, function(child, index4) {
+  var items2 = React670.Children.map(childrenProp, function(child, index4) {
     if (!React670.isValidElement(child)) {
       return;
     }
@@ -70667,7 +70667,7 @@ var _RcVirtualizedMenuList = forwardRef581(function(inProps, ref2) {
     }
     return child;
   });
-  var itemCount = items.length;
+  var itemCount = items2.length;
   var focusedIndexRef = useRef83(activeItemIndex);
   focusedIndexRef.current = activeItemIndex;
   var onContainerHeightChange = useEventCallback2(function(changeHeight) {
@@ -70702,7 +70702,7 @@ var _RcVirtualizedMenuList = forwardRef581(function(inProps, ref2) {
   }), focusIndex = _j.focusIndex, getItemProps = _j.getItemProps;
   var debounceFocusIndex = useDebounce(focusIndex, 20);
   var _k = useKeyboardMoveFocus({
-    options: items,
+    options: items2,
     focusedIndexRef,
     infinite: !disableListWrap,
     onFocusedIndexChange: function(event, toIndex) {
@@ -70810,7 +70810,7 @@ var _RcVirtualizedMenuList = forwardRef581(function(inProps, ref2) {
     } else {
       debounceFocusIndex(focusedIndexRef.current);
     }
-  } }), React670.createElement(Virtuoso, __assign531({ ref: vlRef, data: items, itemContent: function(index4, data) {
+  } }), React670.createElement(Virtuoso, __assign531({ ref: vlRef, data: items2, itemContent: function(index4, data) {
     return data;
   }, totalCount: itemCount, components }, combine2)));
 });
@@ -71175,7 +71175,7 @@ var SelectInput3 = forwardRef584(function(props, ref2) {
       computeDisplay = true;
     }
   }
-  var items = childrenArray.map(function(child) {
+  var items2 = childrenArray.map(function(child) {
     if (!React673.isValidElement(child)) {
       return null;
     }
@@ -71269,7 +71269,7 @@ var SelectInput3 = forwardRef584(function(props, ref2) {
     disabled: disabled3,
     className: classes.nativeInput,
     autoFocus
-  }, other)), React673.createElement(IconComponent, { disabled: disabled3, className: clsx_m_default(classes.icon, classes.iconOpen && (_b = {}, _b[classes.iconOpen] = open, _b), classes.disabled && (_c = {}, _c[classes.disabled] = disabled3, _c)) }), React673.createElement(MenuComponent, __assign534({ id: "menu-" + (name || ""), anchorEl: displayNode, open, onClose: handleClose }, MenuProps, { MenuListProps: __assign534({ "aria-labelledby": labelId, role: "listbox", disableListWrap: true }, MenuProps.MenuListProps), PaperProps: __assign534(__assign534({}, MenuProps.PaperProps), { style: __assign534({ minWidth: menuMinWidth }, MenuProps.PaperProps != null ? MenuProps.PaperProps.style : null) }) }), items));
+  }, other)), React673.createElement(IconComponent, { disabled: disabled3, className: clsx_m_default(classes.icon, classes.iconOpen && (_b = {}, _b[classes.iconOpen] = open, _b), classes.disabled && (_c = {}, _c[classes.disabled] = disabled3, _c)) }), React673.createElement(MenuComponent, __assign534({ id: "menu-" + (name || ""), anchorEl: displayNode, open, onClose: handleClose }, MenuProps, { MenuListProps: __assign534({ "aria-labelledby": labelId, role: "listbox", disableListWrap: true }, MenuProps.MenuListProps), PaperProps: __assign534(__assign534({}, MenuProps.PaperProps), { style: __assign534({ minWidth: menuMinWidth }, MenuProps.PaperProps != null ? MenuProps.PaperProps.style : null) }) }), items2));
 });
 SelectInput3.defaultProps = {};
 SelectInput3.displayName = "SelectInput";
@@ -74052,7 +74052,7 @@ function usePagination() {
         return null;
     }
   };
-  var items = itemList.map(function(item) {
+  var items2 = itemList.map(function(item) {
     return typeof item === "number" ? {
       onClick: function onClick(event) {
         handleClick(event, item);
@@ -74073,7 +74073,7 @@ function usePagination() {
     };
   });
   return _extends({
-    items
+    items: items2
   }, other);
 }
 
@@ -74337,14 +74337,14 @@ var Pagination = /* @__PURE__ */ forwardRef595(function Pagination2(props, ref2)
   } : _props$renderItem, _props$shape = props.shape, shape2 = _props$shape === void 0 ? "round" : _props$shape, showFirstButton = props.showFirstButton, showLastButton = props.showLastButton, siblingCount = props.siblingCount, _props$size = props.size, size = _props$size === void 0 ? "medium" : _props$size, _props$variant = props.variant, variant = _props$variant === void 0 ? "text" : _props$variant, other = _objectWithoutProperties(props, ["boundaryCount", "classes", "className", "color", "count", "defaultPage", "disabled", "getItemAriaLabel", "hideNextButton", "hidePrevButton", "onChange", "page", "renderItem", "shape", "showFirstButton", "showLastButton", "siblingCount", "size", "variant"]);
   var _usePagination = usePagination(_extends({}, props, {
     componentName: "Pagination"
-  })), items = _usePagination.items;
+  })), items2 = _usePagination.items;
   return /* @__PURE__ */ createElement119("nav", _extends({
     "aria-label": "pagination navigation",
     className: clsx_m_default(classes.root, className),
     ref: ref2
   }, other), /* @__PURE__ */ createElement119("ul", {
     className: classes.ul
-  }, items.map(function(item, index4) {
+  }, items2.map(function(item, index4) {
     return /* @__PURE__ */ createElement119("li", {
       key: index4
     }, renderItem(_extends({}, item, {
@@ -74855,11 +74855,11 @@ var Rating = /* @__PURE__ */ forwardRef599(function Rating2(props, ref2) {
   }, other), Array.from(new Array(max2)).map(function(_18, index4) {
     var itemValue = index4 + 1;
     if (precision < 1) {
-      var items = Array.from(new Array(1 / precision));
+      var items2 = Array.from(new Array(1 / precision));
       return /* @__PURE__ */ createElement121("span", {
         key: itemValue,
         className: clsx_m_default(classes.decimal, itemValue === Math.ceil(value) && (hover !== -1 || focus2 !== -1) && classes.iconActive)
-      }, items.map(function($2, indexDecimal) {
+      }, items2.map(function($2, indexDecimal) {
         var itemDecimalValue = roundValueToPrecision(itemValue - 1 + (indexDecimal + 1) * precision, precision);
         return item({
           value: itemDecimalValue,
@@ -74868,7 +74868,7 @@ var Rating = /* @__PURE__ */ forwardRef599(function Rating2(props, ref2) {
           focus: itemDecimalValue <= focus2,
           checked: itemDecimalValue === valueRounded
         }, {
-          style: items.length - 1 === indexDecimal ? {} : {
+          style: items2.length - 1 === indexDecimal ? {} : {
             width: itemDecimalValue === value ? "".concat((indexDecimal + 1) * precision * 100, "%") : "0%",
             overflow: "hidden",
             zIndex: 1,
@@ -78884,15 +78884,64 @@ var Switch3 = (_a4) => {
   return /* @__PURE__ */ React767.createElement(RcThemeProvider, null, /* @__PURE__ */ React767.createElement(RcSwitch, __spreadValues({}, rest)));
 };
 
+// src/Spacing.tsx
+import { RenderTarget } from "framer";
+import React768, { useState as useState57 } from "react";
+var items = {
+  "1": "#ef99b7",
+  "2": "#79ecfa",
+  "3": "#e479f7",
+  "4": "#f8a58b",
+  "5": "#91a0f9",
+  "6": "#f9cf7a",
+  "8": "#79d7e4",
+  "10": "#79c4be",
+  "12": "#a88ec9"
+};
+var defaultSize2 = "100px";
+var SpaceItem = styled_components_default.div`
+  background: ${({ color: color2 }) => color2};
+  opacity: ${({ cmdHold }) => cmdHold && "1"};
+
+  ${({ vertical: vertical2, count: count2 }) => {
+  if (vertical2) {
+    return css2`
+        width: ${defaultSize2};
+        height: ${spacing2(count2)};
+      `;
+  }
+  return css2`
+      width: ${spacing2(count2)};
+      height: ${defaultSize2};
+    `;
+}};
+`;
+var Spacing = ({ count: count2, vertical: vertical2 }) => {
+  const [cmdHold, setCmdHold] = useState57(false);
+  const current = RenderTarget.current();
+  useEventListener(document, "keydown", () => {
+    setCmdHold(true);
+  });
+  useEventListener(document, "keyup", () => {
+    setCmdHold(false);
+  });
+  return /* @__PURE__ */ React768.createElement(RcThemeProvider, null, /* @__PURE__ */ React768.createElement(SpaceItem, {
+    vertical: vertical2,
+    count: count2,
+    color: items[count2],
+    cmdHold: cmdHold || current === RenderTarget.canvas
+  }));
+};
+
 // src/Tag.tsx
-import React768 from "react";
+import React769 from "react";
 var Tag = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React768.createElement(RcThemeProvider, null, /* @__PURE__ */ React768.createElement(RcTag, __spreadValues({}, rest), _children));
+  return /* @__PURE__ */ React769.createElement(RcThemeProvider, null, /* @__PURE__ */ React769.createElement(RcTag, __spreadValues({}, rest), _children));
 };
 
 // src/Text.tsx
-import React769 from "react";
+import React770 from "react";
 var Text2 = (_a4) => {
   var _b = _a4, {
     _children,
@@ -78907,17 +78956,17 @@ var Text2 = (_a4) => {
   } else if (titleWhenOverflowProp === "false") {
     titleWhenOverflow = false;
   }
-  return /* @__PURE__ */ React769.createElement(RcThemeProvider, null, /* @__PURE__ */ React769.createElement(RcText, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React770.createElement(RcThemeProvider, null, /* @__PURE__ */ React770.createElement(RcText, __spreadProps(__spreadValues({}, rest), {
     titleWhenOverflow
   }), _children));
 };
 
 // src/TextField.tsx
-import React770, { useState as useState57 } from "react";
+import React771, { useState as useState58 } from "react";
 var TextField3 = (_a4) => {
   var _b = _a4, { value: valueProp } = _b, rest = __objRest(_b, ["value"]);
-  const [value, setValue] = useState57(valueProp);
-  return /* @__PURE__ */ React770.createElement(RcThemeProvider, null, /* @__PURE__ */ React770.createElement(RcTextField, __spreadProps(__spreadValues({}, rest), {
+  const [value, setValue] = useState58(valueProp);
+  return /* @__PURE__ */ React771.createElement(RcThemeProvider, null, /* @__PURE__ */ React771.createElement(RcTextField, __spreadProps(__spreadValues({}, rest), {
     value,
     onChange: (e2) => {
       setValue(e2.target.value);
@@ -78926,37 +78975,37 @@ var TextField3 = (_a4) => {
 };
 
 // src/Thumbnail.tsx
-import React771 from "react";
+import React772 from "react";
 var Thumbnail = (_a4) => {
   var _b = _a4, { _children, symbol } = _b, rest = __objRest(_b, ["_children", "symbol"]);
-  return /* @__PURE__ */ React771.createElement(RcThemeProvider, null, /* @__PURE__ */ React771.createElement(RcThumbnail, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React772.createElement(RcThemeProvider, null, /* @__PURE__ */ React772.createElement(RcThumbnail, __spreadProps(__spreadValues({}, rest), {
     symbol: icon_exports[symbol]
   }), _children));
 };
 
 // src/Paper.tsx
-import React772 from "react";
+import React773 from "react";
 var Paper3 = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
   const children2 = _children.map((a2) => {
     return a2.props.children || a2;
   });
-  return /* @__PURE__ */ React772.createElement(RcThemeProvider, null, /* @__PURE__ */ React772.createElement(RcPaper, __spreadValues({}, rest), children2));
+  return /* @__PURE__ */ React773.createElement(RcThemeProvider, null, /* @__PURE__ */ React773.createElement(RcPaper, __spreadValues({}, rest), children2));
 };
 
 // src/Presence.tsx
-import React773 from "react";
+import React774 from "react";
 var Presence = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React773.createElement(RcThemeProvider, null, /* @__PURE__ */ React773.createElement(RcPresence, __spreadValues({}, rest), _children));
+  return /* @__PURE__ */ React774.createElement(RcThemeProvider, null, /* @__PURE__ */ React774.createElement(RcPresence, __spreadValues({}, rest), _children));
 };
 
 // src/Textarea.tsx
-import React774, { useState as useState58 } from "react";
+import React775, { useState as useState59 } from "react";
 var Textarea = (_a4) => {
   var _b = _a4, { value: valueProp } = _b, rest = __objRest(_b, ["value"]);
-  const [value, setValue] = useState58(valueProp);
-  return /* @__PURE__ */ React774.createElement(RcThemeProvider, null, /* @__PURE__ */ React774.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
+  const [value, setValue] = useState59(valueProp);
+  return /* @__PURE__ */ React775.createElement(RcThemeProvider, null, /* @__PURE__ */ React775.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
     value,
     onChange: (e2) => {
       setValue(e2.target.value);
@@ -78965,7 +79014,7 @@ var Textarea = (_a4) => {
 };
 
 // src/ThemeProvider.tsx
-import React775 from "react";
+import React776 from "react";
 
 // src/themes/rcBlue/rcBlue.ts
 var rcBlue = {
@@ -89522,13 +89571,13 @@ var RcThemeIds = Object.keys(RcThemes);
 var ThemeProvider3 = (_a4) => {
   var _b = _a4, { children: children2, themeId } = _b, rest = __objRest(_b, ["children", "themeId"]);
   const theme = RcThemes[themeId];
-  return /* @__PURE__ */ React775.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React776.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
     theme
   }), children2[0]);
 };
 
 // src/TimePicker.tsx
-import React776, { useRef as useRef95, useState as useState59 } from "react";
+import React777, { useRef as useRef95, useState as useState60 } from "react";
 var TimePicker = (_a4) => {
   var _b = _a4, {
     _children,
@@ -89543,7 +89592,7 @@ var TimePicker = (_a4) => {
   ]);
   const min2 = useRef95(minProp ? new Date(`2020/1/1 ${minProp}`) : void 0);
   const max2 = useRef95(maxProp ? new Date(`2020/1/1 ${maxProp}`) : void 0);
-  const [value, setValue] = useState59(valueProp);
+  const [value, setValue] = useState60(valueProp);
   useChange(() => {
     min2.current = minProp ? new Date(`2020/1/1 ${minProp}`) : void 0;
     max2.current = maxProp ? new Date(`2020/1/1 ${maxProp}`) : void 0;
@@ -89551,7 +89600,7 @@ var TimePicker = (_a4) => {
   const handleChange = (time) => {
     setValue(time);
   };
-  return /* @__PURE__ */ React776.createElement(RcThemeProvider, null, /* @__PURE__ */ React776.createElement(RcTimePicker, __spreadValues({
+  return /* @__PURE__ */ React777.createElement(RcThemeProvider, null, /* @__PURE__ */ React777.createElement(RcTimePicker, __spreadValues({
     value,
     onChange: handleChange,
     min: min2.current,
@@ -89560,12 +89609,12 @@ var TimePicker = (_a4) => {
 };
 
 // src/Tooltip.tsx
-import React777 from "react";
+import React778 from "react";
 var Tooltip3 = (_a4) => {
   var _b = _a4, { _children, children: children2 } = _b, rest = __objRest(_b, ["_children", "children"]);
-  return /* @__PURE__ */ React777.createElement(RcThemeProvider, null, _children.length > 0 ? /* @__PURE__ */ React777.createElement(RcTooltip, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React778.createElement(RcThemeProvider, null, _children.length > 0 ? /* @__PURE__ */ React778.createElement(RcTooltip, __spreadProps(__spreadValues({}, rest), {
     ignorePointer: true
-  }), _children[0].props.children) : /* @__PURE__ */ React777.createElement("div", null, "choice children"));
+  }), _children[0].props.children) : /* @__PURE__ */ React778.createElement("div", null, "choice children"));
 };
 
 // src/utils/colorOptions.ts
@@ -90215,6 +90264,7 @@ export {
   Slider3 as Slider,
   SnackbarAction,
   SnackbarContent3 as SnackbarContent,
+  Spacing,
   Switch3 as Switch,
   Tag,
   Text2 as Text,
