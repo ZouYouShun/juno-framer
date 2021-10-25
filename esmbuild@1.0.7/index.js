@@ -78901,7 +78901,7 @@ var items = {
 var defaultSize2 = "100px";
 var SpaceItem = styled_components_default.div`
   background: ${({ color: color2 }) => color2};
-  opacity: ${({ cmdHold }) => cmdHold && "1"};
+  opacity: ${({ cmdHold }) => cmdHold ? "1" : "0"};
 
   ${({ vertical: vertical2, count: count2 }) => {
   if (vertical2) {
@@ -78916,7 +78916,8 @@ var SpaceItem = styled_components_default.div`
     `;
 }};
 `;
-var Spacing = ({ count: count2, vertical: vertical2 }) => {
+var Spacing = (_a4) => {
+  var _b = _a4, { count: count2 } = _b, rest = __objRest(_b, ["count"]);
   const [cmdHold, setCmdHold] = useState57(false);
   const current = RenderTarget.current();
   useEventListener(document, "keydown", () => {
@@ -78925,12 +78926,11 @@ var Spacing = ({ count: count2, vertical: vertical2 }) => {
   useEventListener(document, "keyup", () => {
     setCmdHold(false);
   });
-  return /* @__PURE__ */ React768.createElement(RcThemeProvider, null, /* @__PURE__ */ React768.createElement(SpaceItem, {
-    vertical: vertical2,
+  return /* @__PURE__ */ React768.createElement(RcThemeProvider, null, /* @__PURE__ */ React768.createElement(SpaceItem, __spreadProps(__spreadValues({}, rest), {
     count: count2,
     color: items[count2],
     cmdHold: cmdHold || current === RenderTarget.canvas
-  }));
+  })));
 };
 
 // src/Tag.tsx
