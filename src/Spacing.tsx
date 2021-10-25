@@ -5,44 +5,17 @@ import { spacing } from "@ringcentral/juno/foundation/styles/spacing";
 import { RcThemeProvider } from "@ringcentral/juno/foundation/theme/ThemeProvider";
 import React, { useState } from "react";
 
-const items = [
-  {
-    color: "#ef99b7",
-    count: 1,
-  },
-  {
-    color: "#79ecfa",
-    count: 2,
-  },
-  {
-    color: "#e479f7",
-    count: 3,
-  },
-  {
-    color: "#f8a58b",
-    count: 4,
-  },
-  {
-    color: "#91a0f9",
-    count: 5,
-  },
-  {
-    color: "#f9cf7a",
-    count: 6,
-  },
-  {
-    color: "#79d7e4",
-    count: 8,
-  },
-  {
-    color: "#79c4be",
-    count: 10,
-  },
-  {
-    color: "#a88ec9",
-    count: 12,
-  },
-];
+const items = {
+  "1": "#ef99b7",
+  "2": "#79ecfa",
+  "3": "#e479f7",
+  "4": "#f8a58b",
+  "5": "#91a0f9",
+  "6": "#f9cf7a",
+  "8": "#79d7e4",
+  "10": "#79c4be",
+  "12": "#a88ec9",
+};
 
 type SpaceItemProps = { vertical?: boolean; count: number; cmdHold: boolean };
 
@@ -79,12 +52,14 @@ export const Spacing = ({ count, vertical }: SpaceItemProps) => {
     setCmdHold(false);
   });
 
+  console.log(items, count);
+
   return (
     <RcThemeProvider>
       <SpaceItem
         vertical={vertical}
         count={count}
-        color={items[count].color}
+        color={(items as any)[count]}
         cmdHold={cmdHold || current === RenderTarget.canvas}
       />
     </RcThemeProvider>
