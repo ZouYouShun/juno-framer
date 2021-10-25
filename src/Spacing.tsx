@@ -52,8 +52,6 @@ export const Spacing = ({ count, vertical }: SpaceItemProps) => {
     setCmdHold(false);
   });
 
-  console.log(items, count);
-
   return (
     <RcThemeProvider>
       <SpaceItem
