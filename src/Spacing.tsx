@@ -23,7 +23,7 @@ const defaultSize = "100px";
 
 const SpaceItem = styled.div<SpaceItemProps>`
   background: ${({ color }) => color};
-  opacity: ${({ cmdHold }) => cmdHold && "1"};
+  opacity: ${({ cmdHold }) => (cmdHold ? "1" : "0")};
 
   ${({ vertical, count }) => {
     if (vertical) {
@@ -40,7 +40,7 @@ const SpaceItem = styled.div<SpaceItemProps>`
   }};
 `;
 
-export const Spacing = ({ count, vertical }: SpaceItemProps) => {
+export const Spacing = ({ count, ...rest }: SpaceItemProps) => {
   const [cmdHold, setCmdHold] = useState(false);
   const current = RenderTarget.current();
 
@@ -55,7 +55,7 @@ export const Spacing = ({ count, vertical }: SpaceItemProps) => {
   return (
     <RcThemeProvider>
       <SpaceItem
-        vertical={vertical}
+        {...rest}
         count={count}
         color={(items as any)[count]}
         cmdHold={cmdHold || current === RenderTarget.canvas}

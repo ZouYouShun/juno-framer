@@ -1,12 +1,13 @@
 import { addPropertyControls, ControlType } from "framer";
-import * as lib from "http://127.0.0.1:8000/index.js";
+import * as lib from "http://127.0.0.1:8000/index.js?xsdcsdd1s1ssscsssxx";
 
 addPropertyControls(lib.Spacing, {
-  readOnly: {
+  count: {
     title: "count",
-    type: ControlType.Number,
+    type: ControlType.Enum,
     /** description: "", */
-    defaultValue: 4,
+    options: ["1", "2", "3", "4", "5", "6", "8", "10", "12"],
+    defaultValue: "4",
   },
   vertical: {
     title: "vertical",
