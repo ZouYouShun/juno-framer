@@ -1600,17 +1600,17 @@ var require_debounce = __commonJS({
     var FUNC_ERROR_TEXT = "Expected a function";
     var nativeMax = Math.max;
     var nativeMin = Math.min;
-    function debounce5(func4, wait, options) {
+    function debounce5(func4, wait, options2) {
       var lastArgs, lastThis, maxWait, result, timerId, lastCallTime, lastInvokeTime = 0, leading = false, maxing = false, trailing = true;
       if (typeof func4 != "function") {
         throw new TypeError(FUNC_ERROR_TEXT);
       }
       wait = toNumber(wait) || 0;
-      if (isObject(options)) {
-        leading = !!options.leading;
-        maxing = "maxWait" in options;
-        maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
-        trailing = "trailing" in options ? !!options.trailing : trailing;
+      if (isObject(options2)) {
+        leading = !!options2.leading;
+        maxing = "maxWait" in options2;
+        maxWait = maxing ? nativeMax(toNumber(options2.maxWait) || 0, wait) : maxWait;
+        trailing = "trailing" in options2 ? !!options2.trailing : trailing;
       }
       function invokeFunc(time) {
         var args = lastArgs, thisArg = lastThis;
@@ -3992,14 +3992,14 @@ var require_throttle = __commonJS({
     var debounce5 = require_debounce();
     var isObject = require_isObject();
     var FUNC_ERROR_TEXT = "Expected a function";
-    function throttle4(func4, wait, options) {
+    function throttle4(func4, wait, options2) {
       var leading = true, trailing = true;
       if (typeof func4 != "function") {
         throw new TypeError(FUNC_ERROR_TEXT);
       }
-      if (isObject(options)) {
-        leading = "leading" in options ? !!options.leading : leading;
-        trailing = "trailing" in options ? !!options.trailing : trailing;
+      if (isObject(options2)) {
+        leading = "leading" in options2 ? !!options2.leading : leading;
+        trailing = "trailing" in options2 ? !!options2.trailing : trailing;
       }
       return debounce5(func4, wait, {
         "leading": leading,
@@ -4403,10 +4403,10 @@ var require_utils2 = __commonJS({
       return node4.scrollTop;
     };
     exports.reflow = reflow4;
-    function getTransitionProps3(props, options) {
+    function getTransitionProps3(props, options2) {
       var timeout2 = props.timeout, _props$style = props.style, style3 = _props$style === void 0 ? {} : _props$style;
       return {
-        duration: style3.transitionDuration || typeof timeout2 === "number" ? timeout2 : timeout2[options.mode] || 0,
+        duration: style3.transitionDuration || typeof timeout2 === "number" ? timeout2 : timeout2[options2.mode] || 0,
         delay: style3.transitionDelay
       };
     }
@@ -4510,8 +4510,8 @@ var require_transitions = __commonJS({
       duration: duration5,
       create: function create3() {
         var props = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : ["all"];
-        var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-        var _options$duration = options.duration, durationOption = _options$duration === void 0 ? duration5.standard : _options$duration, _options$easing = options.easing, easingOption = _options$easing === void 0 ? easing3.easeInOut : _options$easing, _options$delay = options.delay, delay = _options$delay === void 0 ? 0 : _options$delay, other = (0, _objectWithoutProperties2.default)(options, ["duration", "easing", "delay"]);
+        var options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        var _options$duration = options2.duration, durationOption = _options$duration === void 0 ? duration5.standard : _options$duration, _options$easing = options2.easing, easingOption = _options$easing === void 0 ? easing3.easeInOut : _options$easing, _options$delay = options2.delay, delay = _options$delay === void 0 ? 0 : _options$delay, other = (0, _objectWithoutProperties2.default)(options2, ["duration", "easing", "delay"]);
         if (true) {
           var isString4 = function isString5(value) {
             return typeof value === "string";
@@ -9146,17 +9146,17 @@ function isPlainObject(item) {
   return item && _typeof(item) === "object" && item.constructor === Object;
 }
 function deepmerge(target, source) {
-  var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {
+  var options2 = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {
     clone: true
   };
-  var output = options.clone ? _extends({}, target) : target;
+  var output = options2.clone ? _extends({}, target) : target;
   if (isPlainObject(target) && isPlainObject(source)) {
     Object.keys(source).forEach(function(key) {
       if (key === "__proto__") {
         return;
       }
       if (isPlainObject(source[key]) && key in target) {
-        output[key] = deepmerge(target[key], source[key], options);
+        output[key] = deepmerge(target[key], source[key], options2);
       } else {
         output[key] = source[key];
       }
@@ -10272,8 +10272,8 @@ var nested_default = hasSymbol ? Symbol.for("mui.nested") : "__THEME_NESTED__";
 // node_modules/@material-ui/styles/esm/createGenerateClassName/createGenerateClassName.js
 var pseudoClasses = ["checked", "disabled", "error", "focused", "focusVisible", "required", "expanded", "selected"];
 function createGenerateClassName() {
-  var options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-  var _options$disableGloba = options.disableGlobal, disableGlobal = _options$disableGloba === void 0 ? false : _options$disableGloba, _options$productionPr = options.productionPrefix, productionPrefix = _options$productionPr === void 0 ? "jss" : _options$productionPr, _options$seed = options.seed, seed = _options$seed === void 0 ? "" : _options$seed;
+  var options2 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+  var _options$disableGloba = options2.disableGlobal, disableGlobal = _options$disableGloba === void 0 ? false : _options$disableGloba, _options$productionPr = options2.productionPrefix, productionPrefix = _options$productionPr === void 0 ? "jss" : _options$productionPr, _options$seed = options2.seed, seed = _options$seed === void 0 ? "" : _options$seed;
   var seedPrefix = seed === "" ? "" : "".concat(seed, "-");
   var ruleCounter = 0;
   var getNextCounterId = function getNextCounterId2() {
@@ -10391,13 +10391,13 @@ function cloneStyle(style3) {
   }
   return newStyle;
 }
-function createRule(name, decl, options) {
+function createRule(name, decl, options2) {
   if (name === void 0) {
     name = "unnamed";
   }
-  var jss2 = options.jss;
+  var jss2 = options2.jss;
   var declCopy = cloneStyle(decl);
-  var rule = jss2.plugins.onCreateRule(name, declCopy, options);
+  var rule = jss2.plugins.onCreateRule(name, declCopy, options2);
   if (rule)
     return rule;
   if (name[0] === "@") {
@@ -10438,8 +10438,8 @@ var toCssValue = function toCssValue2(value, ignoreImportant) {
   }
   return cssValue;
 };
-function getWhitespaceSymbols(options) {
-  if (options && options.format === false) {
+function getWhitespaceSymbols(options2) {
+  if (options2 && options2.format === false) {
     return {
       linebreak: "",
       space: ""
@@ -10457,19 +10457,19 @@ function indentStr(str, indent) {
   }
   return result + str;
 }
-function toCss(selector, style3, options) {
-  if (options === void 0) {
-    options = {};
+function toCss(selector, style3, options2) {
+  if (options2 === void 0) {
+    options2 = {};
   }
   var result = "";
   if (!style3)
     return result;
-  var _options = options, _options$indent = _options.indent, indent = _options$indent === void 0 ? 0 : _options$indent;
+  var _options = options2, _options$indent = _options.indent, indent = _options$indent === void 0 ? 0 : _options$indent;
   var fallbacks = style3.fallbacks;
-  if (options.format === false) {
+  if (options2.format === false) {
     indent = -Infinity;
   }
-  var _getWhitespaceSymbols = getWhitespaceSymbols(options), linebreak = _getWhitespaceSymbols.linebreak, space2 = _getWhitespaceSymbols.space;
+  var _getWhitespaceSymbols = getWhitespaceSymbols(options2), linebreak = _getWhitespaceSymbols.linebreak, space2 = _getWhitespaceSymbols.space;
   if (selector)
     indent++;
   if (fallbacks) {
@@ -10504,7 +10504,7 @@ function toCss(selector, style3, options) {
       result += indentStr(_prop2 + ":" + space2 + toCssValue(_value2) + ";", indent);
     }
   }
-  if (!result && !options.allowEmpty)
+  if (!result && !options2.allowEmpty)
     return result;
   if (!selector)
     return result;
@@ -10519,12 +10519,12 @@ var escape = function(str) {
   return nativeEscape ? nativeEscape(str) : str.replace(escapeRegex, "\\$1");
 };
 var BaseStyleRule = /* @__PURE__ */ function() {
-  function BaseStyleRule2(key, style3, options) {
+  function BaseStyleRule2(key, style3, options2) {
     this.type = "style";
     this.isProcessed = false;
-    var sheet = options.sheet, Renderer = options.Renderer;
+    var sheet = options2.sheet, Renderer = options2.Renderer;
     this.key = key;
-    this.options = options;
+    this.options = options2;
     this.style = style3;
     if (sheet)
       this.renderer = sheet.renderer;
@@ -10532,14 +10532,14 @@ var BaseStyleRule = /* @__PURE__ */ function() {
       this.renderer = new Renderer();
   }
   var _proto = BaseStyleRule2.prototype;
-  _proto.prop = function prop2(name, value, options) {
+  _proto.prop = function prop2(name, value, options2) {
     if (value === void 0)
       return this.style[name];
-    var force = options ? options.force : false;
+    var force = options2 ? options2.force : false;
     if (!force && this.style[name] === value)
       return this;
     var newValue = value;
-    if (!options || options.process !== false) {
+    if (!options2 || options2.process !== false) {
       newValue = this.options.jss.plugins.onChangeValue(value, name, this);
     }
     var isEmpty3 = newValue == null || newValue === false;
@@ -10568,10 +10568,10 @@ var BaseStyleRule = /* @__PURE__ */ function() {
 }();
 var StyleRule = /* @__PURE__ */ function(_BaseStyleRule) {
   _inheritsLoose(StyleRule2, _BaseStyleRule);
-  function StyleRule2(key, style3, options) {
+  function StyleRule2(key, style3, options2) {
     var _this;
-    _this = _BaseStyleRule.call(this, key, style3, options) || this;
-    var selector = options.selector, scoped = options.scoped, sheet = options.sheet, generateId = options.generateId;
+    _this = _BaseStyleRule.call(this, key, style3, options2) || this;
+    var selector = options2.selector, scoped = options2.scoped, sheet = options2.sheet, generateId = options2.generateId;
     if (selector) {
       _this.selectorText = selector;
     } else if (scoped !== false) {
@@ -10602,12 +10602,12 @@ var StyleRule = /* @__PURE__ */ function(_BaseStyleRule) {
     }
     return json;
   };
-  _proto2.toString = function toString2(options) {
+  _proto2.toString = function toString2(options2) {
     var sheet = this.options.sheet;
     var link = sheet ? sheet.options.link : false;
-    var opts = link ? _extends({}, options, {
+    var opts = link ? _extends({}, options2, {
       allowEmpty: true
-    }) : options;
+    }) : options2;
     return toCss(this.selectorText, this.style, opts);
   };
   _createClass(StyleRule2, [{
@@ -10631,11 +10631,11 @@ var StyleRule = /* @__PURE__ */ function(_BaseStyleRule) {
   return StyleRule2;
 }(BaseStyleRule);
 var pluginStyleRule = {
-  onCreateRule: function onCreateRule(key, style3, options) {
-    if (key[0] === "@" || options.parent && options.parent.type === "keyframes") {
+  onCreateRule: function onCreateRule(key, style3, options2) {
+    if (key[0] === "@" || options2.parent && options2.parent.type === "keyframes") {
       return null;
     }
-    return new StyleRule(key, style3, options);
+    return new StyleRule(key, style3, options2);
   }
 };
 var defaultToStringOptions = {
@@ -10644,15 +10644,15 @@ var defaultToStringOptions = {
 };
 var atRegExp = /@([\w-]+)/;
 var ConditionalRule = /* @__PURE__ */ function() {
-  function ConditionalRule2(key, styles160, options) {
+  function ConditionalRule2(key, styles160, options2) {
     this.type = "conditional";
     this.isProcessed = false;
     this.key = key;
     var atMatch = key.match(atRegExp);
     this.at = atMatch ? atMatch[1] : "unknown";
-    this.query = options.name || "@" + this.at;
-    this.options = options;
-    this.rules = new RuleList(_extends({}, options, {
+    this.query = options2.name || "@" + this.at;
+    this.options = options2;
+    this.rules = new RuleList(_extends({}, options2, {
       parent: this
     }));
     for (var name in styles160) {
@@ -10667,34 +10667,34 @@ var ConditionalRule = /* @__PURE__ */ function() {
   _proto.indexOf = function indexOf(rule) {
     return this.rules.indexOf(rule);
   };
-  _proto.addRule = function addRule(name, style3, options) {
-    var rule = this.rules.add(name, style3, options);
+  _proto.addRule = function addRule(name, style3, options2) {
+    var rule = this.rules.add(name, style3, options2);
     if (!rule)
       return null;
     this.options.jss.plugins.onProcessRule(rule);
     return rule;
   };
-  _proto.toString = function toString2(options) {
-    if (options === void 0) {
-      options = defaultToStringOptions;
+  _proto.toString = function toString2(options2) {
+    if (options2 === void 0) {
+      options2 = defaultToStringOptions;
     }
-    var _getWhitespaceSymbols = getWhitespaceSymbols(options), linebreak = _getWhitespaceSymbols.linebreak;
-    if (options.indent == null)
-      options.indent = defaultToStringOptions.indent;
-    if (options.children == null)
-      options.children = defaultToStringOptions.children;
-    if (options.children === false) {
+    var _getWhitespaceSymbols = getWhitespaceSymbols(options2), linebreak = _getWhitespaceSymbols.linebreak;
+    if (options2.indent == null)
+      options2.indent = defaultToStringOptions.indent;
+    if (options2.children == null)
+      options2.children = defaultToStringOptions.children;
+    if (options2.children === false) {
       return this.query + " {}";
     }
-    var children2 = this.rules.toString(options);
+    var children2 = this.rules.toString(options2);
     return children2 ? this.query + " {" + linebreak + children2 + linebreak + "}" : "";
   };
   return ConditionalRule2;
 }();
 var keyRegExp = /@media|@supports\s+/;
 var pluginConditionalRule = {
-  onCreateRule: function onCreateRule2(key, styles160, options) {
-    return keyRegExp.test(key) ? new ConditionalRule(key, styles160, options) : null;
+  onCreateRule: function onCreateRule2(key, styles160, options2) {
+    return keyRegExp.test(key) ? new ConditionalRule(key, styles160, options2) : null;
   }
 };
 var defaultToStringOptions$1 = {
@@ -10703,7 +10703,7 @@ var defaultToStringOptions$1 = {
 };
 var nameRegExp = /@keyframes\s+([\w-]+)/;
 var KeyframesRule = /* @__PURE__ */ function() {
-  function KeyframesRule2(key, frames, options) {
+  function KeyframesRule2(key, frames, options2) {
     this.type = "keyframes";
     this.at = "@keyframes";
     this.isProcessed = false;
@@ -10715,33 +10715,33 @@ var KeyframesRule = /* @__PURE__ */ function() {
       true ? tiny_warning_esm_default(false, "[JSS] Bad keyframes name " + key) : void 0;
     }
     this.key = this.type + "-" + this.name;
-    this.options = options;
-    var scoped = options.scoped, sheet = options.sheet, generateId = options.generateId;
+    this.options = options2;
+    var scoped = options2.scoped, sheet = options2.sheet, generateId = options2.generateId;
     this.id = scoped === false ? this.name : escape(generateId(this, sheet));
-    this.rules = new RuleList(_extends({}, options, {
+    this.rules = new RuleList(_extends({}, options2, {
       parent: this
     }));
     for (var name in frames) {
-      this.rules.add(name, frames[name], _extends({}, options, {
+      this.rules.add(name, frames[name], _extends({}, options2, {
         parent: this
       }));
     }
     this.rules.process();
   }
   var _proto = KeyframesRule2.prototype;
-  _proto.toString = function toString2(options) {
-    if (options === void 0) {
-      options = defaultToStringOptions$1;
+  _proto.toString = function toString2(options2) {
+    if (options2 === void 0) {
+      options2 = defaultToStringOptions$1;
     }
-    var _getWhitespaceSymbols = getWhitespaceSymbols(options), linebreak = _getWhitespaceSymbols.linebreak;
-    if (options.indent == null)
-      options.indent = defaultToStringOptions$1.indent;
-    if (options.children == null)
-      options.children = defaultToStringOptions$1.children;
-    if (options.children === false) {
+    var _getWhitespaceSymbols = getWhitespaceSymbols(options2), linebreak = _getWhitespaceSymbols.linebreak;
+    if (options2.indent == null)
+      options2.indent = defaultToStringOptions$1.indent;
+    if (options2.children == null)
+      options2.children = defaultToStringOptions$1.children;
+    if (options2.children === false) {
       return this.at + " " + this.id + " {}";
     }
-    var children2 = this.rules.toString(options);
+    var children2 = this.rules.toString(options2);
     if (children2)
       children2 = "" + linebreak + children2 + linebreak;
     return this.at + " " + this.id + " {" + children2 + "}";
@@ -10770,8 +10770,8 @@ var replaceRef = function replaceRef2(style3, prop2, keyframes2) {
   }
 };
 var pluginKeyframesRule = {
-  onCreateRule: function onCreateRule3(key, frames, options) {
-    return typeof key === "string" && keyRegExp$1.test(key) ? new KeyframesRule(key, frames, options) : null;
+  onCreateRule: function onCreateRule3(key, frames, options2) {
+    return typeof key === "string" && keyRegExp$1.test(key) ? new KeyframesRule(key, frames, options2) : null;
   },
   onProcessStyle: function onProcessStyle(style3, rule, sheet) {
     if (rule.type !== "style" || !sheet)
@@ -10803,36 +10803,36 @@ var KeyframeRule = /* @__PURE__ */ function(_BaseStyleRule) {
     return _BaseStyleRule.apply(this, arguments) || this;
   }
   var _proto = KeyframeRule2.prototype;
-  _proto.toString = function toString2(options) {
+  _proto.toString = function toString2(options2) {
     var sheet = this.options.sheet;
     var link = sheet ? sheet.options.link : false;
-    var opts = link ? _extends({}, options, {
+    var opts = link ? _extends({}, options2, {
       allowEmpty: true
-    }) : options;
+    }) : options2;
     return toCss(this.key, this.style, opts);
   };
   return KeyframeRule2;
 }(BaseStyleRule);
 var pluginKeyframeRule = {
-  onCreateRule: function onCreateRule4(key, style3, options) {
-    if (options.parent && options.parent.type === "keyframes") {
-      return new KeyframeRule(key, style3, options);
+  onCreateRule: function onCreateRule4(key, style3, options2) {
+    if (options2.parent && options2.parent.type === "keyframes") {
+      return new KeyframeRule(key, style3, options2);
     }
     return null;
   }
 };
 var FontFaceRule = /* @__PURE__ */ function() {
-  function FontFaceRule2(key, style3, options) {
+  function FontFaceRule2(key, style3, options2) {
     this.type = "font-face";
     this.at = "@font-face";
     this.isProcessed = false;
     this.key = key;
     this.style = style3;
-    this.options = options;
+    this.options = options2;
   }
   var _proto = FontFaceRule2.prototype;
-  _proto.toString = function toString2(options) {
-    var _getWhitespaceSymbols = getWhitespaceSymbols(options), linebreak = _getWhitespaceSymbols.linebreak;
+  _proto.toString = function toString2(options2) {
+    var _getWhitespaceSymbols = getWhitespaceSymbols(options2), linebreak = _getWhitespaceSymbols.linebreak;
     if (Array.isArray(this.style)) {
       var str = "";
       for (var index4 = 0; index4 < this.style.length; index4++) {
@@ -10842,46 +10842,46 @@ var FontFaceRule = /* @__PURE__ */ function() {
       }
       return str;
     }
-    return toCss(this.at, this.style, options);
+    return toCss(this.at, this.style, options2);
   };
   return FontFaceRule2;
 }();
 var keyRegExp$2 = /@font-face/;
 var pluginFontFaceRule = {
-  onCreateRule: function onCreateRule5(key, style3, options) {
-    return keyRegExp$2.test(key) ? new FontFaceRule(key, style3, options) : null;
+  onCreateRule: function onCreateRule5(key, style3, options2) {
+    return keyRegExp$2.test(key) ? new FontFaceRule(key, style3, options2) : null;
   }
 };
 var ViewportRule = /* @__PURE__ */ function() {
-  function ViewportRule2(key, style3, options) {
+  function ViewportRule2(key, style3, options2) {
     this.type = "viewport";
     this.at = "@viewport";
     this.isProcessed = false;
     this.key = key;
     this.style = style3;
-    this.options = options;
+    this.options = options2;
   }
   var _proto = ViewportRule2.prototype;
-  _proto.toString = function toString2(options) {
-    return toCss(this.key, this.style, options);
+  _proto.toString = function toString2(options2) {
+    return toCss(this.key, this.style, options2);
   };
   return ViewportRule2;
 }();
 var pluginViewportRule = {
-  onCreateRule: function onCreateRule6(key, style3, options) {
-    return key === "@viewport" || key === "@-ms-viewport" ? new ViewportRule(key, style3, options) : null;
+  onCreateRule: function onCreateRule6(key, style3, options2) {
+    return key === "@viewport" || key === "@-ms-viewport" ? new ViewportRule(key, style3, options2) : null;
   }
 };
 var SimpleRule = /* @__PURE__ */ function() {
-  function SimpleRule2(key, value, options) {
+  function SimpleRule2(key, value, options2) {
     this.type = "simple";
     this.isProcessed = false;
     this.key = key;
     this.value = value;
-    this.options = options;
+    this.options = options2;
   }
   var _proto = SimpleRule2.prototype;
-  _proto.toString = function toString2(options) {
+  _proto.toString = function toString2(options2) {
     if (Array.isArray(this.value)) {
       var str = "";
       for (var index4 = 0; index4 < this.value.length; index4++) {
@@ -10901,8 +10901,8 @@ var keysMap = {
   "@namespace": true
 };
 var pluginSimpleRule = {
-  onCreateRule: function onCreateRule7(key, value, options) {
-    return key in keysMap ? new SimpleRule(key, value, options) : null;
+  onCreateRule: function onCreateRule7(key, value, options2) {
+    return key in keysMap ? new SimpleRule(key, value, options2) : null;
   }
 };
 var plugins = [pluginStyleRule, pluginConditionalRule, pluginKeyframesRule, pluginKeyframeRule, pluginFontFaceRule, pluginViewportRule, pluginSimpleRule];
@@ -10914,19 +10914,19 @@ var forceUpdateOptions = {
   process: true
 };
 var RuleList = /* @__PURE__ */ function() {
-  function RuleList2(options) {
+  function RuleList2(options2) {
     this.map = {};
     this.raw = {};
     this.index = [];
     this.counter = 0;
-    this.options = options;
-    this.classes = options.classes;
-    this.keyframes = options.keyframes;
+    this.options = options2;
+    this.classes = options2.classes;
+    this.keyframes = options2.keyframes;
   }
   var _proto = RuleList2.prototype;
   _proto.add = function add3(name, decl, ruleOptions) {
     var _this$options = this.options, parent = _this$options.parent, sheet = _this$options.sheet, jss2 = _this$options.jss, Renderer = _this$options.Renderer, generateId = _this$options.generateId, scoped = _this$options.scoped;
-    var options = _extends({
+    var options2 = _extends({
       classes: this.classes,
       parent,
       sheet,
@@ -10944,13 +10944,13 @@ var RuleList = /* @__PURE__ */ function() {
     }
     this.raw[key] = decl;
     if (key in this.classes) {
-      options.selector = "." + escape(this.classes[key]);
+      options2.selector = "." + escape(this.classes[key]);
     }
-    var rule = createRule(key, decl, options);
+    var rule = createRule(key, decl, options2);
     if (!rule)
       return null;
     this.register(rule);
-    var index4 = options.index === void 0 ? this.index.length : options.index;
+    var index4 = options2.index === void 0 ? this.index.length : options2.index;
     this.index.splice(index4, 0, rule);
     return rule;
   };
@@ -10991,36 +10991,36 @@ var RuleList = /* @__PURE__ */ function() {
   _proto.update = function update4() {
     var name;
     var data;
-    var options;
+    var options2;
     if (typeof (arguments.length <= 0 ? void 0 : arguments[0]) === "string") {
       name = arguments.length <= 0 ? void 0 : arguments[0];
       data = arguments.length <= 1 ? void 0 : arguments[1];
-      options = arguments.length <= 2 ? void 0 : arguments[2];
+      options2 = arguments.length <= 2 ? void 0 : arguments[2];
     } else {
       data = arguments.length <= 0 ? void 0 : arguments[0];
-      options = arguments.length <= 1 ? void 0 : arguments[1];
+      options2 = arguments.length <= 1 ? void 0 : arguments[1];
       name = null;
     }
     if (name) {
-      this.updateOne(this.map[name], data, options);
+      this.updateOne(this.map[name], data, options2);
     } else {
       for (var index4 = 0; index4 < this.index.length; index4++) {
-        this.updateOne(this.index[index4], data, options);
+        this.updateOne(this.index[index4], data, options2);
       }
     }
   };
-  _proto.updateOne = function updateOne(rule, data, options) {
-    if (options === void 0) {
-      options = defaultUpdateOptions;
+  _proto.updateOne = function updateOne(rule, data, options2) {
+    if (options2 === void 0) {
+      options2 = defaultUpdateOptions;
     }
     var _this$options2 = this.options, plugins3 = _this$options2.jss.plugins, sheet = _this$options2.sheet;
     if (rule.rules instanceof RuleList2) {
-      rule.rules.update(data, options);
+      rule.rules.update(data, options2);
       return;
     }
     var style3 = rule.style;
-    plugins3.onUpdate(data, rule, sheet, options);
-    if (options.process && style3 && style3 !== rule.style) {
+    plugins3.onUpdate(data, rule, sheet, options2);
+    if (options2.process && style3 && style3 !== rule.style) {
       plugins3.onProcessStyle(rule.style, rule, sheet);
       for (var prop2 in rule.style) {
         var nextValue = rule.style[prop2];
@@ -11038,14 +11038,14 @@ var RuleList = /* @__PURE__ */ function() {
       }
     }
   };
-  _proto.toString = function toString2(options) {
+  _proto.toString = function toString2(options2) {
     var str = "";
     var sheet = this.options.sheet;
     var link = sheet ? sheet.options.link : false;
-    var _getWhitespaceSymbols = getWhitespaceSymbols(options), linebreak = _getWhitespaceSymbols.linebreak;
+    var _getWhitespaceSymbols = getWhitespaceSymbols(options2), linebreak = _getWhitespaceSymbols.linebreak;
     for (var index4 = 0; index4 < this.index.length; index4++) {
       var rule = this.index[index4];
-      var css3 = rule.toString(options);
+      var css3 = rule.toString(options2);
       if (!css3 && !link)
         continue;
       if (str)
@@ -11057,19 +11057,19 @@ var RuleList = /* @__PURE__ */ function() {
   return RuleList2;
 }();
 var StyleSheet = /* @__PURE__ */ function() {
-  function StyleSheet2(styles160, options) {
+  function StyleSheet2(styles160, options2) {
     this.attached = false;
     this.deployed = false;
     this.classes = {};
     this.keyframes = {};
-    this.options = _extends({}, options, {
+    this.options = _extends({}, options2, {
       sheet: this,
       parent: this,
       classes: this.classes,
       keyframes: this.keyframes
     });
-    if (options.Renderer) {
-      this.renderer = new options.Renderer(this);
+    if (options2.Renderer) {
+      this.renderer = new options2.Renderer(this);
     }
     this.rules = new RuleList(this.options);
     for (var name in styles160) {
@@ -11096,11 +11096,11 @@ var StyleSheet = /* @__PURE__ */ function() {
     this.attached = false;
     return this;
   };
-  _proto.addRule = function addRule(name, decl, options) {
+  _proto.addRule = function addRule(name, decl, options2) {
     var queue = this.queue;
     if (this.attached && !queue)
       this.queue = [];
-    var rule = this.rules.add(name, decl, options);
+    var rule = this.rules.add(name, decl, options2);
     if (!rule)
       return null;
     this.options.jss.plugins.onProcessRule(rule);
@@ -11126,10 +11126,10 @@ var StyleSheet = /* @__PURE__ */ function() {
       this.renderer.insertRule(rule);
     }
   };
-  _proto.addRules = function addRules(styles160, options) {
+  _proto.addRules = function addRules(styles160, options2) {
     var added = [];
     for (var name in styles160) {
-      var rule = this.addRule(name, styles160[name], options);
+      var rule = this.addRule(name, styles160[name], options2);
       if (rule)
         added.push(rule);
     }
@@ -11163,12 +11163,12 @@ var StyleSheet = /* @__PURE__ */ function() {
     (_this$rules = this.rules).update.apply(_this$rules, arguments);
     return this;
   };
-  _proto.updateOne = function updateOne(rule, data, options) {
-    this.rules.updateOne(rule, data, options);
+  _proto.updateOne = function updateOne(rule, data, options2) {
+    this.rules.updateOne(rule, data, options2);
     return this;
   };
-  _proto.toString = function toString2(options) {
-    return this.rules.toString(options);
+  _proto.toString = function toString2(options2) {
+    return this.rules.toString(options2);
   };
   return StyleSheet2;
 }();
@@ -11181,9 +11181,9 @@ var PluginsRegistry = /* @__PURE__ */ function() {
     this.registry = {};
   }
   var _proto = PluginsRegistry2.prototype;
-  _proto.onCreateRule = function onCreateRule8(name, decl, options) {
+  _proto.onCreateRule = function onCreateRule8(name, decl, options2) {
     for (var i2 = 0; i2 < this.registry.onCreateRule.length; i2++) {
-      var rule = this.registry.onCreateRule[i2](name, decl, options);
+      var rule = this.registry.onCreateRule[i2](name, decl, options2);
       if (rule)
         return rule;
     }
@@ -11210,9 +11210,9 @@ var PluginsRegistry = /* @__PURE__ */ function() {
       this.registry.onProcessSheet[i2](sheet);
     }
   };
-  _proto.onUpdate = function onUpdate2(data, rule, sheet, options) {
+  _proto.onUpdate = function onUpdate2(data, rule, sheet, options2) {
     for (var i2 = 0; i2 < this.registry.onUpdate.length; i2++) {
-      this.registry.onUpdate[i2](data, rule, sheet, options);
+      this.registry.onUpdate[i2](data, rule, sheet, options2);
     }
   };
   _proto.onChangeValue = function onChangeValue2(value, prop2, rule) {
@@ -11222,13 +11222,13 @@ var PluginsRegistry = /* @__PURE__ */ function() {
     }
     return processedValue;
   };
-  _proto.use = function use(newPlugin, options) {
-    if (options === void 0) {
-      options = {
+  _proto.use = function use(newPlugin, options2) {
+    if (options2 === void 0) {
+      options2 = {
         queue: "external"
       };
     }
-    var plugins3 = this.plugins[options.queue];
+    var plugins3 = this.plugins[options2.queue];
     if (plugins3.indexOf(newPlugin) !== -1) {
       return;
     }
@@ -11282,8 +11282,8 @@ var SheetsRegistry = /* @__PURE__ */ function() {
     this.registry.splice(index4, 1);
   };
   _proto.toString = function toString2(_temp) {
-    var _ref5 = _temp === void 0 ? {} : _temp, attached = _ref5.attached, options = _objectWithoutPropertiesLoose(_ref5, ["attached"]);
-    var _getWhitespaceSymbols = getWhitespaceSymbols(options), linebreak = _getWhitespaceSymbols.linebreak;
+    var _ref5 = _temp === void 0 ? {} : _temp, attached = _ref5.attached, options2 = _objectWithoutPropertiesLoose(_ref5, ["attached"]);
+    var _getWhitespaceSymbols = getWhitespaceSymbols(options2), linebreak = _getWhitespaceSymbols.linebreak;
     var css3 = "";
     for (var i2 = 0; i2 < this.registry.length; i2++) {
       var sheet = this.registry[i2];
@@ -11292,7 +11292,7 @@ var SheetsRegistry = /* @__PURE__ */ function() {
       }
       if (css3)
         css3 += linebreak;
-      css3 += sheet.toString(options);
+      css3 += sheet.toString(options2);
     }
     return css3;
   };
@@ -11311,9 +11311,9 @@ if (globalThis$1[ns] == null)
   globalThis$1[ns] = 0;
 var moduleId = globalThis$1[ns]++;
 var maxRules = 1e10;
-var createGenerateId = function createGenerateId2(options) {
-  if (options === void 0) {
-    options = {};
+var createGenerateId = function createGenerateId2(options2) {
+  if (options2 === void 0) {
+    options2 = {};
   }
   var ruleCounter = 0;
   var generateId = function generateId2(rule, sheet) {
@@ -11331,7 +11331,7 @@ var createGenerateId = function createGenerateId2(options) {
         jssId = String(sheet.options.jss.id);
       }
     }
-    if (options.minify) {
+    if (options2.minify) {
       return "" + (prefix4 || "c") + moduleId + jssId + ruleCounter;
     }
     return prefix4 + rule.key + "-" + moduleId + (jssId ? "-" + jssId : "") + "-" + ruleCounter;
@@ -11394,19 +11394,19 @@ var setSelector = function setSelector2(cssRule, selectorText) {
 var getHead = memoize(function() {
   return document.querySelector("head");
 });
-function findHigherSheet(registry, options) {
+function findHigherSheet(registry, options2) {
   for (var i2 = 0; i2 < registry.length; i2++) {
     var sheet = registry[i2];
-    if (sheet.attached && sheet.options.index > options.index && sheet.options.insertionPoint === options.insertionPoint) {
+    if (sheet.attached && sheet.options.index > options2.index && sheet.options.insertionPoint === options2.insertionPoint) {
       return sheet;
     }
   }
   return null;
 }
-function findHighestSheet(registry, options) {
+function findHighestSheet(registry, options2) {
   for (var i2 = registry.length - 1; i2 >= 0; i2--) {
     var sheet = registry[i2];
-    if (sheet.attached && sheet.options.insertionPoint === options.insertionPoint) {
+    if (sheet.attached && sheet.options.insertionPoint === options2.insertionPoint) {
       return sheet;
     }
   }
@@ -11422,17 +11422,17 @@ function findCommentNode(text) {
   }
   return null;
 }
-function findPrevNode(options) {
+function findPrevNode(options2) {
   var registry = sheets.registry;
   if (registry.length > 0) {
-    var sheet = findHigherSheet(registry, options);
+    var sheet = findHigherSheet(registry, options2);
     if (sheet && sheet.renderer) {
       return {
         parent: sheet.renderer.element.parentNode,
         node: sheet.renderer.element
       };
     }
-    sheet = findHighestSheet(registry, options);
+    sheet = findHighestSheet(registry, options2);
     if (sheet && sheet.renderer) {
       return {
         parent: sheet.renderer.element.parentNode,
@@ -11440,7 +11440,7 @@ function findPrevNode(options) {
       };
     }
   }
-  var insertionPoint = options.insertionPoint;
+  var insertionPoint = options2.insertionPoint;
   if (insertionPoint && typeof insertionPoint === "string") {
     var comment = findCommentNode(insertionPoint);
     if (comment) {
@@ -11453,9 +11453,9 @@ function findPrevNode(options) {
   }
   return false;
 }
-function insertStyle(style3, options) {
-  var insertionPoint = options.insertionPoint;
-  var nextNode = findPrevNode(options);
+function insertStyle(style3, options2) {
+  var insertionPoint = options2.insertionPoint;
+  var nextNode = findPrevNode(options2);
   if (nextNode !== false && nextNode.parent) {
     nextNode.parent.insertBefore(style3, nextNode.node);
     return;
@@ -11624,7 +11624,7 @@ var DomRenderer = /* @__PURE__ */ function() {
 }();
 var instanceCounter = 0;
 var Jss = /* @__PURE__ */ function() {
-  function Jss2(options) {
+  function Jss2(options2) {
     this.id = instanceCounter++;
     this.version = "10.8.0";
     this.plugins = new PluginsRegistry();
@@ -11644,42 +11644,42 @@ var Jss = /* @__PURE__ */ function() {
         queue: "internal"
       });
     }
-    this.setup(options);
+    this.setup(options2);
   }
   var _proto = Jss2.prototype;
-  _proto.setup = function setup(options) {
-    if (options === void 0) {
-      options = {};
+  _proto.setup = function setup(options2) {
+    if (options2 === void 0) {
+      options2 = {};
     }
-    if (options.createGenerateId) {
-      this.options.createGenerateId = options.createGenerateId;
+    if (options2.createGenerateId) {
+      this.options.createGenerateId = options2.createGenerateId;
     }
-    if (options.id) {
-      this.options.id = _extends({}, this.options.id, options.id);
+    if (options2.id) {
+      this.options.id = _extends({}, this.options.id, options2.id);
     }
-    if (options.createGenerateId || options.id) {
+    if (options2.createGenerateId || options2.id) {
       this.generateId = this.options.createGenerateId(this.options.id);
     }
-    if (options.insertionPoint != null)
-      this.options.insertionPoint = options.insertionPoint;
-    if ("Renderer" in options) {
-      this.options.Renderer = options.Renderer;
+    if (options2.insertionPoint != null)
+      this.options.insertionPoint = options2.insertionPoint;
+    if ("Renderer" in options2) {
+      this.options.Renderer = options2.Renderer;
     }
-    if (options.plugins)
-      this.use.apply(this, options.plugins);
+    if (options2.plugins)
+      this.use.apply(this, options2.plugins);
     return this;
   };
-  _proto.createStyleSheet = function createStyleSheet(styles160, options) {
-    if (options === void 0) {
-      options = {};
+  _proto.createStyleSheet = function createStyleSheet(styles160, options2) {
+    if (options2 === void 0) {
+      options2 = {};
     }
-    var _options = options, index4 = _options.index;
+    var _options = options2, index4 = _options.index;
     if (typeof index4 !== "number") {
       index4 = sheets.index === 0 ? 0 : sheets.index + 1;
     }
-    var sheet = new StyleSheet(styles160, _extends({}, options, {
+    var sheet = new StyleSheet(styles160, _extends({}, options2, {
       jss: this,
-      generateId: options.generateId || this.generateId,
+      generateId: options2.generateId || this.generateId,
       insertionPoint: this.options.insertionPoint,
       Renderer: this.options.Renderer,
       index: index4
@@ -11692,17 +11692,17 @@ var Jss = /* @__PURE__ */ function() {
     sheets.remove(sheet);
     return this;
   };
-  _proto.createRule = function createRule$1(name, style3, options) {
+  _proto.createRule = function createRule$1(name, style3, options2) {
     if (style3 === void 0) {
       style3 = {};
     }
-    if (options === void 0) {
-      options = {};
+    if (options2 === void 0) {
+      options2 = {};
     }
     if (typeof name === "object") {
       return this.createRule(void 0, name, style3);
     }
-    var ruleOptions = _extends({}, options, {
+    var ruleOptions = _extends({}, options2, {
       name,
       jss: this,
       Renderer: this.options.Renderer
@@ -11730,8 +11730,8 @@ var Jss = /* @__PURE__ */ function() {
   };
   return Jss2;
 }();
-var createJss = function createJss2(options) {
-  return new Jss(options);
+var createJss = function createJss2(options2) {
+  return new Jss(options2);
 };
 var hasCSSTOMSupport = typeof CSS === "object" && CSS != null && "number" in CSS;
 function getDynamicStyles(styles160) {
@@ -11762,10 +11762,10 @@ var fnValuesNs = "fnValues" + now;
 var fnRuleNs = "fnStyle" + ++now;
 var functionPlugin = function functionPlugin2() {
   return {
-    onCreateRule: function onCreateRule8(name, decl, options) {
+    onCreateRule: function onCreateRule8(name, decl, options2) {
       if (typeof decl !== "function")
         return null;
-      var rule = createRule(name, {}, options);
+      var rule = createRule(name, {}, options2);
       rule[fnRuleNs] = decl;
       return rule;
     },
@@ -11783,7 +11783,7 @@ var functionPlugin = function functionPlugin2() {
       rule[fnValuesNs] = fnValues;
       return style3;
     },
-    onUpdate: function onUpdate2(data, rule, sheet, options) {
+    onUpdate: function onUpdate2(data, rule, sheet, options2) {
       var styleRule = rule;
       var fnRule = styleRule[fnRuleNs];
       if (fnRule) {
@@ -11800,7 +11800,7 @@ var functionPlugin = function functionPlugin2() {
       var fnValues = styleRule[fnValuesNs];
       if (fnValues) {
         for (var _prop in fnValues) {
-          styleRule.prop(_prop, fnValues[_prop](data), options);
+          styleRule.prop(_prop, fnValues[_prop](data), options2);
         }
       }
     }
@@ -11812,13 +11812,13 @@ var jss_plugin_rule_value_function_esm_default = functionPlugin;
 var at = "@global";
 var atPrefix = "@global ";
 var GlobalContainerRule = /* @__PURE__ */ function() {
-  function GlobalContainerRule2(key, styles160, options) {
+  function GlobalContainerRule2(key, styles160, options2) {
     this.type = "global";
     this.at = at;
     this.isProcessed = false;
     this.key = key;
-    this.options = options;
-    this.rules = new RuleList(_extends({}, options, {
+    this.options = options2;
+    this.rules = new RuleList(_extends({}, options2, {
       parent: this
     }));
     for (var selector in styles160) {
@@ -11830,8 +11830,8 @@ var GlobalContainerRule = /* @__PURE__ */ function() {
   _proto.getRule = function getRule(name) {
     return this.rules.get(name);
   };
-  _proto.addRule = function addRule(name, style3, options) {
-    var rule = this.rules.add(name, style3, options);
+  _proto.addRule = function addRule(name, style3, options2) {
+    var rule = this.rules.add(name, style3, options2);
     if (rule)
       this.options.jss.plugins.onProcessRule(rule);
     return rule;
@@ -11845,20 +11845,20 @@ var GlobalContainerRule = /* @__PURE__ */ function() {
   return GlobalContainerRule2;
 }();
 var GlobalPrefixedRule = /* @__PURE__ */ function() {
-  function GlobalPrefixedRule2(key, style3, options) {
+  function GlobalPrefixedRule2(key, style3, options2) {
     this.type = "global";
     this.at = at;
     this.isProcessed = false;
     this.key = key;
-    this.options = options;
+    this.options = options2;
     var selector = key.substr(atPrefix.length);
-    this.rule = options.jss.createRule(selector, style3, _extends({}, options, {
+    this.rule = options2.jss.createRule(selector, style3, _extends({}, options2, {
       parent: this
     }));
   }
   var _proto2 = GlobalPrefixedRule2.prototype;
-  _proto2.toString = function toString2(options) {
-    return this.rule ? this.rule.toString(options) : "";
+  _proto2.toString = function toString2(options2) {
+    return this.rule ? this.rule.toString(options2) : "";
   };
   return GlobalPrefixedRule2;
 }();
@@ -11874,47 +11874,47 @@ function addScope(selector, scope) {
   return scoped;
 }
 function handleNestedGlobalContainerRule(rule, sheet) {
-  var options = rule.options, style3 = rule.style;
+  var options2 = rule.options, style3 = rule.style;
   var rules = style3 ? style3[at] : null;
   if (!rules)
     return;
   for (var name in rules) {
-    sheet.addRule(name, rules[name], _extends({}, options, {
+    sheet.addRule(name, rules[name], _extends({}, options2, {
       selector: addScope(name, rule.selector)
     }));
   }
   delete style3[at];
 }
 function handlePrefixedGlobalRule(rule, sheet) {
-  var options = rule.options, style3 = rule.style;
+  var options2 = rule.options, style3 = rule.style;
   for (var prop2 in style3) {
     if (prop2[0] !== "@" || prop2.substr(0, at.length) !== at)
       continue;
     var selector = addScope(prop2.substr(at.length), rule.selector);
-    sheet.addRule(selector, style3[prop2], _extends({}, options, {
+    sheet.addRule(selector, style3[prop2], _extends({}, options2, {
       selector
     }));
     delete style3[prop2];
   }
 }
 function jssGlobal() {
-  function onCreateRule8(name, styles160, options) {
+  function onCreateRule8(name, styles160, options2) {
     if (!name)
       return null;
     if (name === at) {
-      return new GlobalContainerRule(name, styles160, options);
+      return new GlobalContainerRule(name, styles160, options2);
     }
     if (name[0] === "@" && name.substr(0, atPrefix.length) === atPrefix) {
-      return new GlobalPrefixedRule(name, styles160, options);
+      return new GlobalPrefixedRule(name, styles160, options2);
     }
-    var parent = options.parent;
+    var parent = options2.parent;
     if (parent) {
       if (parent.type === "global" || parent.options.parent && parent.options.parent.type === "global") {
-        options.scoped = false;
+        options2.scoped = false;
       }
     }
-    if (options.scoped === false) {
-      options.selector = name;
+    if (options2.scoped === false) {
+      options2.selector = name;
     }
     return null;
   }
@@ -11968,36 +11968,36 @@ function jssNested() {
       });
     var nestingLevel = rule.options.nestingLevel;
     nestingLevel = nestingLevel === void 0 ? 1 : nestingLevel + 1;
-    var options = _extends({}, rule.options, {
+    var options2 = _extends({}, rule.options, {
       nestingLevel,
       index: container.indexOf(rule) + 1
     });
-    delete options.name;
-    return options;
+    delete options2.name;
+    return options2;
   }
   function onProcessStyle2(style3, rule, sheet) {
     if (rule.type !== "style")
       return style3;
     var styleRule = rule;
     var container = styleRule.options.parent;
-    var options;
+    var options2;
     var replaceRef3;
     for (var prop2 in style3) {
       var isNested = prop2.indexOf("&") !== -1;
       var isNestedConditional = prop2[0] === "@";
       if (!isNested && !isNestedConditional)
         continue;
-      options = getOptions2(styleRule, container, options);
+      options2 = getOptions2(styleRule, container, options2);
       if (isNested) {
         var selector = replaceParentRefs(prop2, styleRule.selector);
         if (!replaceRef3)
           replaceRef3 = getReplaceRef(container, sheet);
         selector = selector.replace(refRegExp2, replaceRef3);
-        container.addRule(selector, style3[prop2], _extends({}, options, {
+        container.addRule(selector, style3[prop2], _extends({}, options2, {
           selector
         }));
       } else if (isNestedConditional) {
-        container.addRule(prop2, {}, options).addRule(styleRule.key, style3[prop2], {
+        container.addRule(prop2, {}, options2).addRule(styleRule.key, style3[prop2], {
           selector: styleRule.selector
         });
       }
@@ -12217,25 +12217,25 @@ function addCamelCasedVersion(obj) {
   return newObj;
 }
 var units = addCamelCasedVersion(defaultUnits);
-function iterate(prop2, value, options) {
+function iterate(prop2, value, options2) {
   if (value == null)
     return value;
   if (Array.isArray(value)) {
     for (var i2 = 0; i2 < value.length; i2++) {
-      value[i2] = iterate(prop2, value[i2], options);
+      value[i2] = iterate(prop2, value[i2], options2);
     }
   } else if (typeof value === "object") {
     if (prop2 === "fallbacks") {
       for (var innerProp in value) {
-        value[innerProp] = iterate(innerProp, value[innerProp], options);
+        value[innerProp] = iterate(innerProp, value[innerProp], options2);
       }
     } else {
       for (var _innerProp in value) {
-        value[_innerProp] = iterate(prop2 + "-" + _innerProp, value[_innerProp], options);
+        value[_innerProp] = iterate(prop2 + "-" + _innerProp, value[_innerProp], options2);
       }
     }
   } else if (typeof value === "number" && isNaN(value) === false) {
-    var unit3 = options[prop2] || units[prop2];
+    var unit3 = options2[prop2] || units[prop2];
     if (unit3 && !(value === 0 && unit3 === px)) {
       return typeof unit3 === "function" ? unit3(value).toString() : "" + value + unit3;
     }
@@ -12243,11 +12243,11 @@ function iterate(prop2, value, options) {
   }
   return value;
 }
-function defaultUnit(options) {
-  if (options === void 0) {
-    options = {};
+function defaultUnit(options2) {
+  if (options2 === void 0) {
+    options2 = {};
   }
-  var camelCasedOptions = addCamelCasedVersion(options);
+  var camelCasedOptions = addCamelCasedVersion(options2);
   function onProcessStyle2(style3, rule) {
     if (rule.type !== "style")
       return style3;
@@ -12392,10 +12392,10 @@ var textOrientation = {
 };
 var transform = {
   noPrefill: ["transform"],
-  supportedProperty: function supportedProperty5(prop2, style3, options) {
+  supportedProperty: function supportedProperty5(prop2, style3, options2) {
     if (prop2 !== "transform")
       return false;
-    if (options.transform) {
+    if (options2.transform) {
       return prop2;
     }
     return prefix.css + prop2;
@@ -12403,10 +12403,10 @@ var transform = {
 };
 var transition = {
   noPrefill: ["transition"],
-  supportedProperty: function supportedProperty6(prop2, style3, options) {
+  supportedProperty: function supportedProperty6(prop2, style3, options2) {
     if (prop2 !== "transition")
       return false;
-    if (options.transition) {
+    if (options2.transition) {
       return prop2;
     }
     return prefix.css + prop2;
@@ -12575,9 +12575,9 @@ if (module_default) {
 }
 var computed;
 var key$1;
-function supportedProperty17(prop2, options) {
-  if (options === void 0) {
-    options = {};
+function supportedProperty17(prop2, options2) {
+  if (options2 === void 0) {
+    options2 = {};
   }
   if (!el)
     return prop2;
@@ -12585,10 +12585,10 @@ function supportedProperty17(prop2, options) {
     return cache2[prop2];
   }
   if (prop2 === "transition" || prop2 === "transform") {
-    options[prop2] = prop2 in el.style;
+    options2[prop2] = prop2 in el.style;
   }
   for (var i2 = 0; i2 < propertyDetectors.length; i2++) {
-    cache2[prop2] = propertyDetectors[i2](prop2, el.style, options);
+    cache2[prop2] = propertyDetectors[i2](prop2, el.style, options2);
     if (cache2[prop2])
       break;
   }
@@ -12746,8 +12746,8 @@ import React10 from "react";
 
 // node_modules/@material-ui/styles/esm/mergeClasses/mergeClasses.js
 function mergeClasses() {
-  var options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-  var baseClasses = options.baseClasses, newClasses = options.newClasses, Component7 = options.Component;
+  var options2 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+  var baseClasses = options2.baseClasses, newClasses = options2.newClasses, Component7 = options2.Component;
   if (!newClasses) {
     return baseClasses;
   }
@@ -12986,11 +12986,11 @@ function attach(_ref24, props) {
     };
     multiKeyStore_default.set(stylesOptions.sheetsManager, stylesCreator, theme, sheetManager);
   }
-  var options = _extends({}, stylesCreator.options, stylesOptions, {
+  var options2 = _extends({}, stylesCreator.options, stylesOptions, {
     theme,
     flip: typeof stylesOptions.flip === "boolean" ? stylesOptions.flip : theme.direction === "rtl"
   });
-  options.generateId = options.serverGenerateClassName || options.generateClassName;
+  options2.generateId = options2.serverGenerateClassName || options2.generateClassName;
   var sheetsRegistry = stylesOptions.sheetsRegistry;
   if (sheetManager.refs === 0) {
     var staticSheet;
@@ -13001,7 +13001,7 @@ function attach(_ref24, props) {
     if (!staticSheet) {
       staticSheet = stylesOptions.jss.createStyleSheet(styles160, _extends({
         link: false
-      }, options));
+      }, options2));
       staticSheet.attach();
       if (stylesOptions.sheetsCache) {
         multiKeyStore_default.set(stylesOptions.sheetsCache, stylesCreator, theme, staticSheet);
@@ -13016,7 +13016,7 @@ function attach(_ref24, props) {
   if (sheetManager.dynamicStyles) {
     var dynamicSheet = stylesOptions.jss.createStyleSheet(sheetManager.dynamicStyles, _extends({
       link: true
-    }, options));
+    }, options2));
     dynamicSheet.update(props);
     dynamicSheet.attach();
     state.dynamicSheet = dynamicSheet;
@@ -13079,8 +13079,8 @@ function useSynchronousEffect(func4, values6) {
   }, [currentKey]);
 }
 function makeStyles(stylesOrCreator) {
-  var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-  var name = options.name, classNamePrefixOption = options.classNamePrefix, Component7 = options.Component, _options$defaultTheme = options.defaultTheme, defaultTheme2 = _options$defaultTheme === void 0 ? noopTheme_default : _options$defaultTheme, stylesOptions2 = _objectWithoutProperties(options, ["name", "classNamePrefix", "Component", "defaultTheme"]);
+  var options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+  var name = options2.name, classNamePrefixOption = options2.classNamePrefix, Component7 = options2.Component, _options$defaultTheme = options2.defaultTheme, defaultTheme2 = _options$defaultTheme === void 0 ? noopTheme_default : _options$defaultTheme, stylesOptions2 = _objectWithoutProperties(options2, ["name", "classNamePrefix", "Component", "defaultTheme"]);
   var stylesCreator = getStylesCreator(stylesOrCreator);
   var classNamePrefix = name || classNamePrefixOption || "makeStyles";
   stylesCreator.options = {
@@ -13147,8 +13147,8 @@ function omit(input, fields) {
 }
 function styled(Component7) {
   var componentCreator = function componentCreator2(style3) {
-    var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    var name = options.name, stylesOptions = _objectWithoutProperties(options, ["name"]);
+    var options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+    var name = options2.name, stylesOptions = _objectWithoutProperties(options2, ["name"]);
     if (Component7 === void 0) {
       throw new Error(["You are calling styled(Component)(style) with an undefined component.", "You may have forgotten to import it."].join("\n"));
     }
@@ -13279,9 +13279,9 @@ var import_prop_types12 = __toModule(require_prop_types());
 var import_hoist_non_react_statics2 = __toModule(require_hoist_non_react_statics_cjs());
 import React13 from "react";
 var withStyles = function withStyles2(stylesOrCreator) {
-  var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+  var options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
   return function(Component7) {
-    var defaultTheme2 = options.defaultTheme, _options$withTheme = options.withTheme, withTheme2 = _options$withTheme === void 0 ? false : _options$withTheme, name = options.name, stylesOptions = _objectWithoutProperties(options, ["defaultTheme", "withTheme", "name"]);
+    var defaultTheme2 = options2.defaultTheme, _options$withTheme = options2.withTheme, withTheme2 = _options$withTheme === void 0 ? false : _options$withTheme, name = options2.name, stylesOptions = _objectWithoutProperties(options2, ["defaultTheme", "withTheme", "name"]);
     if (true) {
       if (Component7 === void 0) {
         throw new Error(["You are calling withStyles(styles)(Component) with an undefined component.", "You may have forgotten to import it."].join("\n"));
@@ -13340,7 +13340,7 @@ var withStyles = function withStyles2(stylesOrCreator) {
     (0, import_hoist_non_react_statics2.default)(WithStyles, Component7);
     if (true) {
       WithStyles.Naked = Component7;
-      WithStyles.options = options;
+      WithStyles.options = options2;
       WithStyles.useStyles = useStyles4;
     }
     return WithStyles;
@@ -14023,8 +14023,8 @@ function getPath(obj, path) {
     return acc && acc[item] ? acc[item] : null;
   }, obj);
 }
-function style(options) {
-  var prop2 = options.prop, _options$cssProperty = options.cssProperty, cssProperty = _options$cssProperty === void 0 ? options.prop : _options$cssProperty, themeKey = options.themeKey, transform4 = options.transform;
+function style(options2) {
+  var prop2 = options2.prop, _options$cssProperty = options2.cssProperty, cssProperty = _options$cssProperty === void 0 ? options2.prop : _options$cssProperty, themeKey = options2.themeKey, transform4 = options2.transform;
   var fn = function fn2(props) {
     if (props[prop2] == null) {
       return null;
@@ -14585,8 +14585,8 @@ var transitions_default = {
   duration,
   create: function create() {
     var props = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : ["all"];
-    var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    var _options$duration = options.duration, durationOption = _options$duration === void 0 ? duration.standard : _options$duration, _options$easing = options.easing, easingOption = _options$easing === void 0 ? easing.easeInOut : _options$easing, _options$delay = options.delay, delay = _options$delay === void 0 ? 0 : _options$delay, other = _objectWithoutProperties(options, ["duration", "easing", "delay"]);
+    var options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+    var _options$duration = options2.duration, durationOption = _options$duration === void 0 ? duration.standard : _options$duration, _options$easing = options2.easing, easingOption = _options$easing === void 0 ? easing.easeInOut : _options$easing, _options$delay = options2.delay, delay = _options$delay === void 0 ? 0 : _options$delay, other = _objectWithoutProperties(options2, ["duration", "easing", "delay"]);
     if (true) {
       var isString4 = function isString5(value) {
         return typeof value === "string";
@@ -14637,8 +14637,8 @@ var zIndex_default = zIndex2;
 
 // node_modules/@material-ui/core/esm/styles/createTheme.js
 function createTheme() {
-  var options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-  var _options$breakpoints = options.breakpoints, breakpointsInput = _options$breakpoints === void 0 ? {} : _options$breakpoints, _options$mixins = options.mixins, mixinsInput = _options$mixins === void 0 ? {} : _options$mixins, _options$palette = options.palette, paletteInput = _options$palette === void 0 ? {} : _options$palette, spacingInput = options.spacing, _options$typography = options.typography, typographyInput = _options$typography === void 0 ? {} : _options$typography, other = _objectWithoutProperties(options, ["breakpoints", "mixins", "palette", "spacing", "typography"]);
+  var options2 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+  var _options$breakpoints = options2.breakpoints, breakpointsInput = _options$breakpoints === void 0 ? {} : _options$breakpoints, _options$mixins = options2.mixins, mixinsInput = _options$mixins === void 0 ? {} : _options$mixins, _options$palette = options2.palette, paletteInput = _options$palette === void 0 ? {} : _options$palette, spacingInput = options2.spacing, _options$typography = options2.typography, typographyInput = _options$typography === void 0 ? {} : _options$typography, other = _objectWithoutProperties(options2, ["breakpoints", "mixins", "palette", "spacing", "typography"]);
   var palette5 = createPalette(paletteInput);
   var breakpoints3 = createBreakpoints(breakpointsInput);
   var spacing3 = createSpacing(spacingInput);
@@ -14704,10 +14704,10 @@ var defaultTheme = createTheme_default();
 var defaultTheme_default = defaultTheme;
 
 // node_modules/@material-ui/core/esm/styles/withStyles.js
-function withStyles3(stylesOrCreator, options) {
+function withStyles3(stylesOrCreator, options2) {
   return withStyles_default(stylesOrCreator, _extends({
     defaultTheme: defaultTheme_default
-  }, options));
+  }, options2));
 }
 var withStyles_default2 = withStyles3;
 
@@ -14732,10 +14732,10 @@ function deprecatedPropType(validator, reason) {
 var reflow = function reflow2(node4) {
   return node4.scrollTop;
 };
-function getTransitionProps(props, options) {
+function getTransitionProps(props, options2) {
   var timeout2 = props.timeout, _props$style = props.style, style3 = _props$style === void 0 ? {} : _props$style;
   return {
-    duration: style3.transitionDuration || typeof timeout2 === "number" ? timeout2 : timeout2[options.mode] || 0,
+    duration: style3.transitionDuration || typeof timeout2 === "number" ? timeout2 : timeout2[options2.mode] || 0,
     delay: style3.transitionDelay
   };
 }
@@ -15518,20 +15518,20 @@ function createStyles2(styles160) {
 
 // node_modules/@material-ui/core/esm/styles/makeStyles.js
 function makeStyles2(stylesOrCreator) {
-  var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+  var options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
   return makeStyles(stylesOrCreator, _extends({
     defaultTheme: defaultTheme_default
-  }, options));
+  }, options2));
 }
 var makeStyles_default = makeStyles2;
 
 // node_modules/@material-ui/core/esm/styles/styled.js
 var styled2 = function styled3(Component7) {
   var componentCreator = styled(Component7);
-  return function(style3, options) {
+  return function(style3, options2) {
     return componentCreator(style3, _extends({
       defaultTheme: defaultTheme_default
-    }, options));
+    }, options2));
   };
 };
 var styled_default = styled2;
@@ -16828,8 +16828,8 @@ var RcConfig = function() {
   function RcConfig2() {
     var _a4;
     this._WARNING_IGNORE = false;
-    this._WARNING_FUNCTION = function(message, options) {
-      console[(options === null || options === void 0 ? void 0 : options.level) || "warn"](message);
+    this._WARNING_FUNCTION = function(message, options2) {
+      console[(options2 === null || options2 === void 0 ? void 0 : options2.level) || "warn"](message);
     };
     this._WARNING_IGNORE = ((_a4 = window === null || window === void 0 ? void 0 : window.localStorage) === null || _a4 === void 0 ? void 0 : _a4.getItem(JUNO_WARNING_IGNORE_KEY)) === "true";
     window.__JUNO__ = this;
@@ -17559,7 +17559,7 @@ function useEventListener(target) {
   for (var _i = 1; _i < arguments.length; _i++) {
     o2[_i - 1] = arguments[_i];
   }
-  var _a4 = __read5(o2, 3), key = _a4[0], cb = _a4[1], options = _a4[2];
+  var _a4 = __read5(o2, 3), key = _a4[0], cb = _a4[1], options2 = _a4[2];
   var listener = useEventCallback2(cb);
   var cancelRef = useRef8(function() {
   });
@@ -17574,10 +17574,10 @@ function useEventListener(target) {
       return cancelRef.current;
     }
     bindRef.current = function() {
-      return elm.addEventListener(key, listener, options);
+      return elm.addEventListener(key, listener, options2);
     };
     cancelRef.current = function() {
-      return elm.removeEventListener(key, listener, options);
+      return elm.removeEventListener(key, listener, options2);
     };
     bindRef.current();
     return cancelRef.current;
@@ -17689,8 +17689,8 @@ var __assign4 = function() {
   };
   return __assign4.apply(this, arguments);
 };
-function moveIndexInTwoDimension(direction, options) {
-  var currIndex = options.currIndex, columns = options.columns, total = options.total, infinite = options.infinite;
+function moveIndexInTwoDimension(direction, options2) {
+  var currIndex = options2.currIndex, columns = options2.columns, total = options2.total, infinite = options2.infinite;
   var lastIndex = total - 1;
   var isInOrder = infinite === "order";
   var fillTotal = Math.ceil(total / columns) * columns;
@@ -17742,7 +17742,7 @@ function moveIndexInTwoDimension(direction, options) {
     if (direction === "ArrowRight") {
       resultIndex = fillTotal - 1;
     }
-    return moveIndexInTwoDimension(direction, __assign4(__assign4({}, options), { currIndex: resultIndex }));
+    return moveIndexInTwoDimension(direction, __assign4(__assign4({}, options2), { currIndex: resultIndex }));
   }
   return resultIndex;
 }
@@ -17750,8 +17750,8 @@ function moveIndexInTwoDimension(direction, options) {
 // node_modules/@ringcentral/juno/es6/foundation/hooks/useKeyboardMoveFocus/useKeyboardMoveFocus.js
 import { useCallback as useCallback7, useRef as useRef10 } from "react";
 var useKeyboardMoveFocus = function(_a4) {
-  var infinite = _a4.infinite, _b = _a4.options, options = _b === void 0 ? [] : _b, focusedIndexRef = _a4.focusedIndexRef, onFocusedIndexChange = _a4.onFocusedIndexChange, getOptionDisabled = _a4.getOptionDisabled, getOptionSearchText = _a4.getOptionSearchText, _c = _a4.columns, columns = _c === void 0 ? 1 : _c, _d = _a4.endSearchDebounceTime, endSearchDebounceTime = _d === void 0 ? 500 : _d;
-  var total = options.length;
+  var infinite = _a4.infinite, _b = _a4.options, options2 = _b === void 0 ? [] : _b, focusedIndexRef = _a4.focusedIndexRef, onFocusedIndexChange = _a4.onFocusedIndexChange, getOptionDisabled = _a4.getOptionDisabled, getOptionSearchText = _a4.getOptionSearchText, _c = _a4.columns, columns = _c === void 0 ? 1 : _c, _d = _a4.endSearchDebounceTime, endSearchDebounceTime = _d === void 0 ? 500 : _d;
+  var total = options2.length;
   var searchText = useRef10("");
   var debounceEndSearch = useDebounce(function() {
     return searchText.current = "";
@@ -17762,7 +17762,7 @@ var useKeyboardMoveFocus = function(_a4) {
       return;
     debounceEndSearch();
     searchText.current += key.toLowerCase();
-    var matchedIndex = options.findIndex(function(option) {
+    var matchedIndex = options2.findIndex(function(option) {
       var text = getOptionSearchText(option);
       return Boolean(!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(option)) && text && text.toLowerCase().startsWith(searchText.current));
     });
@@ -17787,7 +17787,7 @@ var useKeyboardMoveFocus = function(_a4) {
         searchTextAndFocus(event);
         break;
       }
-      if (!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(options[toIndex]))) {
+      if (!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(options2[toIndex]))) {
         if (toIndex !== focusedIndexRef.current) {
           onFocusedIndexChange(event, toIndex);
         }
@@ -17813,19 +17813,19 @@ var useKeyboardMoveFocus = function(_a4) {
       isInfinite = true;
     }
     for (var i2 = index4; i2 >= 0; i2--) {
-      if (!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(options[i2]))) {
+      if (!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(options2[i2]))) {
         return i2;
       }
     }
     if (isInfinite) {
       for (var i2 = total - 1; i2 > index4; i2--) {
-        if (!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(options[i2]))) {
+        if (!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(options2[i2]))) {
           return i2;
         }
       }
     }
     return -1;
-  }, [focusedIndexRef, getOptionDisabled, options, total]);
+  }, [focusedIndexRef, getOptionDisabled, options2, total]);
   var getNextFocusableOption = useCallback7(function(index4, isInfinite) {
     if (index4 === void 0) {
       index4 = focusedIndexRef.current;
@@ -17834,19 +17834,19 @@ var useKeyboardMoveFocus = function(_a4) {
       isInfinite = true;
     }
     for (var i2 = index4; i2 < total; i2++) {
-      if (!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(options[i2]))) {
+      if (!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(options2[i2]))) {
         return i2;
       }
     }
     if (isInfinite) {
       for (var i2 = 0; i2 < index4; i2++) {
-        if (!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(options[i2]))) {
+        if (!(getOptionDisabled === null || getOptionDisabled === void 0 ? void 0 : getOptionDisabled(options2[i2]))) {
           return i2;
         }
       }
     }
     return -1;
-  }, [focusedIndexRef, getOptionDisabled, options, total]);
+  }, [focusedIndexRef, getOptionDisabled, options2, total]);
   return {
     getPrevFocusableOption,
     getNextFocusableOption,
@@ -18335,13 +18335,13 @@ function getSelectionPosition(inputRef) {
     position: { start: currentPosition || 0, end: currentPositionEnd || 0 }
   };
 }
-function setSelectionPosition(inputRef, options) {
+function setSelectionPosition(inputRef, options2) {
   var elm = inputRef.current;
-  if (elm && options.start !== null && options.end !== null) {
-    if (options.scrollIntoView)
+  if (elm && options2.start !== null && options2.end !== null) {
+    if (options2.scrollIntoView)
       elm.blur();
-    elm.setSelectionRange(options.start, options.end, options.direction);
-    if (options.scrollIntoView)
+    elm.setSelectionRange(options2.start, options2.end, options2.direction);
+    if (options2.scrollIntoView)
       elm.focus();
   }
 }
@@ -18575,18 +18575,18 @@ var __spread6 = function() {
     ar = ar.concat(__read11(arguments[i2]));
   return ar;
 };
-var useRetry = function(cb, options) {
+var useRetry = function(cb, options2) {
   var _a4 = useSleep(), sleep = _a4.sleep, cancelSleep = _a4.cancel;
   var isCancelRef = useRef12(true);
   var complete = function() {
     var _a5;
     isCancelRef.current = true;
-    (_a5 = options === null || options === void 0 ? void 0 : options.onComplete) === null || _a5 === void 0 ? void 0 : _a5.call(options);
+    (_a5 = options2 === null || options2 === void 0 ? void 0 : options2.onComplete) === null || _a5 === void 0 ? void 0 : _a5.call(options2);
   };
   var cancel = function() {
     var _a5;
     if (!isCancelRef.current) {
-      (_a5 = options === null || options === void 0 ? void 0 : options.onCancel) === null || _a5 === void 0 ? void 0 : _a5.call(options);
+      (_a5 = options2 === null || options2 === void 0 ? void 0 : options2.onCancel) === null || _a5 === void 0 ? void 0 : _a5.call(options2);
       complete === null || complete === void 0 ? void 0 : complete();
     }
     cancelSleep();
@@ -18604,19 +18604,19 @@ var useRetry = function(cb, options) {
           case 0:
             cancel();
             isCancelRef.current = false;
-            (_a5 = options === null || options === void 0 ? void 0 : options.onStart) === null || _a5 === void 0 ? void 0 : _a5.call(options);
+            (_a5 = options2 === null || options2 === void 0 ? void 0 : options2.onStart) === null || _a5 === void 0 ? void 0 : _a5.call(options2);
             return [4, cb.apply(void 0, __spread6(args))];
           case 1:
             if (_c.sent()) {
               if (!isCancelRef.current) {
-                (_b = options === null || options === void 0 ? void 0 : options.onSuccess) === null || _b === void 0 ? void 0 : _b.call(options);
+                (_b = options2 === null || options2 === void 0 ? void 0 : options2.onSuccess) === null || _b === void 0 ? void 0 : _b.call(options2);
                 complete();
               }
               return [2];
             }
-            if (!options)
+            if (!options2)
               return [2];
-            retryTimes = options.retryTimes, intervalTime = options.intervalTime, onSuccess = options.onSuccess;
+            retryTimes = options2.retryTimes, intervalTime = options2.intervalTime, onSuccess = options2.onSuccess;
             i2 = 0;
             _c.label = 2;
           case 2:
@@ -18692,12 +18692,12 @@ var useOnlyOneFocusable = function(_a4) {
     moveFocusedId,
     focusIndex: focusIndexWithRetry,
     setIndexTabIndex,
-    getItemProps: function(index4, options) {
+    getItemProps: function(index4, options2) {
       var _a5;
       return combineProps((_a5 = {}, _a5[moveFocusedId] = index4, _a5.tabIndex = index4 === focusedIndexRef.current ? 0 : -1, _a5.onFocus = function() {
         focusedIndexRef.current = index4;
         setIndexTabIndex(index4);
-      }, _a5), options);
+      }, _a5), options2);
     }
   };
 };
@@ -20264,15 +20264,15 @@ var __assign8 = function() {
   };
   return __assign8.apply(this, arguments);
 };
-function createTheme2(options) {
-  if (options === void 0) {
-    options = {};
+function createTheme2(options2) {
+  if (options2 === void 0) {
+    options2 = {};
   }
-  var _a4 = options.palette, paletteInput = _a4 === void 0 ? {} : _a4, _b = options.typography, typographyInput = _b === void 0 ? {} : _b, _c = options.opacity, opacityInput = _c === void 0 ? {} : _c, _d = options.radius, radiusInput = _d === void 0 ? {} : _d, _e2 = options.zIndex, zIndexInput = _e2 === void 0 ? {} : _e2, _f = options.breakpoints, breakpointsInput = _f === void 0 ? {} : _f, _g = options.shape, shapeInput = _g === void 0 ? {} : _g, _h = options.shadows, shadowsInput = _h === void 0 ? [] : _h, _j = options.transitions, transitionsInput = _j === void 0 ? {} : _j;
+  var _a4 = options2.palette, paletteInput = _a4 === void 0 ? {} : _a4, _b = options2.typography, typographyInput = _b === void 0 ? {} : _b, _c = options2.opacity, opacityInput = _c === void 0 ? {} : _c, _d = options2.radius, radiusInput = _d === void 0 ? {} : _d, _e2 = options2.zIndex, zIndexInput = _e2 === void 0 ? {} : _e2, _f = options2.breakpoints, breakpointsInput = _f === void 0 ? {} : _f, _g = options2.shape, shapeInput = _g === void 0 ? {} : _g, _h = options2.shadows, shadowsInput = _h === void 0 ? [] : _h, _j = options2.transitions, transitionsInput = _j === void 0 ? {} : _j;
   var _breakpoints = Object.keys(breakpointsInput).length > 0 ? breakpointsInput : breakpoints_default;
   var _shadows = (shadowsInput === null || shadowsInput === void 0 ? void 0 : shadowsInput.length) > 0 ? shadowsInput : shadows_default3;
   var _palette = deepmerge2(paletteInput["type"] === "dark" ? palette_dark_default : palette_light_default, paletteInput);
-  var theme = __assign8(__assign8({}, options), { spacing: 4, palette: _palette, typography: deepmerge2(typography_default2, typographyInput), opacity: deepmerge2(opacity_default, opacityInput), radius: deepmerge2(radius_default, radiusInput), shadows: _shadows, transitions: deepmerge2(transition_default, transitionsInput), zIndex: deepmerge2(zIndex_default2, zIndexInput), breakpoints: _breakpoints, shape: deepmerge2(shape_default2, shapeInput) });
+  var theme = __assign8(__assign8({}, options2), { spacing: 4, palette: _palette, typography: deepmerge2(typography_default2, typographyInput), opacity: deepmerge2(opacity_default, opacityInput), radius: deepmerge2(radius_default, radiusInput), shadows: _shadows, transitions: deepmerge2(transition_default, transitionsInput), zIndex: deepmerge2(zIndex_default2, zIndexInput), breakpoints: _breakpoints, shape: deepmerge2(shape_default2, shapeInput) });
   return createMuiTheme(theme);
 }
 var createTheme_default2 = createTheme2;
@@ -22152,9 +22152,9 @@ var TouchRipple = /* @__PURE__ */ forwardRef8(function TouchRipple2(props, ref2)
   }, [classes]);
   var start3 = useCallback9(function() {
     var event = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-    var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+    var options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     var cb = arguments.length > 2 ? arguments[2] : void 0;
-    var _options$pulsate = options.pulsate, pulsate2 = _options$pulsate === void 0 ? false : _options$pulsate, _options$center = options.center, center = _options$center === void 0 ? centerProp || options.pulsate : _options$center, _options$fakeElement = options.fakeElement, fakeElement = _options$fakeElement === void 0 ? false : _options$fakeElement;
+    var _options$pulsate = options2.pulsate, pulsate2 = _options$pulsate === void 0 ? false : _options$pulsate, _options$center = options2.center, center = _options$center === void 0 ? centerProp || options2.pulsate : _options$center, _options$fakeElement = options2.fakeElement, fakeElement = _options$fakeElement === void 0 ? false : _options$fakeElement;
     if (event.type === "mousedown" && ignoringMouseDown.current) {
       ignoringMouseDown.current = false;
       return;
@@ -24297,7 +24297,7 @@ function attachToScrollParents(scrollParent, event, callback, scrollParents) {
   }
   scrollParents.push(target);
 }
-function setupEventListeners(reference, options, state, updateBound) {
+function setupEventListeners(reference, options2, state, updateBound) {
   state.updateBound = updateBound;
   getWindow(reference).addEventListener("resize", state.updateBound, { passive: true });
   var scrollElement = getScrollParent(reference);
@@ -24358,12 +24358,12 @@ function applyStyle(data) {
   }
   return data;
 }
-function applyStyleOnLoad(reference, popper, options, modifierOptions, state) {
-  var referenceOffsets = getReferenceOffsets(state, popper, reference, options.positionFixed);
-  var placement = computeAutoPlacement(options.placement, referenceOffsets, popper, reference, options.modifiers.flip.boundariesElement, options.modifiers.flip.padding);
+function applyStyleOnLoad(reference, popper, options2, modifierOptions, state) {
+  var referenceOffsets = getReferenceOffsets(state, popper, reference, options2.positionFixed);
+  var placement = computeAutoPlacement(options2.placement, referenceOffsets, popper, reference, options2.modifiers.flip.boundariesElement, options2.modifiers.flip.padding);
   popper.setAttribute("x-placement", placement);
-  setStyles(popper, { position: options.positionFixed ? "fixed" : "absolute" });
-  return options;
+  setStyles(popper, { position: options2.positionFixed ? "fixed" : "absolute" });
+  return options2;
 }
 function getRoundedOffsets(data, shouldRound) {
   var _data$offsets = data.offsets, popper = _data$offsets.popper, reference = _data$offsets.reference;
@@ -24387,8 +24387,8 @@ function getRoundedOffsets(data, shouldRound) {
   };
 }
 var isFirefox = isBrowser3 && /Firefox/i.test(navigator.userAgent);
-function computeStyle(data, options) {
-  var x2 = options.x, y2 = options.y;
+function computeStyle(data, options2) {
+  var x2 = options2.x, y2 = options2.y;
   var popper = data.offsets.popper;
   var legacyGpuAccelerationOption = find(data.instance.modifiers, function(modifier) {
     return modifier.name === "applyStyle";
@@ -24396,7 +24396,7 @@ function computeStyle(data, options) {
   if (legacyGpuAccelerationOption !== void 0) {
     console.warn("WARNING: `gpuAcceleration` option moved to `computeStyle` modifier and will not be supported in future versions of Popper.js!");
   }
-  var gpuAcceleration = legacyGpuAccelerationOption !== void 0 ? legacyGpuAccelerationOption : options.gpuAcceleration;
+  var gpuAcceleration = legacyGpuAccelerationOption !== void 0 ? legacyGpuAccelerationOption : options2.gpuAcceleration;
   var offsetParent = getOffsetParent(data.instance.popper);
   var offsetParentRect = getBoundingClientRect(offsetParent);
   var styles160 = {
@@ -24460,12 +24460,12 @@ function isModifierRequired(modifiers2, requestingName, requestedName) {
   }
   return isRequired;
 }
-function arrow(data, options) {
+function arrow(data, options2) {
   var _data$offsets$arrow;
   if (!isModifierRequired(data.instance.modifiers, "arrow", "keepTogether")) {
     return data;
   }
-  var arrowElement = options.element;
+  var arrowElement = options2.element;
   if (typeof arrowElement === "string") {
     arrowElement = data.instance.popper.querySelector(arrowElement);
     if (!arrowElement) {
@@ -24524,19 +24524,19 @@ var BEHAVIORS = {
   CLOCKWISE: "clockwise",
   COUNTERCLOCKWISE: "counterclockwise"
 };
-function flip(data, options) {
+function flip(data, options2) {
   if (isModifierEnabled(data.instance.modifiers, "inner")) {
     return data;
   }
   if (data.flipped && data.placement === data.originalPlacement) {
     return data;
   }
-  var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, options.boundariesElement, data.positionFixed);
+  var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options2.padding, options2.boundariesElement, data.positionFixed);
   var placement = data.placement.split("-")[0];
   var placementOpposite = getOppositePlacement(placement);
   var variation = data.placement.split("-")[1] || "";
   var flipOrder = [];
-  switch (options.behavior) {
+  switch (options2.behavior) {
     case BEHAVIORS.FLIP:
       flipOrder = [placement, placementOpposite];
       break;
@@ -24547,7 +24547,7 @@ function flip(data, options) {
       flipOrder = clockwise(placement, true);
       break;
     default:
-      flipOrder = options.behavior;
+      flipOrder = options2.behavior;
   }
   flipOrder.forEach(function(step, index4) {
     if (placement !== step || flipOrder.length === index4 + 1) {
@@ -24565,8 +24565,8 @@ function flip(data, options) {
     var overflowsBottom = floor2(popperOffsets.bottom) > floor2(boundaries.bottom);
     var overflowsBoundaries = placement === "left" && overflowsLeft || placement === "right" && overflowsRight || placement === "top" && overflowsTop || placement === "bottom" && overflowsBottom;
     var isVertical = ["top", "bottom"].indexOf(placement) !== -1;
-    var flippedVariationByRef = !!options.flipVariations && (isVertical && variation === "start" && overflowsLeft || isVertical && variation === "end" && overflowsRight || !isVertical && variation === "start" && overflowsTop || !isVertical && variation === "end" && overflowsBottom);
-    var flippedVariationByContent = !!options.flipVariationsByContent && (isVertical && variation === "start" && overflowsRight || isVertical && variation === "end" && overflowsLeft || !isVertical && variation === "start" && overflowsBottom || !isVertical && variation === "end" && overflowsTop);
+    var flippedVariationByRef = !!options2.flipVariations && (isVertical && variation === "start" && overflowsLeft || isVertical && variation === "end" && overflowsRight || !isVertical && variation === "start" && overflowsTop || !isVertical && variation === "end" && overflowsBottom);
+    var flippedVariationByContent = !!options2.flipVariationsByContent && (isVertical && variation === "start" && overflowsRight || isVertical && variation === "end" && overflowsLeft || !isVertical && variation === "start" && overflowsBottom || !isVertical && variation === "end" && overflowsTop);
     var flippedVariation = flippedVariationByRef || flippedVariationByContent;
     if (overlapsRef || overflowsBoundaries || flippedVariation) {
       data.flipped = true;
@@ -24699,8 +24699,8 @@ function offset(data, _ref5) {
   data.popper = popper;
   return data;
 }
-function preventOverflow(data, options) {
-  var boundariesElement = options.boundariesElement || getOffsetParent(data.instance.popper);
+function preventOverflow(data, options2) {
+  var boundariesElement = options2.boundariesElement || getOffsetParent(data.instance.popper);
   if (data.instance.reference === boundariesElement) {
     boundariesElement = getOffsetParent(boundariesElement);
   }
@@ -24710,17 +24710,17 @@ function preventOverflow(data, options) {
   popperStyles.top = "";
   popperStyles.left = "";
   popperStyles[transformProp] = "";
-  var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, boundariesElement, data.positionFixed);
+  var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options2.padding, boundariesElement, data.positionFixed);
   popperStyles.top = top2;
   popperStyles.left = left2;
   popperStyles[transformProp] = transform4;
-  options.boundaries = boundaries;
-  var order2 = options.priority;
+  options2.boundaries = boundaries;
+  var order2 = options2.priority;
   var popper = data.offsets.popper;
   var check = {
     primary: function primary3(placement) {
       var value = popper[placement];
-      if (popper[placement] < boundaries[placement] && !options.escapeWithReference) {
+      if (popper[placement] < boundaries[placement] && !options2.escapeWithReference) {
         value = Math.max(popper[placement], boundaries[placement]);
       }
       return defineProperty({}, placement, value);
@@ -24728,7 +24728,7 @@ function preventOverflow(data, options) {
     secondary: function secondary3(placement) {
       var mainSide = placement === "right" ? "left" : "top";
       var value = popper[mainSide];
-      if (popper[placement] > boundaries[placement] && !options.escapeWithReference) {
+      if (popper[placement] > boundaries[placement] && !options2.escapeWithReference) {
         value = Math.min(popper[mainSide], boundaries[placement] - (placement === "right" ? popper.width : popper.height));
       }
       return defineProperty({}, mainSide, value);
@@ -24873,13 +24873,13 @@ var Defaults = {
 var Popper = function() {
   function Popper4(reference, popper) {
     var _this = this;
-    var options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+    var options2 = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
     classCallCheck(this, Popper4);
     this.scheduleUpdate = function() {
       return requestAnimationFrame(_this.update);
     };
     this.update = debounce4(this.update.bind(this));
-    this.options = _extends2({}, Popper4.Defaults, options);
+    this.options = _extends2({}, Popper4.Defaults, options2);
     this.state = {
       isDestroyed: false,
       isCreated: false,
@@ -24888,8 +24888,8 @@ var Popper = function() {
     this.reference = reference && reference.jquery ? reference[0] : reference;
     this.popper = popper && popper.jquery ? popper[0] : popper;
     this.options.modifiers = {};
-    Object.keys(_extends2({}, Popper4.Defaults.modifiers, options.modifiers)).forEach(function(name) {
-      _this.options.modifiers[name] = _extends2({}, Popper4.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
+    Object.keys(_extends2({}, Popper4.Defaults.modifiers, options2.modifiers)).forEach(function(name) {
+      _this.options.modifiers[name] = _extends2({}, Popper4.Defaults.modifiers[name] || {}, options2.modifiers ? options2.modifiers[name] : {});
     });
     this.modifiers = Object.keys(this.options.modifiers).map(function(name) {
       return _extends2({
@@ -38178,8 +38178,8 @@ var templateObject_148;
 
 // node_modules/@ringcentral/juno/es6/components/Forms/utils/CustomIconPropsGetter.js
 import React494, { isValidElement as isValidElement9 } from "react";
-var CustomIconPropsGetter = function(options) {
-  var defaultIcon5 = options.icon, defaultCheckedIcon3 = options.checkedIcon, defaultIndeterminateIcon2 = options.indeterminateIcon;
+var CustomIconPropsGetter = function(options2) {
+  var defaultIcon5 = options2.icon, defaultCheckedIcon3 = options2.checkedIcon, defaultIndeterminateIcon2 = options2.indeterminateIcon;
   return function(props) {
     var size = props.size, iconProp = props.icon, checkedIconProp = props.checkedIcon, indeterminateIconProp = props.indeterminateIcon;
     var resultProps = {};
@@ -45984,11 +45984,11 @@ __export(Transition_exports, {
 var import_utils132 = __toModule(require_utils2());
 __reExport(Transition_exports, __toModule(require_transitions()));
 var reflow3 = import_utils132.reflow;
-function getTransitionProps2(props, options) {
+function getTransitionProps2(props, options2) {
   var timeout2 = props.timeout, easing3 = props.easing, _a4 = props.style, style3 = _a4 === void 0 ? {} : _a4;
   return {
-    duration: style3.transitionDuration || typeof timeout2 === "number" ? timeout2 : (timeout2 === null || timeout2 === void 0 ? void 0 : timeout2[options.mode]) || 0,
-    easing: style3.transitionTimingFunction || typeof easing3 === "object" ? easing3 === null || easing3 === void 0 ? void 0 : easing3[options.mode] : easing3,
+    duration: style3.transitionDuration || typeof timeout2 === "number" ? timeout2 : (timeout2 === null || timeout2 === void 0 ? void 0 : timeout2[options2.mode]) || 0,
+    easing: style3.transitionTimingFunction || typeof easing3 === "object" ? easing3 === null || easing3 === void 0 ? void 0 : easing3[options2.mode] : easing3,
     delay: style3.transitionDelay
   };
 }
@@ -47652,35 +47652,35 @@ function JssDomRendererFactory(window2, sheets2) {
   var getHead4 = function() {
     return document2.head;
   };
-  var findHigherSheet2 = function(registry, options) {
+  var findHigherSheet2 = function(registry, options2) {
     for (var i2 = 0; i2 < registry.length; i2++) {
       var sheet = registry[i2];
-      if (sheet.attached && sheet.options.index > options.index && sheet.options.insertionPoint === options.insertionPoint) {
+      if (sheet.attached && sheet.options.index > options2.index && sheet.options.insertionPoint === options2.insertionPoint) {
         return sheet;
       }
     }
     return null;
   };
-  var findHighestSheet2 = function(registry, options) {
+  var findHighestSheet2 = function(registry, options2) {
     for (var i2 = registry.length - 1; i2 >= 0; i2--) {
       var sheet = registry[i2];
-      if (sheet.attached && sheet.options.insertionPoint === options.insertionPoint) {
+      if (sheet.attached && sheet.options.insertionPoint === options2.insertionPoint) {
         return sheet;
       }
     }
     return null;
   };
-  var findPrevNode2 = function(options) {
+  var findPrevNode2 = function(options2) {
     var registry = sheets2.registry;
     if (registry.length > 0) {
-      var sheet = findHigherSheet2(registry, options);
+      var sheet = findHigherSheet2(registry, options2);
       if (sheet && sheet.renderer) {
         return {
           parent: sheet.renderer.element.parentNode,
           node: sheet.renderer.element
         };
       }
-      sheet = findHighestSheet2(registry, options);
+      sheet = findHighestSheet2(registry, options2);
       if (sheet && sheet.renderer) {
         return {
           parent: sheet.renderer.element.parentNode,
@@ -47688,7 +47688,7 @@ function JssDomRendererFactory(window2, sheets2) {
         };
       }
     }
-    var insertionPoint = options.insertionPoint;
+    var insertionPoint = options2.insertionPoint;
     if (insertionPoint && typeof insertionPoint === "string") {
       var comment = findCommentNode2(insertionPoint);
       if (comment) {
@@ -47712,9 +47712,9 @@ function JssDomRendererFactory(window2, sheets2) {
     }
     return null;
   }
-  var insertStyle2 = function(style3, options) {
-    var insertionPoint = options.insertionPoint;
-    var nextNode = findPrevNode2(options);
+  var insertStyle2 = function(style3, options2) {
+    var insertionPoint = options2.insertionPoint;
+    var nextNode = findPrevNode2(options2);
     if (nextNode !== false && nextNode.parent) {
       nextNode.parent.insertBefore(style3, nextNode.node);
       return;
@@ -47768,9 +47768,9 @@ function JssDomRendererFactory(window2, sheets2) {
     return ExternalJssDomRenderer;
   }(JssDomRendererConstructor);
 }
-function buildJssFromWindow(targetWindow, options) {
+function buildJssFromWindow(targetWindow, options2) {
   var sheetsRegistry = new SheetsRegistry();
-  return createJss(__assign465(__assign465(__assign465({}, jssPreset()), options), {
+  return createJss(__assign465(__assign465(__assign465({}, jssPreset()), options2), {
     sheetsRegistry,
     Renderer: JssDomRendererFactory(targetWindow, sheetsRegistry)
   }));
@@ -47891,8 +47891,8 @@ var RcDetachedWindowStylesProvider = function(props) {
   if (!sheetCache.current) {
     sheetCache.current = Ke.masterSheet.reconstructWithOptions({ target: externalWindow.document.head }, false);
   }
-  return React574.createElement(ye, { sheet: sheetCache.current }, React574.createElement(StylesContext.Consumer, null, function(options) {
-    return React574.createElement(StylesProvider, __assign466({}, options, { jss: jssCache.current, sheetsManager: sheetsManagerRef.current }), children2);
+  return React574.createElement(ye, { sheet: sheetCache.current }, React574.createElement(StylesContext.Consumer, null, function(options2) {
+    return React574.createElement(StylesProvider, __assign466({}, options2, { jss: jssCache.current, sheetsManager: sheetsManagerRef.current }), children2);
   }));
 };
 
@@ -48637,12 +48637,12 @@ var PortalManager = function(_super) {
     });
     return _this;
   }
-  PortalManager2.prototype.open = function(Component7, options) {
+  PortalManager2.prototype.open = function(Component7, options2) {
     var _this = this;
-    if (options === void 0) {
-      options = {};
+    if (options2 === void 0) {
+      options2 = {};
     }
-    var _id = options.id, props = options.props, data = options.data;
+    var _id = options2.id, props = options2.props, data = options2.data;
     var id3 = _id !== null && _id !== void 0 ? _id : this._uniqIdUtils.get();
     var currPortal = this.portalStore.get(id3);
     if (currPortal === null || currPortal === void 0 ? void 0 : currPortal.open) {
@@ -50394,8 +50394,8 @@ function verifyPlainObject(value, displayName, methodName) {
 
 // node_modules/react-redux/es/connect/wrapMapToProps.js
 function wrapMapToPropsConstant(getConstant) {
-  return function initConstantSelector(dispatch, options) {
-    var constant = getConstant(dispatch, options);
+  return function initConstantSelector(dispatch, options2) {
+    var constant = getConstant(dispatch, options2);
     function constantSelector() {
       return constant;
     }
@@ -50574,15 +50574,15 @@ function pureFinalPropsSelectorFactory(mapStateToProps, mapDispatchToProps2, mer
   };
 }
 function finalPropsSelectorFactory(dispatch, _ref24) {
-  var initMapStateToProps = _ref24.initMapStateToProps, initMapDispatchToProps = _ref24.initMapDispatchToProps, initMergeProps = _ref24.initMergeProps, options = _objectWithoutPropertiesLoose(_ref24, _excluded3);
-  var mapStateToProps = initMapStateToProps(dispatch, options);
-  var mapDispatchToProps2 = initMapDispatchToProps(dispatch, options);
-  var mergeProps = initMergeProps(dispatch, options);
+  var initMapStateToProps = _ref24.initMapStateToProps, initMapDispatchToProps = _ref24.initMapDispatchToProps, initMergeProps = _ref24.initMergeProps, options2 = _objectWithoutPropertiesLoose(_ref24, _excluded3);
+  var mapStateToProps = initMapStateToProps(dispatch, options2);
+  var mapDispatchToProps2 = initMapDispatchToProps(dispatch, options2);
+  var mergeProps = initMergeProps(dispatch, options2);
   if (true) {
-    verifySubselectors(mapStateToProps, mapDispatchToProps2, mergeProps, options.displayName);
+    verifySubselectors(mapStateToProps, mapDispatchToProps2, mergeProps, options2.displayName);
   }
-  var selectorFactory = options.pure ? pureFinalPropsSelectorFactory : impureFinalPropsSelectorFactory;
-  return selectorFactory(mapStateToProps, mapDispatchToProps2, mergeProps, dispatch, options);
+  var selectorFactory = options2.pure ? pureFinalPropsSelectorFactory : impureFinalPropsSelectorFactory;
+  return selectorFactory(mapStateToProps, mapDispatchToProps2, mergeProps, dispatch, options2);
 }
 
 // node_modules/react-redux/es/connect/connect.js
@@ -50593,8 +50593,8 @@ function match(arg, factories, name) {
     if (result)
       return result;
   }
-  return function(dispatch, options) {
-    throw new Error("Invalid value of type " + typeof arg + " for " + name + " argument when connecting component " + options.wrappedComponentName + ".");
+  return function(dispatch, options2) {
+    throw new Error("Invalid value of type " + typeof arg + " for " + name + " argument when connecting component " + options2.wrappedComponentName + ".");
   };
 }
 function strictEqual(a2, b2) {
@@ -50941,10 +50941,10 @@ function getOptions(shared2, fromBinding) {
 }
 function bindEvents(el2, bindings, sharedOptions) {
   var unbindings = bindings.map(function(binding) {
-    var options = getOptions(sharedOptions, binding.options);
-    el2.addEventListener(binding.eventName, binding.fn, options);
+    var options2 = getOptions(sharedOptions, binding.options);
+    el2.addEventListener(binding.eventName, binding.fn, options2);
     return function unbind() {
-      el2.removeEventListener(binding.eventName, binding.fn, options);
+      el2.removeEventListener(binding.eventName, binding.fn, options2);
     };
   });
   return function unbindAll() {
@@ -51535,12 +51535,12 @@ function getDisplacementGroups(_ref5) {
     invisible: {}
   });
 }
-function getIndexOfLastItem(draggables, options) {
+function getIndexOfLastItem(draggables, options2) {
   if (!draggables.length) {
     return 0;
   }
   var indexOfLastItem = draggables[draggables.length - 1].descriptor.index;
-  return options.inHomeList ? indexOfLastItem : indexOfLastItem + 1;
+  return options2.inHomeList ? indexOfLastItem : indexOfLastItem + 1;
 }
 function goAtEnd(_ref5) {
   var insideDestination = _ref5.insideDestination, inHomeList = _ref5.inHomeList, displacedBy = _ref5.displacedBy, destination = _ref5.destination;
@@ -55275,13 +55275,13 @@ var count = 0;
 var defaults = {
   separator: "::"
 };
-function useUniqueId(prefix4, options) {
-  if (options === void 0) {
-    options = defaults;
+function useUniqueId(prefix4, options2) {
+  if (options2 === void 0) {
+    options2 = defaults;
   }
   return useMemo47(function() {
-    return "" + prefix4 + options.separator + count++;
-  }, [options.separator, prefix4]);
+    return "" + prefix4 + options2.separator + count++;
+  }, [options2.separator, prefix4]);
 }
 function getElementId(_ref5) {
   var contextId = _ref5.contextId, uniqueId4 = _ref5.uniqueId;
@@ -55615,11 +55615,11 @@ function useMouseSensor(api) {
         if (!id3) {
           return;
         }
-        var options = api.findOptionsForDraggable(id3);
-        if (!options) {
+        var options2 = api.findOptionsForDraggable(id3);
+        if (!options2) {
           return;
         }
-        if (options.shouldRespectForcePress) {
+        if (options2.shouldRespectForcePress) {
           return;
         }
         if (!api.canGetLock(id3)) {
@@ -55630,11 +55630,11 @@ function useMouseSensor(api) {
     };
   }, [api]);
   var listenForCapture = useCallback23(function listenForCapture2() {
-    var options = {
+    var options2 = {
       passive: false,
       capture: true
     };
-    unbindEventsRef.current = bindEvents(window, [preventForcePressBinding, startCaptureBinding], options);
+    unbindEventsRef.current = bindEvents(window, [preventForcePressBinding, startCaptureBinding], options2);
   }, [preventForcePressBinding, startCaptureBinding]);
   var stop = useCallback23(function() {
     var current = phaseRef.current;
@@ -55658,7 +55658,7 @@ function useMouseSensor(api) {
     }
   }, [stop]);
   var bindCapturingEvents = useCallback23(function bindCapturingEvents2() {
-    var options = {
+    var options2 = {
       capture: true,
       passive: false
     };
@@ -55672,7 +55672,7 @@ function useMouseSensor(api) {
         phaseRef.current = phase;
       }
     });
-    unbindEventsRef.current = bindEvents(window, bindings, options);
+    unbindEventsRef.current = bindEvents(window, bindings, options2);
   }, [cancel, stop]);
   var startPendingDrag = useCallback23(function startPendingDrag2(actions, point) {
     !(phaseRef.current.type === "IDLE") ? true ? invariant2(false, "Expected to move from IDLE to PENDING drag") : invariant2(false) : void 0;
@@ -55808,11 +55808,11 @@ function useKeyboardSensor(api) {
     };
   }, [api]);
   var listenForCapture = useCallback23(function tryStartCapture() {
-    var options = {
+    var options2 = {
       passive: false,
       capture: true
     };
-    unbindEventsRef.current = bindEvents(window, [startCaptureBinding], options);
+    unbindEventsRef.current = bindEvents(window, [startCaptureBinding], options2);
   }, [startCaptureBinding]);
   useIsomorphicLayoutEffect2(function mount() {
     listenForCapture();
@@ -55975,11 +55975,11 @@ function useTouchSensor(api) {
     };
   }, [api]);
   var listenForCapture = useCallback23(function listenForCapture2() {
-    var options = {
+    var options2 = {
       capture: true,
       passive: false
     };
-    unbindEventsRef.current = bindEvents(window, [startCaptureBinding], options);
+    unbindEventsRef.current = bindEvents(window, [startCaptureBinding], options2);
   }, [startCaptureBinding]);
   var stop = useCallback23(function() {
     var current = phaseRef.current;
@@ -56006,7 +56006,7 @@ function useTouchSensor(api) {
     }
   }, [stop]);
   var bindCapturingEvents = useCallback23(function bindCapturingEvents2() {
-    var options = {
+    var options2 = {
       capture: true,
       passive: false
     };
@@ -56015,8 +56015,8 @@ function useTouchSensor(api) {
       completed: stop,
       getPhase
     };
-    var unbindTarget = bindEvents(window, getHandleBindings(args), options);
-    var unbindWindow = bindEvents(window, getWindowBindings(args), options);
+    var unbindTarget = bindEvents(window, getHandleBindings(args), options2);
+    var unbindWindow = bindEvents(window, getWindowBindings(args), options2);
     unbindEventsRef.current = function unbindAll() {
       unbindTarget();
       unbindWindow();
@@ -56270,14 +56270,14 @@ function tryStart(_ref32) {
     }
     store.dispatch(lift(args.liftActionArgs));
     phase = "DRAGGING";
-    function finish3(reason, options) {
-      if (options === void 0) {
-        options = {
+    function finish3(reason, options2) {
+      if (options2 === void 0) {
+        options2 = {
           shouldBlockNextClick: false
         };
       }
       args.cleanup();
-      if (options.shouldBlockNextClick) {
+      if (options2.shouldBlockNextClick) {
         var unbind = bindEvents(window, [{
           eventName: "click",
           fn: preventDefault,
@@ -56304,11 +56304,11 @@ function tryStart(_ref32) {
         });
       },
       shouldRespectForcePress: getShouldRespectForcePress,
-      drop: function drop5(options) {
-        return finish3("DROP", options);
+      drop: function drop5(options2) {
+        return finish3("DROP", options2);
       },
-      cancel: function cancel(options) {
-        return finish3("CANCEL", options);
+      cancel: function cancel(options2) {
+        return finish3("CANCEL", options2);
       }
     }, args.actions);
   }
@@ -56421,7 +56421,7 @@ function useSensorMarshal(_ref42) {
       draggableId
     });
   }, [lockAPI, registry, store]);
-  var tryGetLock = useCallback23(function(draggableId, forceStop, options) {
+  var tryGetLock = useCallback23(function(draggableId, forceStop, options2) {
     return tryStart({
       lockAPI,
       registry,
@@ -56429,7 +56429,7 @@ function useSensorMarshal(_ref42) {
       store,
       draggableId,
       forceSensorStop: forceStop,
-      sourceEvent: options && options.sourceEvent ? options.sourceEvent : null
+      sourceEvent: options2 && options2.sourceEvent ? options2.sourceEvent : null
     });
   }, [contextId, lockAPI, registry, store]);
   var findClosestDraggableId = useCallback23(function(event) {
@@ -56817,8 +56817,8 @@ var immediate = {
 var delayed = {
   passive: true
 };
-var getListenerOptions = function(options) {
-  return options.shouldPublishImmediately ? immediate : delayed;
+var getListenerOptions = function(options2) {
+  return options2.shouldPublishImmediately ? immediate : delayed;
 };
 function useRequiredContext(Context2) {
   var result = useContext16(Context2);
@@ -56870,14 +56870,14 @@ function useDroppablePublisher(args) {
     var dragging = whileDraggingRef.current;
     var closest3 = getClosestScrollableFromDrag(dragging);
     !(dragging && closest3) ? true ? invariant2(false, "Could not find scroll options while scrolling") : invariant2(false) : void 0;
-    var options = dragging.scrollOptions;
-    if (options.shouldPublishImmediately) {
+    var options2 = dragging.scrollOptions;
+    if (options2.shouldPublishImmediately) {
       updateScroll();
       return;
     }
     scheduleScrollUpdate();
   }, [scheduleScrollUpdate, updateScroll]);
-  var getDimensionAndWatchScroll = useCallback23(function(windowScroll, options) {
+  var getDimensionAndWatchScroll = useCallback23(function(windowScroll, options2) {
     !!whileDraggingRef.current ? true ? invariant2(false, "Cannot collect a droppable while a drag is occurring") : invariant2(false) : void 0;
     var previous = previousRef.current;
     var ref2 = previous.getDroppableRef();
@@ -56887,7 +56887,7 @@ function useDroppablePublisher(args) {
       ref: ref2,
       descriptor,
       env,
-      scrollOptions: options
+      scrollOptions: options2
     };
     whileDraggingRef.current = dragging;
     var dimension = getDimension({
@@ -57274,7 +57274,7 @@ function getDimension$1(descriptor, el2, windowScroll) {
 function useDraggablePublisher(args) {
   var uniqueId4 = useUniqueId("draggable");
   var descriptor = args.descriptor, registry = args.registry, getDraggableRef = args.getDraggableRef, canDragInteractiveElements = args.canDragInteractiveElements, shouldRespectForcePress = args.shouldRespectForcePress, isEnabled = args.isEnabled;
-  var options = useMemo47(function() {
+  var options2 = useMemo47(function() {
     return {
       canDragInteractiveElements,
       shouldRespectForcePress,
@@ -57290,10 +57290,10 @@ function useDraggablePublisher(args) {
     return {
       uniqueId: uniqueId4,
       descriptor,
-      options,
+      options: options2,
       getDimension: getDimension2
     };
-  }, [descriptor, getDimension2, options, uniqueId4]);
+  }, [descriptor, getDimension2, options2, uniqueId4]);
   var publishedRef = useRef60(entry);
   var isFirstPublishRef = useRef60(true);
   useIsomorphicLayoutEffect2(function() {
@@ -59991,9 +59991,9 @@ var DEFAULT_GET_OPTION_LABEL = function(item) {
 var RcDownshiftDefaultRenderNoOptions = function(getNoOptionsProps) {
   return React621.createElement(RcMenuItem, __assign492({ component: "div" }, getNoOptionsProps()), "No Options");
 };
-var RcDownshiftDefaultFilterOptions = function(options, _a4) {
+var RcDownshiftDefaultFilterOptions = function(options2, _a4) {
   var inputValue = _a4.inputValue, getOptionLabel = _a4.getOptionLabel, selectedItems = _a4.selectedItems;
-  return options.filter(function(item) {
+  return options2.filter(function(item) {
     return selectedItems.indexOf(item) < 0 && (getOptionLabel === null || getOptionLabel === void 0 ? void 0 : getOptionLabel(item).toLowerCase().startsWith((inputValue === null || inputValue === void 0 ? void 0 : inputValue.toLowerCase()) || ""));
   });
 };
@@ -60044,7 +60044,7 @@ var __spread19 = function() {
   return ar;
 };
 var useDownshiftGroup = function(_a4) {
-  var groupBy = _a4.groupBy, options = _a4.options, filteredResult = _a4.filteredResult, getExpandIconProps = _a4.getExpandIconProps, groupExpanded = _a4.groupExpanded, onGroupExpanded = _a4.onGroupExpanded, groupVariant = _a4.groupVariant, id3 = _a4.id;
+  var groupBy = _a4.groupBy, options2 = _a4.options, filteredResult = _a4.filteredResult, getExpandIconProps = _a4.getExpandIconProps, groupExpanded = _a4.groupExpanded, onGroupExpanded = _a4.onGroupExpanded, groupVariant = _a4.groupVariant, id3 = _a4.id;
   var _b = __read39(useRefState({}), 2), groupExpandedMapRef = _b[0], setGroupExpandedMap = _b[1];
   var isTitleGroup = groupVariant === "normal";
   useChange(function() {
@@ -60078,7 +60078,7 @@ var useDownshiftGroup = function(_a4) {
     e2.stopPropagation();
   });
   var optionsGroupList = useMemo58(function() {
-    if (groupBy && options) {
+    if (groupBy && options2) {
       var indexBy_1 = new Map();
       var warn_1 = false;
       return filteredResult.reduce(function(acc, option, index4) {
@@ -60137,7 +60137,7 @@ var useDownshiftGroup = function(_a4) {
     handleExpandIconClick,
     id3,
     isTitleGroup,
-    options
+    options2
   ]);
   var groupExpandedMap = groupExpandedMapRef.current;
   var groupedResult = useMemo58(function() {
@@ -60330,7 +60330,7 @@ function stringArrToRegExp(keyToTags) {
 }
 var componentName = "RcDownshift";
 var useDownshift = function(_a4) {
-  var multipleProp = _a4.multiple, variant = _a4.variant, labelProp = _a4.label, inputValueProp = _a4.inputValue, _b = _a4.getOptionLabel, getOptionLabel = _b === void 0 ? DEFAULT_GET_OPTION_LABEL : _b, _c = _a4.keyToTags, keyToTags = _c === void 0 ? DEFAULT_KEY_TO_CHIPS : _c, filterOptions = _a4.filterOptions, disabledItemsHighlightable = _a4.disabledItemsHighlightable, options = _a4.options, freeSolo = _a4.freeSolo, onInputChangeProp = _a4.onInputChange, maxFreeSolo = _a4.maxFreeSolo, onMaxFreeSolo = _a4.onMaxFreeSolo, openOnFocus = _a4.openOnFocus, disableCloseOnSelect = _a4.disableCloseOnSelect, initialIsOpen = _a4.initialIsOpen, autoSelect = _a4.autoSelect, inputContainerRef = _a4.inputContainerRef, inputRef = _a4.inputRef, wrapperRef = _a4.wrapperRef, onKeyDownProp = _a4.onKeyDown, onSelectChange = _a4.onChange, _d = _a4.value, selectedItemsProp = _d === void 0 ? [] : _d, disabled3 = _a4.disabled, renderNoOptions = _a4.renderNoOptions, onClear = _a4.onClear, autoHighlight = _a4.autoHighlight, getOptionDisabled = _a4.getOptionDisabled, addNoOptionItem = _a4.addNoOptionItem, groupBy = _a4.groupBy, onGroupExpanded = _a4.onGroupExpanded, groupVariant = _a4.groupVariant, groupExpanded = _a4.groupExpanded, getExpandIconProps = _a4.getExpandIconProps, required2 = _a4.required, openProp = _a4.open, onOpen = _a4.onOpen, onClose = _a4.onClose;
+  var multipleProp = _a4.multiple, variant = _a4.variant, labelProp = _a4.label, inputValueProp = _a4.inputValue, _b = _a4.getOptionLabel, getOptionLabel = _b === void 0 ? DEFAULT_GET_OPTION_LABEL : _b, _c = _a4.keyToTags, keyToTags = _c === void 0 ? DEFAULT_KEY_TO_CHIPS : _c, filterOptions = _a4.filterOptions, disabledItemsHighlightable = _a4.disabledItemsHighlightable, options2 = _a4.options, freeSolo = _a4.freeSolo, onInputChangeProp = _a4.onInputChange, maxFreeSolo = _a4.maxFreeSolo, onMaxFreeSolo = _a4.onMaxFreeSolo, openOnFocus = _a4.openOnFocus, disableCloseOnSelect = _a4.disableCloseOnSelect, initialIsOpen = _a4.initialIsOpen, autoSelect = _a4.autoSelect, inputContainerRef = _a4.inputContainerRef, inputRef = _a4.inputRef, wrapperRef = _a4.wrapperRef, onKeyDownProp = _a4.onKeyDown, onSelectChange = _a4.onChange, _d = _a4.value, selectedItemsProp = _d === void 0 ? [] : _d, disabled3 = _a4.disabled, renderNoOptions = _a4.renderNoOptions, onClear = _a4.onClear, autoHighlight = _a4.autoHighlight, getOptionDisabled = _a4.getOptionDisabled, addNoOptionItem = _a4.addNoOptionItem, groupBy = _a4.groupBy, onGroupExpanded = _a4.onGroupExpanded, groupVariant = _a4.groupVariant, groupExpanded = _a4.groupExpanded, getExpandIconProps = _a4.getExpandIconProps, required2 = _a4.required, openProp = _a4.open, onOpen = _a4.onOpen, onClose = _a4.onClose;
   var isAutocomplete = variant === "autocomplete";
   var multiple = isAutocomplete ? false : multipleProp;
   var isSelectedFromAutocompleteRef = useRef63(false);
@@ -60396,7 +60396,7 @@ var useDownshift = function(_a4) {
       }
       return items2;
     };
-    var results = getFilteredItems(options);
+    var results = getFilteredItems(options2);
     noOptionItemRef.current = void 0;
     if (addNoOptionItem) {
       var item = getInputValueAsItem();
@@ -60425,13 +60425,13 @@ var useDownshift = function(_a4) {
     freeSolo,
     getOptionLabel,
     inputValue,
-    options,
+    options2,
     renderNoOptions,
     selectedItems
   ]);
   var _l = useDownshiftGroup({
     groupBy,
-    options,
+    options: options2,
     filteredResult,
     getExpandIconProps,
     groupExpanded,
@@ -60654,11 +60654,11 @@ var useDownshift = function(_a4) {
   };
   useChange(function() {
     var shouldResetHighlightedIndex = !keepHighlightedIndexRef.current;
-    if (options !== void 0 && shouldResetHighlightedIndex) {
+    if (options2 !== void 0 && shouldResetHighlightedIndex) {
       setHighlightedIndex(DEFAULT_HIGHLIGHTED_INDEX, { reason: "auto" });
     }
   }, function() {
-    return options;
+    return options2;
   });
   var defaultHighlightedIndex = useMemo59(function() {
     return autoHighlight ? getNextFocusableOption(0) : -1;
@@ -65200,13 +65200,13 @@ var List4 = forwardRef547(function(props, ref2) {
 });
 var SuggestionList = forwardRef547(function(inProps, ref2) {
   var props = useThemeProps({ props: inProps, name: "RcSuggestionList" });
-  var highlightedIndex = props.highlightedIndex, options = props.options, getItemProps = props.getItemProps, getMenuProps = props.getMenuProps, renderOption = props.renderOption, inputValue = props.inputValue, groupVariant = props.groupVariant, groupExpanded = props.groupExpanded, renderGroup = props.renderGroup, optionsGroupList = props.optionsGroupList, getOptionDisabled = props.getOptionDisabled, MenuItem4 = props.MenuItem, changeHighlightedIndexReason = props.changeHighlightedIndexReason, isKeepHighlightedIndex = props.isKeepHighlightedIndex, componentsProp = props.components, onUpdatePopper = props.onUpdatePopper, getOptionLabel = props.getOptionLabel, padding = props.padding, _a4 = props.maxContainerHeight, maxContainerHeight = _a4 === void 0 ? "100%" : _a4, classNameProp = props.className, classesProp = props.classes, rest = __rest98(props, ["highlightedIndex", "options", "getItemProps", "getMenuProps", "renderOption", "inputValue", "groupVariant", "groupExpanded", "renderGroup", "optionsGroupList", "getOptionDisabled", "MenuItem", "changeHighlightedIndexReason", "isKeepHighlightedIndex", "components", "onUpdatePopper", "getOptionLabel", "padding", "maxContainerHeight", "className", "classes"]);
+  var highlightedIndex = props.highlightedIndex, options2 = props.options, getItemProps = props.getItemProps, getMenuProps = props.getMenuProps, renderOption = props.renderOption, inputValue = props.inputValue, groupVariant = props.groupVariant, groupExpanded = props.groupExpanded, renderGroup = props.renderGroup, optionsGroupList = props.optionsGroupList, getOptionDisabled = props.getOptionDisabled, MenuItem4 = props.MenuItem, changeHighlightedIndexReason = props.changeHighlightedIndexReason, isKeepHighlightedIndex = props.isKeepHighlightedIndex, componentsProp = props.components, onUpdatePopper = props.onUpdatePopper, getOptionLabel = props.getOptionLabel, padding = props.padding, _a4 = props.maxContainerHeight, maxContainerHeight = _a4 === void 0 ? "100%" : _a4, classNameProp = props.className, classesProp = props.classes, rest = __rest98(props, ["highlightedIndex", "options", "getItemProps", "getMenuProps", "renderOption", "inputValue", "groupVariant", "groupExpanded", "renderGroup", "optionsGroupList", "getOptionDisabled", "MenuItem", "changeHighlightedIndexReason", "isKeepHighlightedIndex", "components", "onUpdatePopper", "getOptionLabel", "padding", "maxContainerHeight", "className", "classes"]);
   var vlRef = useRef69(null);
   var forkVlRef = useForkRef2(ref2, vlRef);
   var isTitleGroup = groupVariant === "normal";
   var listRef = useRef69(null);
-  var itemData = options;
-  var itemCount = options.length;
+  var itemData = options2;
+  var itemCount = options2.length;
   var classes = combineClasses(RcSuggestionListClasses, classesProp);
   var className = clsx_m_default(classNameProp, classes === null || classes === void 0 ? void 0 : classes.root);
   var _b = useDynamicHeight({
@@ -65386,7 +65386,7 @@ var __read62 = function(o2, n2) {
 };
 var _RcDownshift = memo406(forwardRef548(function(inProps, ref2) {
   var props = useThemeProps({ props: inProps, name: "RcDownshift" });
-  var _a4 = props.itemToString, itemToString = _a4 === void 0 ? DEFAULT_GET_OPTION_LABEL : _a4, _b = props.keyToChips, keyToChips = _b === void 0 ? DEFAULT_KEY_TO_CHIPS : _b, _c = props.limitOfFreeChips, limitOfFreeChips = _c === void 0 ? DEFAULT_LIMIT_CHIPS : _c, minRowHeight = props.minRowHeight, suggestionItems = props.suggestionItems, messageRef = props.messageRef, MenuItem4 = props.MenuItem, inputLabel = props.inputLabel, nameError = props.nameError, maxLength = props.maxLength, InputItem = props.InputItem, emailError = props.emailError, autoSwitchEmail = props.autoSwitchEmail, enableFreeChips = props.enableFreeChips, inputPlaceholder = props.inputPlaceholder, errorSelectedItems = props.errorSelectedItems, enableAutoTransform = props.enableAutoTransform, allowPlainHelperText = props.allowPlainHelperText, TextFieldProps = props.TextFieldProps, selectedItemsProp = props.selectedItems, automationId = props.automationId, screenReader = props.screenReader, onSelectChange = props.onSelectChange, variant = props.variant, groupExpanded = props.groupExpanded, _d = props.groupVariant, groupVariant = _d === void 0 ? "normal" : _d, getExpandIconProps = props.getExpandIconProps, groupBy = props.groupBy, _e2 = props.value, valueProp = _e2 === void 0 ? selectedItemsProp : _e2, _f = props.autoHighlight, autoHighlight = _f === void 0 ? true : _f, _g = props.fullWidth, fullWidth = _g === void 0 ? true : _g, _h = props.clearBtn, clearBtn = _h === void 0 ? false : _h, _j = props.toggleButton, toggleButton = _j === void 0 ? false : _j, _k = props.multiple, multiple = _k === void 0 ? false : _k, clearButtonProps = props.clearButtonProps, onClear = props.onClear, ToggleButtonProps = props.ToggleButtonProps, inputValueProp = props.inputValue, onKeyDownProp = props.onKeyDown, helperTextProp = props.helperText, options = props.options, openOnFocus = props.openOnFocus, _l = props.getOptionLabel, getOptionLabel = _l === void 0 ? itemToString : _l, renderInput = props.renderInput, _m = props.label, label3 = _m === void 0 ? inputLabel : _m, _o = props.inputRef, inputRefProp = _o === void 0 ? messageRef : _o, _p = props.error, error4 = _p === void 0 ? nameError : _p, _q = props.placeholder, placeholder2 = _q === void 0 ? inputPlaceholder : _q, _r = props.freeSolo, freeSolo = _r === void 0 ? enableFreeChips : _r, _s = props.keyToTags, keyToTags = _s === void 0 ? keyToChips : _s, _t = props.maxFreeSolo, maxFreeSolo = _t === void 0 ? limitOfFreeChips : _t, SuggestionListProps = props.SuggestionListProps, _u = props.autoSelect, autoSelect = _u === void 0 ? enableAutoTransform : _u, PopperProps = props.PopperProps, initialIsOpen = props.initialIsOpen, disabled3 = props.disabled, requiredProp = props.required, _v = props.defaultIsOpen, defaultIsOpen = _v === void 0 ? openOnFocus : _v, _w = props.disableCloseOnSelect, disableCloseOnSelect = _w === void 0 ? defaultIsOpen : _w, _x = props.onChange, onChangeProp = _x === void 0 ? onSelectChange : _x, onInputChangeProp = props.onInputChange, onMaxFreeSolo = props.onMaxFreeSolo, FormHelperTextPropsProp = props.FormHelperTextProps, action3 = props.action, filterOptions = props.filterOptions, renderOption = props.renderOption, renderTags = props.renderTags, getOptionDisabled = props.getOptionDisabled, renderGroup = props.renderGroup, onGroupExpanded = props.onGroupExpanded, renderNoOptions = props.renderNoOptions, InputPropsProp = props.InputProps, debug = props.debug, disabledItemsHighlightable = props.disabledItemsHighlightable, openProp = props.open, onOpen = props.onOpen, onClose = props.onClose, rest = __rest99(props, ["itemToString", "keyToChips", "limitOfFreeChips", "minRowHeight", "suggestionItems", "messageRef", "MenuItem", "inputLabel", "nameError", "maxLength", "InputItem", "emailError", "autoSwitchEmail", "enableFreeChips", "inputPlaceholder", "errorSelectedItems", "enableAutoTransform", "allowPlainHelperText", "TextFieldProps", "selectedItems", "automationId", "screenReader", "onSelectChange", "variant", "groupExpanded", "groupVariant", "getExpandIconProps", "groupBy", "value", "autoHighlight", "fullWidth", "clearBtn", "toggleButton", "multiple", "clearButtonProps", "onClear", "ToggleButtonProps", "inputValue", "onKeyDown", "helperText", "options", "openOnFocus", "getOptionLabel", "renderInput", "label", "inputRef", "error", "placeholder", "freeSolo", "keyToTags", "maxFreeSolo", "SuggestionListProps", "autoSelect", "PopperProps", "initialIsOpen", "disabled", "required", "defaultIsOpen", "disableCloseOnSelect", "onChange", "onInputChange", "onMaxFreeSolo", "FormHelperTextProps", "action", "filterOptions", "renderOption", "renderTags", "getOptionDisabled", "renderGroup", "onGroupExpanded", "renderNoOptions", "InputProps", "debug", "disabledItemsHighlightable", "open", "onOpen", "onClose"]);
+  var _a4 = props.itemToString, itemToString = _a4 === void 0 ? DEFAULT_GET_OPTION_LABEL : _a4, _b = props.keyToChips, keyToChips = _b === void 0 ? DEFAULT_KEY_TO_CHIPS : _b, _c = props.limitOfFreeChips, limitOfFreeChips = _c === void 0 ? DEFAULT_LIMIT_CHIPS : _c, minRowHeight = props.minRowHeight, suggestionItems = props.suggestionItems, messageRef = props.messageRef, MenuItem4 = props.MenuItem, inputLabel = props.inputLabel, nameError = props.nameError, maxLength = props.maxLength, InputItem = props.InputItem, emailError = props.emailError, autoSwitchEmail = props.autoSwitchEmail, enableFreeChips = props.enableFreeChips, inputPlaceholder = props.inputPlaceholder, errorSelectedItems = props.errorSelectedItems, enableAutoTransform = props.enableAutoTransform, allowPlainHelperText = props.allowPlainHelperText, TextFieldProps = props.TextFieldProps, selectedItemsProp = props.selectedItems, automationId = props.automationId, screenReader = props.screenReader, onSelectChange = props.onSelectChange, variant = props.variant, groupExpanded = props.groupExpanded, _d = props.groupVariant, groupVariant = _d === void 0 ? "normal" : _d, getExpandIconProps = props.getExpandIconProps, groupBy = props.groupBy, _e2 = props.value, valueProp = _e2 === void 0 ? selectedItemsProp : _e2, _f = props.autoHighlight, autoHighlight = _f === void 0 ? true : _f, _g = props.fullWidth, fullWidth = _g === void 0 ? true : _g, _h = props.clearBtn, clearBtn = _h === void 0 ? false : _h, _j = props.toggleButton, toggleButton = _j === void 0 ? false : _j, _k = props.multiple, multiple = _k === void 0 ? false : _k, clearButtonProps = props.clearButtonProps, onClear = props.onClear, ToggleButtonProps = props.ToggleButtonProps, inputValueProp = props.inputValue, onKeyDownProp = props.onKeyDown, helperTextProp = props.helperText, options2 = props.options, openOnFocus = props.openOnFocus, _l = props.getOptionLabel, getOptionLabel = _l === void 0 ? itemToString : _l, renderInput = props.renderInput, _m = props.label, label3 = _m === void 0 ? inputLabel : _m, _o = props.inputRef, inputRefProp = _o === void 0 ? messageRef : _o, _p = props.error, error4 = _p === void 0 ? nameError : _p, _q = props.placeholder, placeholder2 = _q === void 0 ? inputPlaceholder : _q, _r = props.freeSolo, freeSolo = _r === void 0 ? enableFreeChips : _r, _s = props.keyToTags, keyToTags = _s === void 0 ? keyToChips : _s, _t = props.maxFreeSolo, maxFreeSolo = _t === void 0 ? limitOfFreeChips : _t, SuggestionListProps = props.SuggestionListProps, _u = props.autoSelect, autoSelect = _u === void 0 ? enableAutoTransform : _u, PopperProps = props.PopperProps, initialIsOpen = props.initialIsOpen, disabled3 = props.disabled, requiredProp = props.required, _v = props.defaultIsOpen, defaultIsOpen = _v === void 0 ? openOnFocus : _v, _w = props.disableCloseOnSelect, disableCloseOnSelect = _w === void 0 ? defaultIsOpen : _w, _x = props.onChange, onChangeProp = _x === void 0 ? onSelectChange : _x, onInputChangeProp = props.onInputChange, onMaxFreeSolo = props.onMaxFreeSolo, FormHelperTextPropsProp = props.FormHelperTextProps, action3 = props.action, filterOptions = props.filterOptions, renderOption = props.renderOption, renderTags = props.renderTags, getOptionDisabled = props.getOptionDisabled, renderGroup = props.renderGroup, onGroupExpanded = props.onGroupExpanded, renderNoOptions = props.renderNoOptions, InputPropsProp = props.InputProps, debug = props.debug, disabledItemsHighlightable = props.disabledItemsHighlightable, openProp = props.open, onOpen = props.onOpen, onClose = props.onClose, rest = __rest99(props, ["itemToString", "keyToChips", "limitOfFreeChips", "minRowHeight", "suggestionItems", "messageRef", "MenuItem", "inputLabel", "nameError", "maxLength", "InputItem", "emailError", "autoSwitchEmail", "enableFreeChips", "inputPlaceholder", "errorSelectedItems", "enableAutoTransform", "allowPlainHelperText", "TextFieldProps", "selectedItems", "automationId", "screenReader", "onSelectChange", "variant", "groupExpanded", "groupVariant", "getExpandIconProps", "groupBy", "value", "autoHighlight", "fullWidth", "clearBtn", "toggleButton", "multiple", "clearButtonProps", "onClear", "ToggleButtonProps", "inputValue", "onKeyDown", "helperText", "options", "openOnFocus", "getOptionLabel", "renderInput", "label", "inputRef", "error", "placeholder", "freeSolo", "keyToTags", "maxFreeSolo", "SuggestionListProps", "autoSelect", "PopperProps", "initialIsOpen", "disabled", "required", "defaultIsOpen", "disableCloseOnSelect", "onChange", "onInputChange", "onMaxFreeSolo", "FormHelperTextProps", "action", "filterOptions", "renderOption", "renderTags", "getOptionDisabled", "renderGroup", "onGroupExpanded", "renderNoOptions", "InputProps", "debug", "disabledItemsHighlightable", "open", "onOpen", "onClose"]);
   var _y = __read62(useState31("bottom"), 2), position4 = _y[0], setPosition = _y[1];
   var innerInputRef = useRef70(null);
   var textFieldRef = useRef70(null);
@@ -65409,7 +65409,7 @@ var _RcDownshift = memo406(forwardRef548(function(inProps, ref2) {
     getOptionDisabled,
     groupExpanded: groupVariant === "normal" ? true : groupExpanded,
     getExpandIconProps,
-    options: suggestionItems || options,
+    options: suggestionItems || options2,
     freeSolo,
     label: label3,
     multiple,
@@ -67773,10 +67773,10 @@ function easeInOutSin(time) {
   return (1 + Math.sin(Math.PI * time - Math.PI / 2)) / 2;
 }
 function animate(property, element2, to) {
-  var options = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
+  var options2 = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
   var cb = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : function() {
   };
-  var _options$ease = options.ease, ease2 = _options$ease === void 0 ? easeInOutSin : _options$ease, _options$duration = options.duration, duration5 = _options$duration === void 0 ? 300 : _options$duration;
+  var _options$ease = options2.ease, ease2 = _options$ease === void 0 ? easeInOutSin : _options$ease, _options$duration = options2.duration, duration5 = _options$duration === void 0 ? 300 : _options$duration;
   var start3 = null;
   var from = element2[property];
   var cancelled = false;
@@ -72497,7 +72497,7 @@ import {
   useState as useState39
 } from "react";
 function useMediaQuery(queryInput) {
-  var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+  var options2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
   var theme = useTheme();
   var props = getThemeProps({
     theme,
@@ -72512,7 +72512,7 @@ function useMediaQuery(queryInput) {
   var query = typeof queryInput === "function" ? queryInput(theme) : queryInput;
   query = query.replace(/^@media( ?)/m, "");
   var supportMatchMedia = typeof window !== "undefined" && typeof window.matchMedia !== "undefined";
-  var _props$options = _extends({}, props, options), _props$options$defaul = _props$options.defaultMatches, defaultMatches = _props$options$defaul === void 0 ? false : _props$options$defaul, _props$options$matchM = _props$options.matchMedia, matchMedia = _props$options$matchM === void 0 ? supportMatchMedia ? window.matchMedia : null : _props$options$matchM, _props$options$noSsr = _props$options.noSsr, noSsr = _props$options$noSsr === void 0 ? false : _props$options$noSsr, _props$options$ssrMat = _props$options.ssrMatchMedia, ssrMatchMedia = _props$options$ssrMat === void 0 ? null : _props$options$ssrMat;
+  var _props$options = _extends({}, props, options2), _props$options$defaul = _props$options.defaultMatches, defaultMatches = _props$options$defaul === void 0 ? false : _props$options$defaul, _props$options$matchM = _props$options.matchMedia, matchMedia = _props$options$matchM === void 0 ? supportMatchMedia ? window.matchMedia : null : _props$options$matchM, _props$options$noSsr = _props$options.noSsr, noSsr = _props$options$noSsr === void 0 ? false : _props$options$noSsr, _props$options$ssrMat = _props$options.ssrMatchMedia, ssrMatchMedia = _props$options$ssrMat === void 0 ? null : _props$options$ssrMat;
   var _React$useState = useState39(function() {
     if (noSsr && supportMatchMedia) {
       return matchMedia(query).matches;
@@ -72566,9 +72566,9 @@ var isWidthDown = function isWidthDown2(breakpoint, width2) {
 };
 var useEnhancedEffect9 = typeof window === "undefined" ? useEffect57 : useLayoutEffect27;
 var withWidth = function withWidth2() {
-  var options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+  var options2 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
   return function(Component7) {
-    var _options$withTheme = options.withTheme, withThemeOption = _options$withTheme === void 0 ? false : _options$withTheme, _options$noSSR = options.noSSR, noSSR = _options$noSSR === void 0 ? false : _options$noSSR, initialWidthOption = options.initialWidth;
+    var _options$withTheme = options2.withTheme, withThemeOption = _options$withTheme === void 0 ? false : _options$withTheme, _options$noSSR = options2.noSSR, noSSR = _options$noSSR === void 0 ? false : _options$noSSR, initialWidthOption = options2.initialWidth;
     function WithWidth(props) {
       var contextTheme = useTheme2();
       var theme = props.theme || contextTheme;
@@ -78669,17 +78669,48 @@ var DatePicker = (_a4) => {
   }, rest)));
 };
 
+// src/Downshift.tsx
+import React751, { useState as useState52 } from "react";
+var options = [
+  { id: "phone_1", label: "Afghanistan" },
+  { id: "phone_2", label: "Aland Islands" },
+  { id: "phone_3", label: "Bahamas" },
+  { id: "phone_4", label: "Bahrain" },
+  { id: "phone_5", label: "China" },
+  { id: "phone_6", label: "Algeria" },
+  { id: "phone_7", label: "American Samoa" },
+  { id: "phone_8", label: "Andorra" },
+  { id: "phone_9", label: "Angola" },
+  { id: "phone_10", label: "Anguilla" },
+  { id: "phone_11", label: "Antarctica" },
+  { id: "phone_12", label: "Antigua and Barbuda" },
+  { id: "phone_13", label: "Argentina" },
+  { id: "phone_14", label: "Armenia" }
+];
+var Downshift = (_a4) => {
+  var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
+  const [value, setValue] = useState52([]);
+  return /* @__PURE__ */ React751.createElement(RcThemeProvider, null, /* @__PURE__ */ React751.createElement(ExportType2, __spreadProps(__spreadValues({}, rest), {
+    options,
+    value,
+    onChange: (selectedItems) => {
+      setValue(selectedItems);
+    },
+    filterOptions: RcDownshiftDefaultFilterOptions
+  })));
+};
+
 // src/Icon.tsx
-import React751 from "react";
+import React752 from "react";
 var Icon = (_a4) => {
   var _b = _a4, { symbol } = _b, rest = __objRest(_b, ["symbol"]);
-  return /* @__PURE__ */ React751.createElement(RcThemeProvider, null, /* @__PURE__ */ React751.createElement(RcIcon, __spreadValues({
+  return /* @__PURE__ */ React752.createElement(RcThemeProvider, null, /* @__PURE__ */ React752.createElement(RcIcon, __spreadValues({
     symbol: icon_exports[symbol]
   }, rest)));
 };
 
 // src/IconButton.tsx
-import React752 from "react";
+import React753 from "react";
 var IconButton3 = (_a4) => {
   var _b = _a4, {
     _children,
@@ -78694,7 +78725,7 @@ var IconButton3 = (_a4) => {
     "elevation",
     "activeElevation"
   ]);
-  return /* @__PURE__ */ React752.createElement(RcThemeProvider, null, /* @__PURE__ */ React752.createElement(RcIconButton, __spreadProps(__spreadValues({
+  return /* @__PURE__ */ React753.createElement(RcThemeProvider, null, /* @__PURE__ */ React753.createElement(RcIconButton, __spreadProps(__spreadValues({
     symbol: icon_exports[symbol]
   }, rest), {
     elevation: elevation === "undefined" ? void 0 : elevation,
@@ -78703,11 +78734,11 @@ var IconButton3 = (_a4) => {
 };
 
 // src/InlineEditable.tsx
-import React753, { useState as useState52 } from "react";
+import React754, { useState as useState53 } from "react";
 var InlineEditable = (_a4) => {
   var _b = _a4, { value: valueProp } = _b, rest = __objRest(_b, ["value"]);
-  const [value, setValue] = useState52(valueProp || "");
-  return /* @__PURE__ */ React753.createElement(RcThemeProvider, null, /* @__PURE__ */ React753.createElement(RcInlineEditable, __spreadProps(__spreadValues({}, rest), {
+  const [value, setValue] = useState53(valueProp || "");
+  return /* @__PURE__ */ React754.createElement(RcThemeProvider, null, /* @__PURE__ */ React754.createElement(RcInlineEditable, __spreadProps(__spreadValues({}, rest), {
     value,
     onChange: (newValue, reason) => {
       setValue(newValue);
@@ -78716,106 +78747,106 @@ var InlineEditable = (_a4) => {
 };
 
 // src/LinearProgress.tsx
-import React754 from "react";
+import React755 from "react";
 var LinearProgress3 = (_a4) => {
   var rest = __objRest(_a4, []);
-  return /* @__PURE__ */ React754.createElement(RcThemeProvider, null, /* @__PURE__ */ React754.createElement(RcLinearProgress, __spreadValues({}, rest)));
+  return /* @__PURE__ */ React755.createElement(RcThemeProvider, null, /* @__PURE__ */ React755.createElement(RcLinearProgress, __spreadValues({}, rest)));
 };
 
 // src/Link.tsx
-import React755 from "react";
+import React756 from "react";
 var Link = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React755.createElement(RcThemeProvider, null, /* @__PURE__ */ React755.createElement(RcLink, __spreadValues({}, rest), _children));
+  return /* @__PURE__ */ React756.createElement(RcThemeProvider, null, /* @__PURE__ */ React756.createElement(RcLink, __spreadValues({}, rest), _children));
 };
 
 // src/List.tsx
-import React756 from "react";
+import React757 from "react";
 var List5 = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
   const children2 = _children.map((a2) => {
     return a2.props.children;
   });
-  return /* @__PURE__ */ React756.createElement(RcThemeProvider, null, /* @__PURE__ */ React756.createElement(RcList, __spreadValues({}, rest), children2));
+  return /* @__PURE__ */ React757.createElement(RcThemeProvider, null, /* @__PURE__ */ React757.createElement(RcList, __spreadValues({}, rest), children2));
 };
 
 // src/ListItem.tsx
-import React757 from "react";
+import React758 from "react";
 var ListItem3 = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
   const children2 = _children.map((a2) => {
     return a2.props.children;
   });
-  return /* @__PURE__ */ React757.createElement(RcThemeProvider, null, /* @__PURE__ */ React757.createElement(RcListItem, __spreadValues({}, rest), children2));
+  return /* @__PURE__ */ React758.createElement(RcThemeProvider, null, /* @__PURE__ */ React758.createElement(RcListItem, __spreadValues({}, rest), children2));
 };
 
 // src/Menu.tsx
-import React758, { useState as useState53 } from "react";
+import React759, { useState as useState54 } from "react";
 var Menu3 = (_a4) => {
   var _b = _a4, { _children, anchorEl: anchorElProp } = _b, rest = __objRest(_b, ["_children", "anchorEl"]);
-  const [anchorEl, setAnchorEl] = useState53(null);
+  const [anchorEl, setAnchorEl] = useState54(null);
   const handleClick = (event) => setAnchorEl(event.currentTarget);
-  const host = anchorElProp.length > 0 ? React758.cloneElement(anchorElProp[0].props.children, {
+  const host = anchorElProp.length > 0 ? React759.cloneElement(anchorElProp[0].props.children, {
     onClick: handleClick
-  }) : /* @__PURE__ */ React758.createElement(RcButton, {
+  }) : /* @__PURE__ */ React759.createElement(RcButton, {
     onClick: handleClick
   }, "add host element with anchorEl");
   const handleClose = () => setAnchorEl(null);
   const children2 = _children.map((a2) => {
-    return React758.cloneElement(a2.props.children, { onClick: handleClose });
+    return React759.cloneElement(a2.props.children, { onClick: handleClose });
   });
-  return /* @__PURE__ */ React758.createElement(RcThemeProvider, null, host, /* @__PURE__ */ React758.createElement(RcMenu, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React759.createElement(RcThemeProvider, null, host, /* @__PURE__ */ React759.createElement(RcMenu, __spreadProps(__spreadValues({}, rest), {
     open: Boolean(anchorEl),
     anchorEl,
     onClose: handleClose
-  }), children2.length > 0 ? children2 : /* @__PURE__ */ React758.createElement(RcMenuItem, null, /* @__PURE__ */ React758.createElement(RcListItemText, {
+  }), children2.length > 0 ? children2 : /* @__PURE__ */ React759.createElement(RcMenuItem, null, /* @__PURE__ */ React759.createElement(RcListItemText, {
     primary: "add children with MenuItem"
   }))));
 };
 
 // src/MenuItem.tsx
-import React759 from "react";
+import React760 from "react";
 var MenuItem3 = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
   const children2 = _children.map((a2) => {
     return a2.props.children;
   });
-  return /* @__PURE__ */ React759.createElement(RcThemeProvider, null, /* @__PURE__ */ React759.createElement(RcMenuItem, __spreadValues({}, rest), children2));
+  return /* @__PURE__ */ React760.createElement(RcThemeProvider, null, /* @__PURE__ */ React760.createElement(RcMenuItem, __spreadValues({}, rest), children2));
 };
 
 // src/Radio.tsx
-import React760 from "react";
+import React761 from "react";
 var Radio4 = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React760.createElement(RcThemeProvider, null, /* @__PURE__ */ React760.createElement(RcRadio, __spreadValues({}, rest), _children));
+  return /* @__PURE__ */ React761.createElement(RcThemeProvider, null, /* @__PURE__ */ React761.createElement(RcRadio, __spreadValues({}, rest), _children));
 };
 
 // src/RadioGroup.tsx
-import React761, { useState as useState54 } from "react";
+import React762, { useState as useState55 } from "react";
 var RadioGroup3 = (_a4) => {
   var _b = _a4, { _children, value: valueProp } = _b, rest = __objRest(_b, ["_children", "value"]);
-  const [value, setValue] = useState54(valueProp);
+  const [value, setValue] = useState55(valueProp);
   const children2 = _children.map((a2) => {
     return a2.props.children;
   });
-  return /* @__PURE__ */ React761.createElement(RcThemeProvider, null, children2.length > 0 ? /* @__PURE__ */ React761.createElement(RcRadioGroup, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React762.createElement(RcThemeProvider, null, children2.length > 0 ? /* @__PURE__ */ React762.createElement(RcRadioGroup, __spreadProps(__spreadValues({}, rest), {
     value,
     onChange: (event, value2) => {
       setValue(value2);
     }
-  }), children2) : /* @__PURE__ */ React761.createElement("div", null, "choice children"));
+  }), children2) : /* @__PURE__ */ React762.createElement("div", null, "choice children"));
 };
 
 // src/Rating.tsx
-import React762 from "react";
+import React763 from "react";
 var Rating3 = (_a4) => {
   var _b = _a4, { size = "xlarge", icon, emptyIcon } = _b, rest = __objRest(_b, ["size", "icon", "emptyIcon"]);
-  return /* @__PURE__ */ React762.createElement(RcThemeProvider, null, /* @__PURE__ */ React762.createElement(RcRating, __spreadValues({
-    icon: /* @__PURE__ */ React762.createElement(RcIcon, {
+  return /* @__PURE__ */ React763.createElement(RcThemeProvider, null, /* @__PURE__ */ React763.createElement(RcRating, __spreadValues({
+    icon: /* @__PURE__ */ React763.createElement(RcIcon, {
       size,
       symbol: icon_exports[icon]
     }),
-    emptyIcon: /* @__PURE__ */ React762.createElement(RcIcon, {
+    emptyIcon: /* @__PURE__ */ React763.createElement(RcIcon, {
       size,
       symbol: icon_exports[emptyIcon]
     })
@@ -78823,37 +78854,37 @@ var Rating3 = (_a4) => {
 };
 
 // src/Select.tsx
-import React763, { useState as useState56 } from "react";
+import React764, { useState as useState57 } from "react";
 var Select3 = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  const [value, setValue] = useState56(void 0);
+  const [value, setValue] = useState57(void 0);
   const children2 = (_children == null ? void 0 : _children.map((a2, i2) => {
     const item = a2.props.children;
-    return React763.cloneElement(item, { key: i2, value: item.props.value });
+    return React764.cloneElement(item, { key: i2, value: item.props.value });
   })) || [];
   const handleChange = (event) => {
     const { value: value2 } = event.target;
     setValue(value2);
   };
-  return /* @__PURE__ */ React763.createElement(RcThemeProvider, null, /* @__PURE__ */ React763.createElement(RcSelect, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React764.createElement(RcThemeProvider, null, /* @__PURE__ */ React764.createElement(RcSelect, __spreadProps(__spreadValues({}, rest), {
     onChange: handleChange,
     value
-  }), children2.length > 0 ? children2 : /* @__PURE__ */ React763.createElement(RcMenuItem, {
+  }), children2.length > 0 ? children2 : /* @__PURE__ */ React764.createElement(RcMenuItem, {
     value: "0"
-  }, /* @__PURE__ */ React763.createElement(RcListItemText, {
+  }, /* @__PURE__ */ React764.createElement(RcListItemText, {
     primary: "add children"
   }))));
 };
 
 // src/Slider.tsx
-import React764 from "react";
+import React765 from "react";
 var Slider3 = (_a4) => {
   var rest = __objRest(_a4, []);
-  return /* @__PURE__ */ React764.createElement(RcThemeProvider, null, /* @__PURE__ */ React764.createElement(RcSlider, __spreadValues({}, rest)));
+  return /* @__PURE__ */ React765.createElement(RcThemeProvider, null, /* @__PURE__ */ React765.createElement(RcSlider, __spreadValues({}, rest)));
 };
 
 // src/SnackbarContent.tsx
-import React765 from "react";
+import React766 from "react";
 var SnackbarContent3 = (_a4) => {
   var _b = _a4, {
     _children,
@@ -78865,28 +78896,28 @@ var SnackbarContent3 = (_a4) => {
   const action3 = actionProp.map((a2) => {
     return a2.props.children;
   });
-  return /* @__PURE__ */ React765.createElement(RcThemeProvider, null, /* @__PURE__ */ React765.createElement(RcSnackbarContent, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React766.createElement(RcThemeProvider, null, /* @__PURE__ */ React766.createElement(RcSnackbarContent, __spreadProps(__spreadValues({}, rest), {
     action: action3
   }), _children));
 };
 
 // src/SnackbarAction.tsx
-import React766 from "react";
+import React767 from "react";
 var SnackbarAction = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React766.createElement(RcThemeProvider, null, /* @__PURE__ */ React766.createElement(RcSnackbarAction, __spreadValues({}, rest), _children));
+  return /* @__PURE__ */ React767.createElement(RcThemeProvider, null, /* @__PURE__ */ React767.createElement(RcSnackbarAction, __spreadValues({}, rest), _children));
 };
 
 // src/Switch.tsx
-import React767 from "react";
+import React768 from "react";
 var Switch3 = (_a4) => {
   var rest = __objRest(_a4, []);
-  return /* @__PURE__ */ React767.createElement(RcThemeProvider, null, /* @__PURE__ */ React767.createElement(RcSwitch, __spreadValues({}, rest)));
+  return /* @__PURE__ */ React768.createElement(RcThemeProvider, null, /* @__PURE__ */ React768.createElement(RcSwitch, __spreadValues({}, rest)));
 };
 
 // src/Spacing.tsx
 import { RenderTarget } from "framer";
-import React768, { useState as useState57 } from "react";
+import React769, { useState as useState58 } from "react";
 var items = {
   "1": "#ef99b7",
   "2": "#79ecfa",
@@ -78918,15 +78949,17 @@ var SpaceItem = styled_components_default.div`
 `;
 var Spacing = (_a4) => {
   var _b = _a4, { count: count2 } = _b, rest = __objRest(_b, ["count"]);
-  const [cmdHold, setCmdHold] = useState57(false);
+  const [cmdHold, setCmdHold] = useState58(false);
   const current = RenderTarget.current();
-  useEventListener(document, "keydown", () => {
-    setCmdHold(true);
+  useEventListener(document, "keydown", (e2) => {
+    if (e2.key === "Meta") {
+      setCmdHold(true);
+    }
   });
   useEventListener(document, "keyup", () => {
     setCmdHold(false);
   });
-  return /* @__PURE__ */ React768.createElement(RcThemeProvider, null, /* @__PURE__ */ React768.createElement(SpaceItem, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React769.createElement(RcThemeProvider, null, /* @__PURE__ */ React769.createElement(SpaceItem, __spreadProps(__spreadValues({}, rest), {
     count: count2,
     color: items[count2],
     cmdHold: cmdHold || current === RenderTarget.canvas
@@ -78934,14 +78967,14 @@ var Spacing = (_a4) => {
 };
 
 // src/Tag.tsx
-import React769 from "react";
+import React770 from "react";
 var Tag = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React769.createElement(RcThemeProvider, null, /* @__PURE__ */ React769.createElement(RcTag, __spreadValues({}, rest), _children));
+  return /* @__PURE__ */ React770.createElement(RcThemeProvider, null, /* @__PURE__ */ React770.createElement(RcTag, __spreadValues({}, rest), _children));
 };
 
 // src/Text.tsx
-import React770 from "react";
+import React771 from "react";
 var Text2 = (_a4) => {
   var _b = _a4, {
     _children,
@@ -78956,17 +78989,17 @@ var Text2 = (_a4) => {
   } else if (titleWhenOverflowProp === "false") {
     titleWhenOverflow = false;
   }
-  return /* @__PURE__ */ React770.createElement(RcThemeProvider, null, /* @__PURE__ */ React770.createElement(RcText, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React771.createElement(RcThemeProvider, null, /* @__PURE__ */ React771.createElement(RcText, __spreadProps(__spreadValues({}, rest), {
     titleWhenOverflow
   }), _children));
 };
 
 // src/TextField.tsx
-import React771, { useState as useState58 } from "react";
+import React772, { useState as useState59 } from "react";
 var TextField3 = (_a4) => {
   var _b = _a4, { value: valueProp } = _b, rest = __objRest(_b, ["value"]);
-  const [value, setValue] = useState58(valueProp);
-  return /* @__PURE__ */ React771.createElement(RcThemeProvider, null, /* @__PURE__ */ React771.createElement(RcTextField, __spreadProps(__spreadValues({}, rest), {
+  const [value, setValue] = useState59(valueProp);
+  return /* @__PURE__ */ React772.createElement(RcThemeProvider, null, /* @__PURE__ */ React772.createElement(RcTextField, __spreadProps(__spreadValues({}, rest), {
     value,
     onChange: (e2) => {
       setValue(e2.target.value);
@@ -78975,37 +79008,37 @@ var TextField3 = (_a4) => {
 };
 
 // src/Thumbnail.tsx
-import React772 from "react";
+import React773 from "react";
 var Thumbnail = (_a4) => {
   var _b = _a4, { _children, symbol } = _b, rest = __objRest(_b, ["_children", "symbol"]);
-  return /* @__PURE__ */ React772.createElement(RcThemeProvider, null, /* @__PURE__ */ React772.createElement(RcThumbnail, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React773.createElement(RcThemeProvider, null, /* @__PURE__ */ React773.createElement(RcThumbnail, __spreadProps(__spreadValues({}, rest), {
     symbol: icon_exports[symbol]
   }), _children));
 };
 
 // src/Paper.tsx
-import React773 from "react";
+import React774 from "react";
 var Paper3 = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
   const children2 = _children.map((a2) => {
     return a2.props.children || a2;
   });
-  return /* @__PURE__ */ React773.createElement(RcThemeProvider, null, /* @__PURE__ */ React773.createElement(RcPaper, __spreadValues({}, rest), children2));
+  return /* @__PURE__ */ React774.createElement(RcThemeProvider, null, /* @__PURE__ */ React774.createElement(RcPaper, __spreadValues({}, rest), children2));
 };
 
 // src/Presence.tsx
-import React774 from "react";
+import React775 from "react";
 var Presence = (_a4) => {
   var _b = _a4, { _children } = _b, rest = __objRest(_b, ["_children"]);
-  return /* @__PURE__ */ React774.createElement(RcThemeProvider, null, /* @__PURE__ */ React774.createElement(RcPresence, __spreadValues({}, rest), _children));
+  return /* @__PURE__ */ React775.createElement(RcThemeProvider, null, /* @__PURE__ */ React775.createElement(RcPresence, __spreadValues({}, rest), _children));
 };
 
 // src/Textarea.tsx
-import React775, { useState as useState59 } from "react";
+import React776, { useState as useState60 } from "react";
 var Textarea = (_a4) => {
   var _b = _a4, { value: valueProp } = _b, rest = __objRest(_b, ["value"]);
-  const [value, setValue] = useState59(valueProp);
-  return /* @__PURE__ */ React775.createElement(RcThemeProvider, null, /* @__PURE__ */ React775.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
+  const [value, setValue] = useState60(valueProp);
+  return /* @__PURE__ */ React776.createElement(RcThemeProvider, null, /* @__PURE__ */ React776.createElement(RcTextarea, __spreadProps(__spreadValues({}, rest), {
     value,
     onChange: (e2) => {
       setValue(e2.target.value);
@@ -79014,7 +79047,7 @@ var Textarea = (_a4) => {
 };
 
 // src/ThemeProvider.tsx
-import React776 from "react";
+import React777 from "react";
 
 // src/themes/rcBlue/rcBlue.ts
 var rcBlue = {
@@ -89571,13 +89604,13 @@ var RcThemeIds = Object.keys(RcThemes);
 var ThemeProvider3 = (_a4) => {
   var _b = _a4, { children: children2, themeId } = _b, rest = __objRest(_b, ["children", "themeId"]);
   const theme = RcThemes[themeId];
-  return /* @__PURE__ */ React776.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React777.createElement(RcThemeProvider, __spreadProps(__spreadValues({}, rest), {
     theme
   }), children2[0]);
 };
 
 // src/TimePicker.tsx
-import React777, { useRef as useRef95, useState as useState60 } from "react";
+import React778, { useRef as useRef95, useState as useState61 } from "react";
 var TimePicker = (_a4) => {
   var _b = _a4, {
     _children,
@@ -89592,7 +89625,7 @@ var TimePicker = (_a4) => {
   ]);
   const min2 = useRef95(minProp ? new Date(`2020/1/1 ${minProp}`) : void 0);
   const max2 = useRef95(maxProp ? new Date(`2020/1/1 ${maxProp}`) : void 0);
-  const [value, setValue] = useState60(valueProp);
+  const [value, setValue] = useState61(valueProp);
   useChange(() => {
     min2.current = minProp ? new Date(`2020/1/1 ${minProp}`) : void 0;
     max2.current = maxProp ? new Date(`2020/1/1 ${maxProp}`) : void 0;
@@ -89600,7 +89633,7 @@ var TimePicker = (_a4) => {
   const handleChange = (time) => {
     setValue(time);
   };
-  return /* @__PURE__ */ React777.createElement(RcThemeProvider, null, /* @__PURE__ */ React777.createElement(RcTimePicker, __spreadValues({
+  return /* @__PURE__ */ React778.createElement(RcThemeProvider, null, /* @__PURE__ */ React778.createElement(RcTimePicker, __spreadValues({
     value,
     onChange: handleChange,
     min: min2.current,
@@ -89609,12 +89642,12 @@ var TimePicker = (_a4) => {
 };
 
 // src/Tooltip.tsx
-import React778 from "react";
+import React779 from "react";
 var Tooltip3 = (_a4) => {
   var _b = _a4, { _children, children: children2 } = _b, rest = __objRest(_b, ["_children", "children"]);
-  return /* @__PURE__ */ React778.createElement(RcThemeProvider, null, _children.length > 0 ? /* @__PURE__ */ React778.createElement(RcTooltip, __spreadProps(__spreadValues({}, rest), {
+  return /* @__PURE__ */ React779.createElement(RcThemeProvider, null, _children.length > 0 ? /* @__PURE__ */ React779.createElement(RcTooltip, __spreadProps(__spreadValues({}, rest), {
     ignorePointer: true
-  }), _children[0].props.children) : /* @__PURE__ */ React778.createElement("div", null, "choice children"));
+  }), _children[0].props.children) : /* @__PURE__ */ React779.createElement("div", null, "choice children"));
 };
 
 // src/utils/colorOptions.ts
@@ -90243,6 +90276,7 @@ export {
   DatePicker,
   DialPad,
   Divider,
+  Downshift,
   Icon,
   IconButton3 as IconButton,
   InlineEditable,
