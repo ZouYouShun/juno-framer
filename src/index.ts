@@ -30,6 +30,7 @@ export * from "./Slider";
 export * from "./SnackbarContent";
 export * from "./SnackbarAction";
 export * from "./Switch";
+export * from "./Spacing";
 export * from "./Tag";
 export * from "./Text";
 export * from "./TextField";
