@@ -1,7 +1,7 @@
 import { addPropertyControls, ControlType } from "framer";
 import * as lib from "http://127.0.0.1:8000/index.js";
 
-addPropertyControls(lib.wnshiftDoc, {
+addPropertyControls(lib.Downshift, {
   keyToTags: {
     title: "keyToTags",
     type: ControlType.Object,
@@ -282,5 +282,5 @@ You can learn more about it [following the specification](https://html.spec.what
   },
 });
 
-const RcwnshiftDoc: React.ComponentType = lib.wnshiftDoc;
-export default RcwnshiftDoc;
+const RcDownshift: React.ComponentType = lib.Downshift;
+export default RcDownshift;

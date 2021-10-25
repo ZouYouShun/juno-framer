@@ -44,8 +44,10 @@ export const Spacing = ({ count, ...rest }: SpaceItemProps) => {
   const [cmdHold, setCmdHold] = useState(false);
   const current = RenderTarget.current();
 
-  useEventListener(document, "keydown", () => {
-    setCmdHold(true);
+  useEventListener(document, "keydown", (e: any) => {
+    if (e.key === "Meta") {
+      setCmdHold(true);
+    }
   });
 
   useEventListener(document, "keyup", () => {

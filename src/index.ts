@@ -13,6 +13,7 @@ export * from "./CircularProgress";
 export * from "./DialPad";
 export * from "./Divider";
 export * from "./DatePicker";
+export * from "./Downshift";
 export * from "./Icon";
 export * from "./IconButton";
 export * from "./InlineEditable";
