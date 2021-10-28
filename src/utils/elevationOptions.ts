@@ -1,5 +1,6 @@
 export const elevationOptions = [
   "undefined",
+  "0",
   "1",
   "2",
   "3",
