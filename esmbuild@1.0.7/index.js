@@ -89787,6 +89787,7 @@ var colorOptions = [
 // src/utils/elevationOptions.ts
 var elevationOptions = [
   "undefined",
+  "0",
   "1",
   "2",
   "3",
